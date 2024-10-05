@@ -1,0 +1,173 @@
+/*!
+ * Datepicker for Bootstrap
+ *
+ * Copyright 2012 Stefan Petre
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ */
+ .dtpicker {
+    top: 0;
+    left: 0;
+    right: auto;
+    padding: 0px;
+    margin-top: 10px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    z-index: 1051;
+    /*.dow {
+      border-top: 1px solid #ddd !important;
+    }*/
+  
+  }
+  .dtpicker:before {
+      content: '';
+      display: inline-block;
+      border-left: 11px solid transparent;
+      border-right: 11px solid transparent;
+      border-bottom: 11px solid rgba(0, 0, 0, 0.2);
+      position: absolute;
+      top: -12px;
+      left: 14px;
+  }
+  .dtpicker:after {
+      content: '';
+      display: inline-block;
+      border-left: 11px solid transparent;
+      border-right: 11px solid transparent;
+      border-bottom: 11px solid #FFF;
+      position: absolute;
+      top: -11px;
+      left: 14px;
+  }
+  .dtpicker > div {
+    display: none;
+  }
+  .dtpicker table {
+    width: 100%;
+    margin: 0;
+    
+  }
+   .dtpicker table thead{
+       background-color: #FFF;
+       border-bottom: 1px solid #EBEBEB; 	
+       display: block;
+       padding: 7px;
+       border-radius: 4px;
+       border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      color: #999;
+   }
+   .dtpicker table tbody{
+       display: block;
+       padding: 7px;
+       background-color: #F8F8F8;
+       border-radius: 4px;
+   }
+  .dtpicker td,
+  .dtpicker th {
+    text-align: center;
+    width: 20px;
+    height: 20px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+  }
+  .dtpicker td.day:hover {
+    background: #eeeeee;
+    cursor: pointer;
+  }
+  .dtpicker td.day.disabled {
+    color: #d4d4d4;
+  }
+  .dtpicker td.old,
+  .dtpicker td.new {
+    color: #999999;
+  }
+  .dtpicker td.active,
+  .dtpicker td.active:hover {
+    color: #ffffff;
+    background-color: #C0E5F7;
+  }
+  .dtpicker td.active:hover,
+  .dtpicker td.active:hover:hover,
+  .dtpicker td.active:focus,
+  .dtpicker td.active:hover:focus,
+  .dtpicker td.active:active,
+  .dtpicker td.active:hover:active,
+  .dtpicker td.active.active,
+  .dtpicker td.active:hover.active,
+  .dtpicker td.active.disabled,
+  .dtpicker td.active:hover.disabled,
+  .dtpicker td.active[disabled],
+  .dtpicker td.active:hover[disabled] {
+    color: #333;
+    background-color:#C0E5F7;
+    *background-color: #C0E5F7;
+  }
+  .dtpicker td.active:active,
+  .dtpicker td.active:hover:active,
+  .dtpicker td.active.active,
+  .dtpicker td.active:hover.active {
+    background-color: #003399 \9;
+  }
+  .dtpicker .dtpicker-months td, .dtpicker .dtpicker-years td{
+      width: 215px;
+  }
+  .dtpicker td span {
+    display: block;
+    width: 47px;
+    height: 54px;
+    line-height: 54px;
+    float: left;
+    margin: 2px;
+    cursor: pointer;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+  }
+  .dtpicker td span:hover {
+    background: #eeeeee;
+  }
+  .dtpicker td span.active {
+    color: #ffffff;
+    background-color: #C0E5F7;
+  }
+  .dtpicker td span.active:hover,
+  .dtpicker td span.active:focus,
+  .dtpicker td span.active:active,
+  .dtpicker td span.active.active,
+  .dtpicker td span.active.disabled,
+  .dtpicker td span.active[disabled] {
+    color: #333;
+    background-color: #C0E5F7;
+    *background-color: #C0E5F7;
+  }
+  .dtpicker td span.active:active,
+  .dtpicker td span.active.active {
+    background-color: #003399 \9;
+  }
+  .dtpicker td span.old {
+    color: #999999;
+  }
+  .dtpicker th.switch {
+    width: 145px;
+  }
+  .dtpicker th.next,
+  .dtpicker th.prev {
+    font-size: 21px;
+  }
+  .dtpicker thead tr:first-child th {
+    cursor: pointer;
+  }
+  .dtpicker thead tr:first-child th:hover {
+    background: #eeeeee;
+  }
+  .input-append.date .add-on i,
+  .input-prepend.date .add-on i {
+    display: block;
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+  }

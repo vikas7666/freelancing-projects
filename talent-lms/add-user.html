@@ -1,0 +1,3325 @@
+<html lang="en">
+
+<head>
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="LMS">
+	<meta property="og:title" content="LMS">
+	<meta property="og:description"
+		content="TalentLMS - Cloud based, Lean Learning Platform with an Emphasis on Usability and Easy Course Creation">
+
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0">
+	<meta http-equiv="Content-Language" content="en">
+	<meta charset="utf-8">
+	<meta name="keywords" content="lms, elearning, learning platform, cloud, saas">
+	<meta name="description"
+		content="TalentLMS - Cloud based, Lean Learning Platform with an Emphasis on Usability and Easy Course Creation">
+	<title>LMS</title>
+	<!-- css -->
+	<link href="css/animate.min.css" rel="stylesheet" type="text/css">
+	<link href="css/reset.css" rel="stylesheet" type="text/css">
+	<link href="css/dtpicker.css" rel="stylesheet" type="text/css">
+	<link href="css/jquery.fileupload.css" rel="stylesheet" type="text/css">
+	<link href="css/jquery.fileupload-ui-custom.css" rel="stylesheet" type="text/css">
+	<link href="css/jquery.Jcrop.css" rel="stylesheet" type="text/css">
+	<link href="favicon.ico" rel="shortcut icon">
+	<script src="js/lib/jquery.min.js" type="text/javascript"></script>
+	<script src="js/lib/tmpl.min.js" type="text/javascript"></script>
+	<script src="js/lib/load-image.all.min.js" type="text/javascript"></script>
+	<script src="js/lib/canvas-to-blob.min.js" type="text/javascript"></script>
+	<script src="js/lib/uploader-544.min.js" type="text/javascript"></script>
+	<script src="js/lib/image-crop-544.min.js" type="text/javascript"></script>
+	<script src="js/formenhancements.min.js" type="text/javascript"></script>
+	<script>window.intercomSettings = {};</script>
+	<link href="css/toastr.min.css" rel="stylesheet" type="text/css">
+</head>
+
+<body class="tl-body">
+	<div class="navbar">
+		<div class="navbar-inner">
+			<div class="container-fluid nav-container" id="tl-navigation-bar-handler">
+				<a class="btn btn-navbar hamburger hamburger--slider hamburger--small hamburger--collapse"
+					data-toggle="collapse" data-target=".nav-collapse">
+					<span class="hamburger-box">
+						<span class="hamburger-inner"></span>
+					</span>
+				</a>
+				<a class="brand" href="https://demo77.talentlms.com/dashboard"><img
+						src="https://d3j0t7vrtr92dk.cloudfront.net/images/talent_bigger.png" class="avatar-square"></a>
+				<div id="tl-loading-pane" class="hide affix text-center" style="display: none;">
+					<p><img src="https://d3j0t7vrtr92dk.cloudfront.net/images/loading-small.gif"
+							class="tl-loader-small"></p>
+				</div>
+				<div class="nav-collapse collapse">
+					<ul class="nav pull-right">
+						<li class="dropdown" id="tl-dropdown-roles">
+							<a href="#" class="dropdown-toggle tl-nabvar-roles-button" data-toggle="dropdown">
+								<span title="M. Gupta">M. Gupta</span> | <b>Administrator</b> &nbsp;
+								<b class="caret"></b>
+							</a>
+							<ul class="dropdown-menu">
+								<li id="tl-administrator-option" class="tl-role-change-btn">
+									<a href="https://demo77.talentlms.com/dashboard/index/role:administrator"
+										class="active">
+										<i class="tl-select-icon-selected"></i>
+										Administrator </a>
+								</li>
+								<li id="tl-trainer-option" class="tl-role-change-btn">
+									<a href="https://demo77.talentlms.com/dashboard/index/role:trainer" class="">
+										<i class="tl-select-icon"></i>
+										Instructor </a>
+								</li>
+								<li id="tl-learner-option" class="tl-role-change-btn">
+									<a href="https://demo77.talentlms.com/dashboard/index/role:learner" class="">
+										<i class="tl-select-icon"></i>
+										Learner </a>
+								</li>
+								<li class="divider"></li>
+								<li id="tl-myinfo-option">
+									<a href="https://demo77.talentlms.com/user/info/id:1">
+										<i class="tl-icon16 icon-address-card"></i>
+										My info </a>
+								</li>
+								<li id="tl-mycourses-option">
+									<a href="https://demo77.talentlms.com/user/courses/id:1">
+										<i class="tl-icon16 icon-book"></i>
+										My courses </a>
+								</li>
+								<li id="tl-mycertifications-option">
+									<a href="https://demo77.talentlms.com/reports/userinfo/id:1#certifications">
+										<i class="tl-icon16 icon-trophy"></i>
+										My certificates </a>
+								</li>
+								<li id="tl-myprogress-option">
+									<a href="https://demo77.talentlms.com/reports/userinfo/id:1">
+										<i class="tl-icon16 icon-user-chart"></i>
+										My progress </a>
+								</li>
+								<li id="tl-mygroups-option">
+									<a href="https://demo77.talentlms.com/user/groups/id:1">
+										<i class="tl-icon16 icon-users"></i>
+										My groups </a>
+								</li>
+								<li id="tl-mybranches-option">
+									<a href="https://demo77.talentlms.com/user/branches/id:1">
+										<i class="tl-icon16 icon-split"></i>
+										My branches </a>
+								</li>
+								<li id="tl-myfiles-option">
+									<a href="https://demo77.talentlms.com/user/files/id:1">
+										<i class="tl-icon16 icon-doc-alt-1"></i>
+										My files </a>
+								</li>
+							</ul>
+						</li>
+						<li class="dropdown" id="tl-dropdown-goto">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+								Go to &nbsp;
+								<b class="caret"></b>
+							</a>
+							<ul class="dropdown-menu">
+								<li>
+									<a href="https://demo77.talentlms.com/dashboard" class="tl-admin-goto">
+										<i class="tl-icon16 icon-home"></i>
+										Home </a>
+								</li>
+								<li>
+									<a href="https://demo77.talentlms.com/user/index/gridPref:reset"
+										class="tl-admin-goto">
+										<i class="tl-icon16 icon-user"></i>
+										Users </a>
+								</li>
+								<li>
+									<a href="https://demo77.talentlms.com/course/index/gridPref:reset"
+										class="tl-admin-goto">
+										<i class="tl-icon16 icon-book"></i>
+										Courses </a>
+								</li>
+								<li>
+									<a href="https://demo77.talentlms.com/marketplace/talentlibrary_index"
+										class="tl-admin-goto">
+										<i class="tl-icon16 icon-basket"></i>
+										Course Store </a>
+								</li>
+								<li>
+									<a href="https://demo77.talentlms.com/category/index/gridPref:reset"
+										class="tl-admin-goto">
+										<i class="tl-icon16 icon-menu"></i>
+										Categories </a>
+								</li>
+								<li>
+									<a href="https://demo77.talentlms.com/group/index/gridPref:reset"
+										class="tl-admin-goto">
+										<i class="tl-icon16 icon-users"></i>
+										Groups </a>
+								</li>
+								<li>
+									<a href="https://demo77.talentlms.com/branch/index/gridPref:reset"
+										class="tl-admin-goto">
+										<i class="tl-icon16 icon-split"></i>
+										Branches </a>
+								</li>
+								<li>
+									<a href="https://demo77.talentlms.com/reports/index" class="tl-admin-goto">
+										<i class="tl-icon16 icon-chart-pie"></i>
+										Reports </a>
+								</li>
+								<li>
+									<a href="https://demo77.talentlms.com/import" class="tl-admin-goto">
+										<i class="tl-icon16 icon-refresh"></i>
+										Import - Export </a>
+								</li>
+								<li>
+									<a href="https://demo77.talentlms.com/eventsengine/notification_index/gridPref:reset"
+										class="tl-admin-goto">
+										<i class="tl-icon16 icon-back-in-time"></i>
+										Events engine </a>
+								</li>
+								<li>
+									<a href="https://demo77.talentlms.com/account/basic_index" class="tl-admin-goto">
+										<i class="tl-icon16 icon-sliders-v"></i>
+										Account &amp; Settings </a>
+								</li>
+								<li class="divider"></li>
+								<li>
+									<a href="https://demo77.talentlms.com/user/create" class="tl-admin-goto">
+										<i class="tl-icon16 icon-plus-circled"></i>
+										Add user </a>
+								</li>
+								<li>
+									<a href="https://demo77.talentlms.com/course/create" class="tl-admin-goto">
+										<i class="tl-icon16 icon-plus-circled"></i>
+										Add course </a>
+								</li>
+							</ul>
+						</li>
+						<li class="dropdown" id="tl-dropdown-messages">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+								Messages&nbsp;<b class="caret"></b>
+							</a>
+							<ul class="dropdown-menu">
+								<li>
+									<a href="https://demo77.talentlms.com/message">
+										<i class="tl-icon16 icon-inbox"></i>Go to Inbox </a>
+								</li>
+								<li>
+									<a href="https://demo77.talentlms.com/message/create">
+										<i class="tl-icon16 icon-mail-1"></i>Send message </a>
+								</li>
+								<li class="divider"></li>
+								<li><a href="javascript:void(0)">No messages</a></li>
+							</ul>
+						</li>
+						<li class="dropdown hidden-phone hidden-tablet" id="tl-dropdown-help">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+								Help <b class="caret"></b>
+							</a>
+							<div class="dropdown-menu tl-help-menu border-box">
+								<div class="tl-help-menu--open-holder"></div>
+								<div class="d-row flex-nowrap align-items-stretch tl-help-menu--escape-open-holder">
+									<div class="d-col-auto">
+										<div class="tl-help-menu_left-panel" id="help_menu_left_panel">
+											<ul class="tl-help-menu_modes-list no-select">
+												<li>
+													<div class="tl-help-menu_mode-button tl-help-menu_mode-button--internal active"
+														data-state-scope="help-menu-mode" data-state-name="faqs"
+														data-select-state="help-menu-mode:faqs">
+														<span title="Knowledge base">Knowledge base</span>
+													</div>
+												</li>
+												<li>
+													<div class="tl-help-menu_mode-button tl-help-menu_mode-button--internal"
+														data-state-scope="help-menu-mode" data-state-name="tour"
+														data-select-state="help-menu-mode:tour">
+														<span title="Tour">Tour</span>
+													</div>
+												</li>
+												<li>
+													<div class="tl-help-menu_mode-button tl-help-menu_mode-button--internal"
+														data-state-scope="help-menu-mode" data-state-name="videos"
+														data-select-state="help-menu-mode:videos">
+														<span title="Videos">Videos</span>
+													</div>
+												</li>
+												<li>
+													<div id="help_form_show_btn"
+														class="tl-help-menu_mode-button tl-help-menu_mode-button--internal"
+														data-state-scope="help-menu-mode" data-state-name="form"
+														data-select-state="help-menu-mode:form">
+														<span title="Contact support">Contact support</span>
+													</div>
+												</li>
+												<li>
+													<div id="help_chat_show_btn"
+														class="tl-help-menu_mode-button tl-help-menu_mode-button--internal"
+														data-state-scope="help-menu-mode" data-state-name="chat"
+														data-select-state="help-menu-mode:chat">
+														<span title="Live support">Live support</span>
+													</div>
+												</li>
+												<li>
+													<div id="help_form_success_show_btn"
+														class="tl-help-menu_mode-button tl-help-menu_mode-button--internal"
+														data-state-scope="help-menu-mode" data-state-name="form-success"
+														data-select-state="help-menu-mode:form-success">
+														<span title="Success manager">Success manager</span>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div class="d-col">
+										<div class="tl-help-menu_right-panel">
+											<div class="tl-help-menu_screen tl-help-menu--no-anim tl-help-menu_screen--faqs tl-help-menu--handle-display active"
+												data-state-scope="help-menu-mode" data-state-name="faqs">
+												<div class="tl-help-menu_screen_part tl-help-menu--no-anim tl-help-menu--handle-display active"
+													data-state-scope="help-menu-search-faqs" data-state-name="search">
+													<div class="d-row">
+														<div
+															class="d-col tl-help-menu_screen_header tl-help-menu_screen--padx">
+															<div class="tl-can-clear-input w-100">
+																<input id="help_search_faqs" autocomplete="off"
+																	type="text" maxlength="255"
+																	class="tl-help-menu_text tl-help-menu_text--margin-fix"
+																	placeholder="Search knowledge base">
+																<div class="tl-clear-input-btn">
+																	<i class="icon-remove"></i>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="d-row">
+														<div class="d-col">
+															<div class="tl-help-menu_faqs-container">
+																<div class="tl-help-menu--handle-display w-100 text-center"
+																	data-state-scope="help-menu-faqs"
+																	data-state-name="faqs-loading">
+																	<ul
+																		class="tl-help-menu_faqs-links-list overflow-hidden">
+																		<li class="tl-help-menu--no-anim">
+																			<div>
+																				<div
+																					class="item-loading tl-help-menu_item-loading">
+																					<div
+																						class="tl-help-menu_item-loading_mask tl-help-menu_item-loading_mask--text-cover tl-help-menu_item-loading_mask--1-1">
+																					</div>
+																					<div
+																						class="tl-help-menu_item-loading_mask tl-help-menu_item-loading_mask--line-cover tl-help-menu_item-loading_mask--2">
+																					</div>
+																					<div
+																						class="tl-help-menu_item-loading_mask tl-help-menu_item-loading_mask--text-cover tl-help-menu_item-loading_mask--3-3">
+																					</div>
+																					<div
+																						class="tl-help-menu_item-loading_mask tl-help-menu_item-loading_mask--line-cover tl-help-menu_item-loading_mask--4">
+																					</div>
+																					<div
+																						class="tl-help-menu_item-loading_mask tl-help-menu_item-loading_mask--text-cover tl-help-menu_item-loading_mask--5">
+																					</div>
+																				</div>
+																			</div>
+																		</li>
+																		<li class="tl-help-menu--no-anim">
+																			<div>
+																				<div
+																					class="item-loading tl-help-menu_item-loading">
+																					<div
+																						class="tl-help-menu_item-loading_mask tl-help-menu_item-loading_mask--text-cover tl-help-menu_item-loading_mask--1">
+																					</div>
+																					<div
+																						class="tl-help-menu_item-loading_mask tl-help-menu_item-loading_mask--line-cover tl-help-menu_item-loading_mask--2">
+																					</div>
+																					<div
+																						class="tl-help-menu_item-loading_mask tl-help-menu_item-loading_mask--text-cover tl-help-menu_item-loading_mask--3">
+																					</div>
+																					<div
+																						class="tl-help-menu_item-loading_mask tl-help-menu_item-loading_mask--line-cover tl-help-menu_item-loading_mask--4">
+																					</div>
+																					<div
+																						class="tl-help-menu_item-loading_mask tl-help-menu_item-loading_mask--text-cover tl-help-menu_item-loading_mask--5">
+																					</div>
+																				</div>
+																			</div>
+																		</li>
+																		<li class="tl-help-menu--no-anim">
+																			<div>
+																				<div
+																					class="item-loading tl-help-menu_item-loading">
+																					<div
+																						class="tl-help-menu_item-loading_mask tl-help-menu_item-loading_mask--text-cover tl-help-menu_item-loading_mask--1-2">
+																					</div>
+																					<div
+																						class="tl-help-menu_item-loading_mask tl-help-menu_item-loading_mask--line-cover tl-help-menu_item-loading_mask--2">
+																					</div>
+																					<div
+																						class="tl-help-menu_item-loading_mask tl-help-menu_item-loading_mask--text-cover tl-help-menu_item-loading_mask--3-4">
+																					</div>
+																					<div
+																						class="tl-help-menu_item-loading_mask tl-help-menu_item-loading_mask--line-cover tl-help-menu_item-loading_mask--4-4">
+																					</div>
+																				</div>
+																			</div>
+																		</li>
+																	</ul>
+																</div>
+																<div class="tl-help-menu--handle-display w-100 text-center"
+																	data-state-scope="help-menu-faqs"
+																	data-state-name="faqs-empty">
+																	<div class="tl-help-menu_inform-panel">
+																		<img class="tl-help-menu_inform-panel_img"
+																			src="https://d3j0t7vrtr92dk.cloudfront.net/images/help_menu/ES_NoArticles.svg">
+																		<p>
+																			No relevant articles found </p>
+																	</div>
+																</div>
+																<ul id="help_menu_faqs_links"
+																	class="tl-help-menu_faqs-links-list tl-help-menu--handle-display active"
+																	data-state-scope="help-menu-faqs"
+																	data-state-name="faqs-loaded">
+																	<li>
+																		<div><a data-article-id="4902447296284"
+																				href="https://help.talentlms.com/hc/en-us/articles/4902447296284-How-to-create-new-user-profiles"
+																				target="_blank">
+																				<h2>How to create new user profiles</h2>
+																			</a>
+																			<p>Regardless of any <em>user</em> method
+																				chosen, you can always add
+																				<em>users</em> individually to your
+																				portal or do a mass <em>user</em>
+																				import. If you
+																			</p>
+																		</div>
+																	</li>
+																	<li>
+																		<div><a data-article-id="4572111461660"
+																				href="https://help.talentlms.com/hc/en-us/articles/4572111461660-How-to-allow-newly-created-users-to-set-their-own-passwords"
+																				target="_blank">
+																				<h2>How to allow newly created users to
+																					set their own passwords</h2>
+																			</a>
+																			<p>When <em>users</em> are <em>created</em>
+																				by an admin, then they are assigned a
+																				password. Administrators can create a
+																				notification to allow</p>
+																		</div>
+																	</li>
+																	<li>
+																		<div><a data-article-id="360014574694"
+																				href="https://help.talentlms.com/hc/en-us/articles/360014574694-How-to-create-new-users-without-their-email-address"
+																				target="_blank">
+																				<h2>How to create new users without
+																					their email address</h2>
+																			</a>
+																			<p>Administrator and add the new
+																				<em>user</em> ( Home &gt; <em>Users</em>
+																				&gt; Add <em>user</em> ). 4. Before
+																				saving the new <em>user</em> profile,
+																				check Exclude from
+																			</p>
+																		</div>
+																	</li>
+																	<li>
+																		<div><a data-article-id="360014574734"
+																				href="https://help.talentlms.com/hc/en-us/articles/360014574734-A-guide-to-TalentLMS-user-types"
+																				target="_blank">
+																				<h2>A guide to TalentLMS user types</h2>
+																			</a>
+																			<p>the <em>user</em> type. Step 3:
+																				<em>Create</em> your own custom
+																				<em>user</em> type 1. Return to Home
+																				&gt; <em>User</em> types and click Add
+																				<em>user</em> type
+																			</p>
+																		</div>
+																	</li>
+																	<li>
+																		<div><a data-article-id="360015217233"
+																				href="https://help.talentlms.com/hc/en-us/articles/360015217233-How-to-deal-with-users-that-don-t-purchase-any-courses"
+																				target="_blank">
+																				<h2>How to deal with users that don’t
+																					purchase any courses</h2>
+																			</a>
+																			<p>registered <em>users</em> through your
+																				Course Catalog. But what if your
+																				paid-for active-<em>user</em> slots are
+																				held by <em>users</em> that <em>use</em>
+																				your portal</p>
+																		</div>
+																	</li>
+																	<li>
+																		<div><a data-article-id="360014573214"
+																				href="https://help.talentlms.com/hc/en-us/articles/360014573214-How-to-import-historical-course-completion-data"
+																				target="_blank">
+																				<h2>How to import historical course
+																					completion data</h2>
+																			</a>
+																			<p>TalentLMS account as Administrator and
+																				<em>create</em> the <em>users</em> (
+																				Home &gt; <em>Users</em> &gt; Add
+																				<em>user</em> ) and courses ( Home &gt;
+																				Courses
+																			</p>
+																		</div>
+																	</li>
+																	<li>
+																		<div><a data-article-id="360014572574"
+																				href="https://help.talentlms.com/hc/en-us/articles/360014572574-What-are-the-notifications-triggered-by-ILT-events"
+																				target="_blank">
+																				<h2>What are the notifications triggered
+																					by ILT events</h2>
+																			</a>
+																			<p>when a <em>user</em> registers themselves
+																				to an ILT session they (i.e., the
+																				instructor) have <em>created</em>. The
+																				same event can be <em>used</em> to
+																				notify</p>
+																		</div>
+																	</li>
+																</ul>
+															</div>
+														</div>
+													</div>
+													<div class="tl-help-menu_screen_separator"></div>
+													<div class="d-row">
+														<div class="d-col text-center tl-help-menu_screen--padx">
+															<a href="https://help.talentlms.com/hc/en-us/"
+																class="btn btn-primary m-0" target="_blank">
+																Go to knowledge base </a>
+														</div>
+													</div>
+												</div>
+												<div class="tl-help-menu_screen_part tl-help-menu--handle-display"
+													data-state-scope="help-menu-search-faqs"
+													data-state-name="preview-faq">
+													<div id="help_search_faq_previewer"
+														class="tl-help-menu_article-previewer">
+														<div class="d-row">
+															<div
+																class="d-col tl-help-menu_screen_header tl-help-menu_screen--padx">
+																<a class="tl-help-menu_article-previewer_title tl-help-menu--external-link"
+																	href="#" target="_blank"></a>
+															</div>
+														</div>
+														<div class="d-row">
+															<div class="d-col">
+																<div
+																	class="tl-help-menu_article-previewer_content tl-help-menu_screen--padx">
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="tl-help-menu_screen_separator"></div>
+													<div class="tl-help-menu_screen--padx">
+														<div class="d-row align-items-center">
+															<div class="d-col-auto text-left">
+																<div class="tl-help-menu_back-btn"
+																	data-select-state="help-menu-search-faqs:search"
+																	data-open-menu-left-panel="">
+																	<i class="icon-chevron-left"></i>
+																	<span>
+																		Back </span>
+																</div>
+															</div>
+															<div class="d-col text-right"></div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="tl-help-menu_screen tl-help-menu--handle-display"
+												data-state-scope="help-menu-mode" data-state-name="tour">
+												<div
+													class="tl-help-menu_inform-panel tl-help-menu_inform-panel--pad-bottom">
+													<img class="tl-help-menu_inform-panel_img"
+														src="https://d3j0t7vrtr92dk.cloudfront.net/images/help_menu/ES_Tour.svg">
+													<p>
+														Restart the guided tour </p>
+													<a id="restart_tour_btn" href="#" class="btn btn-primary">
+														Restart tour </a>
+												</div>
+											</div>
+											<div class="tl-help-menu_screen tl-help-menu--handle-display"
+												data-state-scope="help-menu-mode" data-state-name="videos">
+												<div
+													class="tl-help-menu_inform-panel tl-help-menu_inform-panel--pad-bottom">
+													<img class="tl-help-menu_inform-panel_img"
+														src="https://d3j0t7vrtr92dk.cloudfront.net/images/help_menu/ES_Videos.svg">
+													<p>
+														A vast collection of introductory videos </p>
+													<a href="https://demo77.talentlms.com/help/index/#videos"
+														class="btn btn-primary">
+														View videos </a>
+												</div>
+											</div>
+											<div class="tl-help-menu_screen tl-help-menu_screen--form tl-help-menu--handle-display"
+												data-state-scope="help-menu-mode" data-state-name="form">
+												<script type="text/javascript">
+													$(document).ready(function () {
+														$('#help_menu_form').submit(function (event) {
+															if ($(this).attr('id') == 'tl-account-certifications' && $('#mode').val() == 1) {
+																$('#update-certificate').removeClass('disabled').button('reset');
+															}
+
+															if ($(this).attr('id') == 'tl-account-themes' && $('#mode').val() == 1) {
+																$('#update-theme').removeClass('disabled').button('reset');
+															}
+
+															if (($(this).attr('id') == 'add-coupon-form' || $(this).attr('id') == 'edit-coupon-form') && $('#tl-discount-type').val() == '1') {
+																$("input[name='fixed_amount_discount']").val(123456789.11);
+															}
+															else if (($(this).attr('id') == 'add-coupon-form' || $(this).attr('id') == 'edit-coupon-form') && $('#tl-discount-type').val() == '2') {
+																$("input[name='percentage_discount']").val(99.101);
+															}
+
+															myportal.app.submitForm = new Array();
+
+															if (typeof (myportal.app.validForm) == 'undefined' || myportal.app.validForm == false) {
+																myportal.app.validForm = true;
+															}
+
+															$('#help_input_subject').closest('.controls').find('.help-block:first').empty();
+															$('#help_input_subject').parents('.control-group').removeClass('error');
+															$('#help_input_message').closest('.controls').find('.help-block:first').empty();
+															$('#help_input_message').parents('.control-group').removeClass('error');
+
+															myportal.app.submitForm['help_input_subject'] = new Array();
+															myportal.app.submitForm['help_input_subject']['mandatory'] = true;
+															myportal.app.submitForm['help_input_subject']['maxlength'] = true;
+															myportal.app.submitForm['help_input_message'] = new Array();
+															myportal.app.submitForm['help_input_message']['mandatory'] = true;
+															myportal.app.submitForm['help_input_message']['maxlength'] = true;
+
+															myportal.app.validateMandatory('help_input_subject', decodeURIComponent('%27Subject%27%20is%20required'));
+															myportal.app.validateMaxLength('help_input_subject', decodeURIComponent('%27Subject%27%20cannot%20exceed%20255%20characters'), 255);
+															myportal.app.validateMandatory('help_input_message', decodeURIComponent('%27Message%27%20is%20required'));
+															myportal.app.validateMaxLength('help_input_message', decodeURIComponent('%27Message%27%20cannot%20exceed%2010000%20characters'), 10000);
+
+
+															if (typeof (myportal.app.submitForm) != 'undefined') {
+																var submitMe = true;
+																var errorElement = false;
+
+																for (var index in myportal.app.submitForm) {
+																	for (var index_ in myportal.app.submitForm[index]) {
+																		if (myportal.app.submitForm[index][index_] == false) {
+																			submitMe = false;
+																			errorElement = index;
+																			myportal.app.validForm = false;
+																			break;
+																		}
+																	}
+																}
+															}
+
+															if (typeof (myportal.app.submitForm) != 'undefined' && submitMe == false) {
+																event.preventDefault();
+																$(this).find("input[type=submit]").next('.dropdown-toggle').removeClass('disabled');
+																$(this).find("input[type=submit]").button('reset');
+																$(this).find("input[type=submit]").blur();
+
+
+																if (($(this).attr('id') == 'tl-account-themes' || $(this).attr('id') == 'tl-account-certifications') && !myportal.app.validForm) { // make sure that the tab with the error is shown
+																	var errorTab = $('#' + errorElement).parents('.tab-pane').attr('id');
+																	$('li a[href="#' + errorTab + '"]').tab('show');
+																}
+
+																if (($(this).attr('id') == 'tl-account-certifications' && $('#mode').val() == 1) || ($(this).attr('id') == 'tl-account-themes' && $('#mode').val() == 1)) {
+																	$('#save-as-new-button').removeClass('disabled').removeAttr("disabled").val(myportal.app.translate('save-as-new'));
+																}
+
+																if (($(this).attr('id') == 'add-coupon-form' || $(this).attr('id') == 'edit-coupon-form') && $('#tl-discount-type').val() == '1') {
+																	$("input[name='fixed_amount_discount']").val('');
+																}
+																else if (($(this).attr('id') == 'add-coupon-form' || $(this).attr('id') == 'edit-coupon-form') && $('#tl-discount-type').val() == '2') {
+																	$("input[name='percentage_discount']").val('');
+																}
+															}
+														});
+													});
+												</script>
+												<form name="form" method="post"
+													action="https://demo77.talentlms.com/zendesk/createticket"
+													class="tl-help-menu_screen_part tl-help-menu_form tl-help-menu--handle-display active"
+													id="help_menu_form" data-state-scope="help-menu-form-view"
+													data-state-name="compose"
+													data-submiturl="https://demo77.talentlms.com/zendesk/createticket"
+													enctype="multipart/form-data"><input type="hidden"
+														name="_track_form" value="1666798243" class=""
+														id="1207205678"><input type="hidden" name="_myToken"
+														value="04f7d19e22a2f074c665b12c1c575d68" class=""
+														id="_myToken"><input type="hidden" name="ticket_attachment_name"
+														value="" class="" id="1562703525"><input type="hidden"
+														name="ticket_s3_attachment" value="" class="" id="1755826061">
+													<div class="d-row">
+														<div class="d-col">
+															<input type="text" name="subject" value=""
+																class="tl-help-menu_text" id="help_input_subject"
+																placeholder="Describe the issue" autocomplete="off"
+																data-lpignore="true" data-form-type="other" tabindex="">
+														</div>
+													</div>
+													<div class="d-row">
+														<div class="d-col">
+															<textarea name="msg" class="tl-help-menu_text-area"
+																id="help_input_message"
+																placeholder="Tell us what's going on in as much detail as possible.
+
+To help us solve your issue faster, tell us where you are in the platform and what you're trying to do. If possible, include the URL of the page you're on, the course name, username, user ID, user email, a screenshot, or any other specifics you can."
+																tabindex=""></textarea>
+														</div>
+													</div>
+													<div class="d-row">
+														<div class="d-col">
+															<div
+																class="tl-help-menu_form-controls d-row align-items-center">
+																<div
+																	class="d-col d-flex align-items-center justify-content-start text-left tl-help-menu_form-controls_left-side">
+																	<div id="ticket_attachment_namespace"
+																		data-url="https://demo77.talentlms.com/zendesk/uploadattachment">
+																		<span
+																			class="fileinput-button tl-cursor-pointer ">
+																			<span
+																				class="file-wrapper text-center"><input
+																					type="file" name="ticket_attachment"
+																					tabindex="-1"><a
+																					class="tl-tool-tip inputbtn"
+																					tabindex="-1" rel="tooltip"
+																					data-placement="bottom"
+																					data-original-title="<u>Accepted files</u>:<br/>gif, jpg, jpeg, png, doc, docx, pdf<br/><u>Max file size</u>: 10 MB<br/>"
+																					data-html="true"
+																					href="javascript:void(0);"
+																					id="help_ticket_attachment_input">
+																					<div
+																						class="btn btn-primary tl-help-menu_circled-btn">
+																						<i
+																							class="tl-help-menu_circled-btn_icon icon-doc-alt-1"></i>
+																					</div>Upload a file
+																				</a>
+																				<div class="note error text-error">
+																				</div>
+																			</span>
+																			<script
+																				type="text/javascript">$(document).ready(function () { $('.tl-tool-tip').tooltip({ container: 'body' }); });</script>
+																			<span
+																				class="progress progress-success progress-striped active fade "
+																				style="position: relative;">
+																				<div class="info"
+																					style="position: absolute; width: 100%; text-align: center; font-weight: 600;">
+																				</div>
+																				<div class="bar" style="width: 0%;">
+																				</div>
+																			</span>
+																			<table style="width: 100%;">
+																				<tbody class="files"></tbody>
+																			</table>
+																		</span>
+																		<span id="tl-ticket-attachment-area"
+																			class="well-ticket-attachment hide"
+																			style="display: none;">
+																			<i
+																				class="icon-attach tl-cursor-default"></i>&nbsp;
+																			<span
+																				id="tl-ticket-attachment-filename"></span>&nbsp;
+																			<a id="tl-ticket-attachment-clear"
+																				class="none-decoration"
+																				href="javascript:void(0);"
+																				title="cancel">
+																				<i class="icon-remove"></i>
+																			</a>
+																		</span>
+																	</div>
+																</div>
+																<div
+																	class="d-col d-flex align-items-center justify-content-end text-right">
+																	<input type="submit" name="submit_btn" value="Next"
+																		class="btn btn-primary m-0 tl-help-menu_submit-btn"
+																		id="help_submit_btn" disabled="disabled"
+																		tabindex="">
+																</div>
+															</div>
+														</div>
+													</div>
+												</form>
+												<div class="tl-help-menu--handle-display tl-help-menu_screen--padx"
+													data-state-scope="help-menu-form-view" data-state-name="sending">
+													<div class="tl-help-menu_form-done-screen tl-align-y-center">
+														<div class="tl-help-menu_form-done-screen_msg">
+															<img class="tl-help-menu_form-done-screen_msg_img"
+																src="https://d3j0t7vrtr92dk.cloudfront.net/images/unknown_big.png">
+															<div class="tl-help-menu_form-done-screen_msg_text">
+																Submitting your request.<br>Please wait... </div>
+														</div>
+													</div>
+												</div>
+												<div class="tl-help-menu--handle-display tl-help-menu_screen--padx"
+													data-state-scope="help-menu-form-view" data-state-name="success">
+													<div class="tl-help-menu_form-done-screen tl-align-y-center">
+														<div class="tl-help-menu_form-done-screen_msg">
+															<img class="tl-help-menu_form-done-screen_msg_img"
+																src="https://d3j0t7vrtr92dk.cloudfront.net/images/unknown_big.png">
+															<div class="tl-help-menu_form-done-screen_msg_text">
+																Thank you for your message.<br>We'll be in touch! </div>
+														</div>
+													</div>
+												</div>
+												<div class="tl-help-menu_screen_part tl-help-menu--handle-display"
+													data-state-scope="help-menu-form-view"
+													data-state-name="suggestions">
+													<div class="d-row">
+														<div
+															class="d-col tl-help-menu_screen_header tl-help-menu_screen--padx">
+															<h4 class="tl-help-menu_faqs-suggest-title">
+																Before we send your request, do any of these articles
+																help? </h4>
+														</div>
+													</div>
+													<div class="d-row">
+														<div class="d-col">
+															<div class="tl-help-menu_faqs-container">
+																<ul id="help_form_faq_suggestions"
+																	class="tl-help-menu_faqs-links-list"></ul>
+															</div>
+														</div>
+													</div>
+													<div class="tl-help-menu_screen_separator"></div>
+													<div class="tl-help-menu_screen--padx">
+														<div class="d-row align-items-center">
+															<div class="d-col-auto text-left">
+																<div class="tl-help-menu_back-btn"
+																	data-select-state="help-menu-form-view:compose">
+																	<i class="icon-chevron-left"></i>
+																	<span>
+																		Back </span>
+																</div>
+															</div>
+															<div class="d-col text-right">
+																<div id="help_submit_send_now"
+																	class="btn btn-primary m-0" disabled="disabled">
+																	<span class="tl-help-menu--handle-display active"
+																		data-state-scope="help-menu-form-state"
+																		data-state-name="unsend">
+																		No, send my question </span>
+																	<span class="tl-help-menu--handle-display"
+																		data-state-scope="help-menu-form-state"
+																		data-state-name="sending">
+																		Sending... </span>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="tl-help-menu_screen_part tl-help-menu--handle-display"
+													data-state-scope="help-menu-form-view"
+													data-state-name="preview-faq">
+													<div id="help_form_faq_previewer"
+														class="tl-help-menu_article-previewer">
+														<div class="d-row">
+															<div
+																class="d-col tl-help-menu_screen_header tl-help-menu_screen--padx">
+																<a class="tl-help-menu_article-previewer_title tl-help-menu--external-link"
+																	href="#" target="_blank"></a>
+															</div>
+														</div>
+														<div class="d-row">
+															<div class="d-col">
+																<div
+																	class="tl-help-menu_article-previewer_content tl-help-menu_screen--padx">
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="tl-help-menu_screen_separator"></div>
+													<div class="tl-help-menu_screen--padx">
+														<div class="d-row align-items-center">
+															<div class="d-col-auto text-left">
+																<div class="tl-help-menu_back-btn"
+																	data-select-state="help-menu-form-view:suggestions"
+																	data-open-menu-left-panel="">
+																	<i class="icon-chevron-left"></i>
+																	<span>
+																		Back </span>
+																</div>
+															</div>
+															<div class="d-col text-right">
+																<div data-close-help-menu=""
+																	class="btn btn-primary m-0">
+																	This answers my question </div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="tl-help-menu_screen tl-help-menu--handle-display"
+												data-state-scope="help-menu-mode" data-state-name="chat">
+												<div
+													class="tl-help-menu_inform-panel tl-help-menu_inform-panel--pad-bottom">
+													<img class="tl-help-menu_inform-panel_img"
+														src="https://d3j0t7vrtr92dk.cloudfront.net/images/help_menu/LIVE_SUPPORT.svg">
+													<p class="tl-chat-status">
+														Live support is only available on Premium plans </p>
+													<a id="chat_with_support_btn"
+														href="https://demo77.talentlms.com/account/subscription_index"
+														class="btn btn-primary chat-disabled">
+														Upgrade </a>
+												</div>
+											</div>
+											<div class="tl-help-menu_screen tl-help-menu--handle-display"
+												data-state-scope="help-menu-mode" data-state-name="form-success">
+												<div
+													class="tl-help-menu_inform-panel tl-help-menu_inform-panel--pad-bottom">
+													<img class="tl-help-menu_inform-panel_img"
+														src="https://d3j0t7vrtr92dk.cloudfront.net/images/help_menu/LIVE_SUPPORT.svg">
+													<p class="tl-success-status">
+														Success managers are available only on annual Premium plans and
+														above </p>
+													<a id="success_upgrade_btn"
+														href="https://demo77.talentlms.com/account/subscription_index"
+														class="btn btn-primary chat-disabled">
+														Upgrade </a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="tl-help-menu-open-holder"></div>
+						</li>
+						<li class="divider-vertical spotlight-divider" style="margin-left: 0px; "></li>
+						<li class="dropdown open hidden-phone hidden-tablet">
+							<div class="tl-can-clear-input" style="margin-top: 10px;">
+								<input id="tl-spotlight" autocomplete="off"
+									class="tl-nav-spotlight ui-autocomplete-input" placeholder="Search" type="text">
+								<div class="tl-clear-input-btn">
+									<i class="icon-remove"></i>
+								</div>
+							</div>
+						</li>
+						<li class="divider-vertical spotlight-divider" style="margin-right: 0px;"></li>
+						<li class="hidden-desktop" id="tl-navbar-logout">
+							<a id="navbar-logout" href="https://demo77.talentlms.com/index/logout">
+								Log out </a>
+						</li>
+						<li class="hidden-tablet hidden-phone" id="tl-navbar-logout-icon"><a id="navbar-logout"
+								href="https://demo77.talentlms.com/index/logout"><i class="icon-logout nav-logout"
+									title="Log out"></i></a></li>
+					</ul>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="preview_modal_nav" class="modal fade preview-modal hide" tabindex="-1"></div>
+
+	<script type="text/javascript">
+		$(document).ready(function () {
+
+
+
+			$.ui.autocomplete.prototype._renderItemData = function (ul, item) {
+				var regex = new RegExp("" + safeRegexString(myportal.app.escapeHtml(this.term)), "i");
+				var term = item.label.replace(regex, "<span style='font-weight: 600;'>" + "$&" + "</span>");
+				if (item.highlightDetails) {
+					var details = item.details.replace(regex, "<span style='font-weight: 600;'>" + "$&" + "</span>");
+				}
+				else {
+					var details = item.details;
+				}
+				var imageUrl = item.imageUrl;
+				var imageClass = item.imageClass;
+				if (imageUrl) {
+					if (item.fileType) {
+						var illustrationTag = '<span class="label file-type-label file-type-label--' + item.fileCategory + '">' + item.fileType + '</span>';
+					}
+					else {
+						var illustrationTag = '<img class="avatar-square image40x40 tl-nav-spotlight-image" src="' + imageUrl + '"> ';
+					}
+				}
+				else if (imageClass) {
+					var illustrationTag = '<div class="tl-icons-block"> ' +
+						'<span class="tl-icon-stack"> ' +
+						'<i class="icon-circle tl-icon-stack-background tl-spotlight-option-icon-background"></i> ' +
+						'<i class="' + item.imageClass + ' tl-icon-stack-content"></i>' +
+						'</span>' +
+						'</div>';
+				}
+
+				if (!item.virtual) { // Normal search result item
+					return $("<li></li>")
+						.addClass("tl-spotlight-result-item")
+						.data("ui-autocomplete-item", item)
+						.printTestId('spotlight-result-' + item.category.toLowerCase() + '-' + item.id)
+						.append('<div class="tl-spotlight-result-item_icon">' + illustrationTag + '</div>' +
+							'<div class="tl-spotlight-result-item_text">' +
+							'<div class="tl-spotlight-result-item_title">' + term + '</div>' +
+							'<div class="tl-spotlight-result-item_details">' + details + '</div>' +
+							'</div>')
+						.appendTo(ul);
+				}
+				else if (item.type === 'no_results') {
+					return $('<li data-ui-autocomplete-item="" class="text-center tl-empty-result tl-nav-spotlight-no-results">')
+						.data("ui-autocomplete-item", item)
+						.append('<div><img src="https://d3j0t7vrtr92dk.cloudfront.net/images/empty_states/noSearchBox.svg" class="tl-nav-spotlight-no-results-img"></div>' +
+							'<div><h3>Oh, no. Nothing was found.</h3></div>' +
+							'<div>Use a different term or filter and try again</div>')
+						.appendTo(ul);
+				}
+				else { // "View detailed results" item
+					return $('<li data-ui-autocomplete-item="" class="text-center tl-nav-spotlight-view-all">')
+						.data("ui-autocomplete-item", item)
+						.append('<a href="' + item.url + '" ' + window.printTestId('spotlight-view-all') + ' >' +
+							'<i class="icon-search"></i>' + item.label +
+							'</a>')
+						.appendTo(ul);
+				}
+
+			};
+
+			$.widget("custom.spotlightautocomplete", $.ui.autocomplete, {
+				_create: function () {
+					this._super();
+					this.widget().menu("option", "items", "> :not(.tl-spotlight-category)");
+				},
+				_renderMenu: function (ul, items) {
+					var self = this;
+					var currentCategory = "";
+					ul.addClass('dropdown-menu tl-spotlight-dropdown');
+					$.each(items, function (index, item) {
+						var li;
+						var itemsLength = items.length;
+						if (index < 8 || index === itemsLength - 1) { // Last item is the "View detailed results"
+							if (item.category !== currentCategory && item.category !== '') {
+								ul.append("<li class='tl-spotlight-category'>" + item.category + "</li>");
+								currentCategory = item.category;
+							}
+							li = self._renderItemData(ul, item);
+							if (item.category) {
+								li.attr("aria-label", item.category + " : " + item.label);
+							}
+						}
+					});
+				},
+				_resizeMenu: function () {
+					//resize menu
+				}
+			});
+
+			var spotlightLastResults = {}; // Contains the last results fetched by spotlight.
+
+			$('#tl-spotlight').spotlightautocomplete({
+				minLength: 2,
+				source: function (request, response) {
+					if (spotlightLastResults[request.term]) {
+						response(spotlightLastResults[request.term]);
+						return;
+					}
+
+					var url = 'https://demo77.talentlms.com/index/spotlight/term:###term###';
+
+					myportal.app.ajax(url.replace('###term###', encodeURIComponent(request.term)), {
+						success: function (data) {
+							var results = $.map(data, function (item) {
+								return {
+									id: item.id,
+									label: item.label,
+									url: item.url,
+									category: item.category,
+									imageUrl: item.imageUrl,
+									imageClass: item.imageClass,
+									details: item.details,
+									fileType: item.fileType,
+									fileCategory: item.fileCategory,
+									modalPreview: item.modalPreview,
+									highlightDetails: item.highlightDetails,
+									term: request.term
+								}
+							});
+
+							request.term = encodeURI(request.term.replace(/'/g, "%27"));
+
+							// Push "View detailed results" item.
+							var url = 'https://demo77.talentlms.com/index/results/term:###term###';
+							url = url.replace('###term###', request.term);
+
+							if (!results.length) {
+								results.push({ // "No Results Found" item
+									virtual: true, // Indicate that this is not a real search result item.
+									label: '',
+									term: '',
+									url: '',
+									id: 0,
+									category: '',
+									type: 'no_results',
+								});
+							}
+							else {
+								results.push({ // "View Detailed Results" item
+									virtual: true, // Indicate that this is not a real search result item.
+									label: 'View detailed results',
+									term: request.term,
+									url: url,
+									id: 0,
+									category: '',
+									type: 'view_detailed_results',
+								});
+							}
+
+							spotlightLastResults = { // Re-initialise variable to delete old data.
+								[request.term]: results
+							};
+							response(results);
+						},
+						dataType: "json"
+					});
+				},
+				select: function (event, ui) {
+					$('#tl-spotlight').val(ui.item.label);
+					if (ui.item.modalPreview) {
+						event.preventDefault();
+						var action = ui.item.url;
+						if (typeof (action) != 'undefined') {
+							parameters = {
+								type: 'GET',
+								url: action,
+								success: function (data) {
+									$("#preview_modal_nav").empty().append(data);
+									$("#preview_modal_nav").modal();
+									$('#tl-loading-pane').hide();
+								}
+							};
+							myportal.app.ajax(action, parameters);
+						}
+					}
+					else {
+						window.location = ui.item.url;
+					}
+					return false;
+				},
+				focus: function (event, ui) {
+					event.preventDefault();
+				},
+				position: { my: "right top", at: "right bottom" },
+				open: function () {
+					$(".ui-autocomplete:visible").css({ top: "+=10" });
+				},
+			});
+
+			$(window).resize(function () {
+				if ($('.tl-spotlight-dropdown').css('display') === 'block') {
+					$('#tl-spotlight').spotlightautocomplete('search');
+				}
+			});
+
+			// Auto open header menus
+			$('#tl-dropdown-roles, #tl-dropdown-messages, #tl-dropdown-help, #tl-dropdown-goto, #tl-cms-page-dropdown-more').mouseenter(function (e) {
+				if (!$(this).hasClass('open') && $(window).width() >= 980) {
+					$(this).addClass("open autoopened");
+				}
+			});
+			$('#tl-dropdown-roles, #tl-dropdown-messages, #tl-dropdown-help, #tl-dropdown-goto, #tl-cms-page-dropdown-more').mouseleave(function () {
+				if ($(this).hasClass('open') && $(this).hasClass('autoopened')) {
+					$(this).removeClass("open autoopened");
+				}
+			});
+			//empty #preview_modal_nav on close so that videos/audio stop playing
+			$('#preview_modal_nav').bind('hidden', function () {
+				$('#preview_modal_nav').html('');
+			});
+		});
+
+		$(document).ready(function () {
+			var truncate = function (string, maxLength) {
+				return string.length > maxLength ? (string.substring(0, maxLength) + '...') : string;
+			};
+			var strip = function (html) {
+				var tmp = document.createElement("DIV");
+				tmp.innerHTML = html;
+				return tmp.textContent || tmp.innerText || "";
+			};
+			var fulltrim = function (string) {
+				return string.replace(/(?:(?:^|\n)\s+|\s+(?:$|\n))/g, '').replace(/\s+/g, ' ');
+			};
+			var arrayToHash = function (array, key) {
+				var i = 0, l = array.length, hash = {};
+				for (; i < l; i++) {
+					if (array[i][key]) {
+						hash[array[i][key]] = array[i];
+					}
+				}
+				return hash;
+			};
+			var mergeJSON = function (jsonsArray) {
+				var merged = {};
+				for (var i = 0; i < jsonsArray.length; i++) {
+					for (var key in jsonsArray[i]) {
+						if (jsonsArray[i].hasOwnProperty(key) && typeof jsonsArray[i][key] !== "undefined") {
+							merged[key] = jsonsArray[i][key];
+						}
+					}
+				}
+				return merged;
+			};
+			$(document).on('state:change', function (e, data) {
+				var stateScope = data.stateScope;
+				var stateName = data.stateName;
+				if (stateName !== 'form' && stateName !== 'form-success') {
+					clearTicketAttachmentErrors();
+				}
+			});
+			var clearTicketAttachmentErrors = function () {
+				$('#ticket_attachment_namespace .note.error').html('');
+				$('#ticket_attachment_namespace table .files .error').html('');
+
+				$('#success_attachment_namespace .note.error').html('');
+				$('#success_attachment_namespace table .files .error').html('');
+			}
+			var closeHelpMenu = function () {
+				openAndLockHelpMenu(false);
+			};
+			var articlesToHTML = function (articles) {
+				var htmlCode = [],
+					length = articles ? articles.length : 0,
+					articleID,
+					articleURL,
+					articleTitle,
+					articleText;
+				for (var i = 0; i < length; i++) {
+					articleID = articles[i].id;
+					articleURL = articles[i].html_url;
+					articleTitle = articles[i].title;
+					articleText = articles[i].snippet;
+					articleText = articleText.replace(/&nbsp;/gi, '');
+					articleText = fulltrim(articleText);
+					htmlCode.push('<li><div><a data-article-id="' + articleID + '" href="' + articleURL + '" target="_blank" ' + window.printTestId("help-menu-faq-link-" + i) + '><h2>' + articleTitle + '</h2></a><p>' + articleText + '</p></div></li>');
+				}
+				htmlCode = htmlCode.join('');
+				return htmlCode;
+			};
+			var renderArticles = function (articles) {
+				if (articles.length > 0) {
+					var htmlCode = articlesToHTML(articles);
+					$('#help_menu_faqs_links').html(htmlCode);
+					setState("help-menu-faqs", "faqs-loaded");
+					$('#help_menu_faqs_links').scrollTop(0);
+				} else {
+					setState("help-menu-faqs", "faqs-empty");
+				}
+			};
+			var defaultSearchKey = "create user";
+			var defaultArticles;
+			var cachedArticles = {};
+			var fetchHelpArticles = function (searchKey, callback) {
+				var GET_FAQS_ENDPOINT = "https://demo77.talentlms.com/zendesk/listarticles";
+				myportal.app.ajax(GET_FAQS_ENDPOINT, {
+					type: "POST",
+					dataType: "json",
+					data: {
+						myToken: window.myToken || "",
+						pageTitle: searchKey || ""
+					},
+					success: (function (callback) {
+						return function (response) {
+							var articles = [];
+							try {
+								articles = response.data.results || [];
+							} catch (e) {
+								articles = [];
+							}
+							cachedArticles = mergeJSON([cachedArticles, arrayToHash(articles || [], 'id')]);
+							callback && callback(articles);
+						};
+					})(callback),
+					error: function () {
+						callback && callback([]);
+					}
+				}, false);
+			};
+			var loadHelpArticles = function (searchKey) {
+				var shouldSetDefaultArticles = (typeof defaultArticles === "undefined");
+				searchKey = searchKey ? searchKey : defaultSearchKey;
+				if (shouldSetDefaultArticles || searchKey !== defaultSearchKey) {
+					setState("help-menu-faqs", "faqs-loading");
+					fetchHelpArticles(searchKey, (function (shouldSetDefaultArticles) {
+						return function (articles) {
+							if (shouldSetDefaultArticles) {
+								defaultArticles = articles;
+							}
+							renderArticles(articles);
+						};
+					})(shouldSetDefaultArticles));
+				} else {
+					renderArticles(defaultArticles);
+				}
+			};
+
+			var isFileUploadedHelpForm = false;
+			var lockHelpForm = function (lock) {
+				$('#help_menu_form')[lock ? 'addClass' : 'removeClass']('tl-help-menu_form--lock');
+				$('#help_submit_btn,#help_submit_send_now').attr('disabled', lock ? 'disabled' : null);
+			};
+			var validateHelpForm = function () {
+				var subject = $('#help_input_subject').val().trim();
+				var message = $('#help_input_message').val().trim();
+				var isValid = subject.length > 0 && message.length > 0;;
+				return isValid;
+			};
+			var previewArticle = function (articleContainerSelector, articleID) {
+				var articleContainer = $(articleContainerSelector);
+				var article = cachedArticles[articleID];
+				if (article && articleContainer.length) {
+					enableHelpMenuLeftPanel(false);
+					var articleContainerTitle = articleContainer.find('.tl-help-menu_article-previewer_title');
+					var articleContainerContent = articleContainer.find('.tl-help-menu_article-previewer_content');
+					articleContainerTitle.text(truncate(article.title, 49)).attr('title', article.title).attr('href', article.html_url);
+					articleContainerContent.html(article.body);
+					articleContainerContent.scrollTop(0);
+				}
+			};
+			$('#help_input_message,#help_input_subject').on('keyup', function (e) {
+				var isValid = validateHelpForm();
+				if (!isFileUploadedHelpForm) {
+					$('#help_submit_btn').attr('disabled', isValid ? null : 'disabled');
+				}
+			});
+			var submitHelpForm = function () {
+				lockHelpForm(true);
+				setState("help-menu-form-state", "sending");
+				setState("help-menu-form-view", "sending");
+				var helpForm = $('#help_menu_form');
+				var successMessageTTL = 5000; // How much time will display the success message
+				var data = new FormData(helpForm.get(0));
+				var onSuccessSend = function () {
+					setState("help-menu-form-view", "success");
+					setTimeout(function () {
+						lockHelpForm(false);
+						initHelpForm();
+					}, successMessageTTL);
+				};
+				var onFailedSend = function (errors) {
+					setState("help-menu-form-view", "compose");
+					setState("help-menu-form-state", "unsend");
+					lockHelpForm(false);
+					var defaultErrorMessage = "Can't send the message. Please try again later.";
+					var errorMessage = defaultErrorMessage;
+					try {
+						if (errors.length === 0) {
+							errors.push(defaultErrorMessage);
+						}
+					} catch (e) {
+						errors = [defaultErrorMessage];
+					}
+					for (var i = 0; i < errors.length; i++) {
+						myportal.app.notify({
+							type: "error",
+							message: errors[i]
+						});
+					}
+				};
+				myportal.app.ajax(helpForm.attr('data-submiturl'), {
+					type: "POST",
+					dataType: "json",
+					data: data,
+					cache: false,
+					processData: false,
+					contentType: false,
+					success: (function (onSuccessSend, onFailedSend) {
+						return function (response) {
+							if (response.success) {
+								onSuccessSend();
+							} else {
+								var errors = [];
+								for (var i in response.data) {
+									if (response.data.hasOwnProperty(i) && typeof response.data[i] !== "undefined") {
+										errors.push(response.data[i]);
+									}
+								}
+								onFailedSend(errors);
+							}
+						};
+					})(onSuccessSend, onFailedSend),
+					error: (function (onSuccessSend, onFailedSend) {
+						return function (response) {
+							var errors = [];
+							try {
+								errors = [decodeURIComponent(response.responseJSON.message)];
+							} catch (e) {
+								errors = [];
+							}
+							onFailedSend(errors);
+						};
+					})(onSuccessSend, onFailedSend)
+				});
+			};
+			var enableHelpMenuLeftPanel = function (enable) {
+				$('#help_menu_left_panel')[enable ? 'removeClass' : 'addClass']('hidden');
+			};
+
+			var resetHelpMenuAttachment = function () {
+				setState("help-menu-form-attachment", "select-file");
+				$('input[name="ticket_attachment"]').val('');
+				$('input[name="ticket_s3_attachment"]').val('');
+				$('input[name="ticket_attachment_name"]').val('');
+				$('#tl-ticket-attachment-filename').text('');
+				$('#tl-ticket-attachment-area').hide();
+				$('#ticket_attachment_namespace .fileinput-button').show();
+			};
+			var initHelpForm = function () {
+				setState("help-menu-form-state", "unsend");
+				setState("help-menu-form-view", "compose");
+				resetHelpMenuAttachment();
+				$('#help_submit_btn').attr('disabled', 'disabled');
+				$('#help_submit_send_now').attr('disabled', 'disabled');
+				$('#help_input_message').val('');
+				$('#help_input_subject').val('');
+			};
+			var initHelpMenu = function () {
+				setState("help-menu-mode", "faqs");
+				setState("help-menu-search-faqs", "search");
+				enableHelpMenuLeftPanel(true);
+				initHelpForm();
+				loadHelpArticles();
+			};
+			initHelpMenu();
+
+			$('#ticket_attachment_namespace').fileupload({
+				autoUpload: true,
+				disableInputButton: false,
+				replaceFileInput: true,
+				acceptFileTypes: /(\.|\/)(gif|jpg|jpeg|png|doc|docx|pdf)$/i,
+				maxFileSize: 10485760,
+				uploadTemplateId: 'tl-template-upload-ticket',
+				dropZone: null,
+				add: function (e, data) {
+					var that = this;
+					var $this = $(this);
+					var validation = data.process(function () {
+						return $this.fileupload('process', data);
+					});
+
+					validation.done(function () {
+						isFileUploadedHelpForm = true;
+						$('#help_submit_btn').attr('disabled', 'disabled');
+						$.blueimp.fileupload.prototype.options.add.call(that, e, data);
+					});
+
+					validation.fail(function (data) {
+						$('#ticket_attachment_namespace .note.error').html("<i class='icon-attention-circled tl-cursor-default'></i> " + data.files[data.index].error);
+					});
+				},
+				done: function (e, data) {
+					isFileUploadedHelpForm = false;
+					var isValid = validateHelpForm();
+					$('#help_submit_btn').attr('disabled', isValid ? null : 'disabled');
+					$('#ticket_attachment_namespace table .files').html('');
+				}
+			});
+
+			$('#ticket_attachment_namespace').bind('fileuploadstart', function () {
+				myportal.app.isUploading = true;
+				keepSessionAlive = setInterval(function () { $.get("https://demo77.talentlms.com/index/ping"); }, 300000);
+				$('#ticket_attachment_namespace .file-wrapper').hide();
+			});
+
+			$('#ticket_attachment_namespace').bind('fileuploadstop', function () {
+				myportal.app.isUploading = false;
+				clearInterval(keepSessionAlive);
+			});
+
+			$('#ticket_attachment_namespace').bind('fileuploadalways', function (e, data) {
+				$('#ticket_attachment_namespace .file-wrapper').show();
+			});
+
+			$('#tl-ticket-attachment-clear').click(function () {
+				resetHelpMenuAttachment();
+			});
+
+			$('#ticket_attachment_namespace').bind('fileuploaddone', function (e, data) {
+				if (data.result.success) {
+					$('input[name="ticket_s3_attachment"]').val(data.result.data.ticket_s3_attachment);
+					$('input[name="ticket_attachment_name"]').val(data.result.data.ticket_attachment_name);
+					$('#tl-ticket-attachment-filename').attr("title", data.result.data.ticket_attachment_name).text(data.result.data.ticket_attachment_name.slice(0, 27));
+					$('#ticket_attachment_namespace .fileinput-button').hide();
+					$('#tl-ticket-attachment-area').show();
+				} else {
+					$('#ticket_attachment_namespace .note.error').html("<i class='icon-attention-circled tl-cursor-default'></i> " + data.result.error);
+				}
+			});
+
+			$(document).on('click', '.tl-help-menu', function (e) {
+				/* Make the help menu stay open when click inside */
+				e.stopPropagation();
+			});
+			$('#help_submit_send_now').on('click', function (e) {
+				submitHelpForm();
+			});
+			$('#help_submit_btn').on('click', function (e) {
+				e.stopPropagation();
+				e.preventDefault();
+				var subject = $('#help_input_subject').val().trim();
+				lockHelpForm(true);
+				fetchHelpArticles(subject, function (articles) {
+					lockHelpForm(false);
+					if (articles && articles.length > 0) {
+						var htmlCode = articlesToHTML(articles);
+						$('#help_form_faq_suggestions').html(htmlCode);
+						setState("help-menu-form-view", "suggestions");
+						$('#help_form_faq_suggestions').scrollTop(0);
+					} else {
+						submitHelpForm();
+					}
+				});
+			});
+			$(document).on('click', '#help_form_faq_suggestions li a', function (e) {
+				e.stopPropagation();
+				e.preventDefault();
+				var articleID = $(this).attr('data-article-id');
+				previewArticle('#help_form_faq_previewer', articleID);
+				setState("help-menu-form-view", "preview-faq");
+				$('#help_form_faq_previewer .tl-help-menu_article-previewer_content').scrollTop(0);
+				return false;
+			});
+			$(document).on('click', '#help_menu_faqs_links li a', function (e) {
+				e.stopPropagation();
+				e.preventDefault();
+				var articleID = $(this).attr('data-article-id');
+				previewArticle('#help_search_faq_previewer', articleID);
+				setState("help-menu-search-faqs", "preview-faq");
+				$('#help_search_faq_previewer .tl-help-menu_article-previewer_content').scrollTop(0);
+				return false;
+			});
+			var RESET_TOUR_ENDPOINT = "https://demo77.talentlms.com/index/hidetips/showall:1";
+			var WELCOME_PAGE_URL = "https://demo77.talentlms.com/dashboard/welcome";
+			$(document).on('click', '#restart_tour_btn', function (e) {
+				e.stopPropagation();
+				e.preventDefault();
+				myportal.app.ajax(RESET_TOUR_ENDPOINT, {
+					success: function () {
+						window.location = WELCOME_PAGE_URL;
+					}
+				});
+			});
+			$(document).on('click', '[data-close-help-menu]', function (e) {
+				closeHelpMenu();
+				initHelpMenu();
+			});
+			$(document).on('click', '[data-open-menu-left-panel]', function (e) {
+				enableHelpMenuLeftPanel(true);
+			});
+
+			$('.tl-help-menu_faqs-links-list,.tl-help-menu_article-previewer_content').on('scroll', function (e) {
+				var isScrolledDown = $(this).scrollTop() > 0;
+				var headerElement = $(this).closest('.tl-help-menu_screen_part').find('.tl-help-menu_screen_header');
+				if (headerElement.length) {
+					headerElement[isScrolledDown ? 'addClass' : 'removeClass']('tl-help-menu_screen_header--border');
+				}
+			});
+			$(document).on('keyup', '#help_search_faqs', debounce(function (e) {
+				var searchKey = $(this).val().trim();
+				if (searchKey.length === 0) {
+					searchKey = defaultSearchKey;
+				}
+				loadHelpArticles(searchKey);
+			}, 600));
+			var openAndLockHelpMenu = function (open) {
+				if (open) {
+					$('#tl-dropdown-help').addClass('open').find('.tl-help-menu').addClass('lock');
+				} else {
+					$('#tl-dropdown-help').removeClass('open').find('.tl-help-menu').removeClass('lock');
+					clearTicketAttachmentErrors();
+				}
+			};
+			$(document).on('mouseenter', '#tl-navigation-bar-handler .dropdown', function (e) {
+				var id = $(this).get(0).id;
+				if (id === "tl-dropdown-help") {
+					openAndLockHelpMenu(true);
+				} else {
+					openAndLockHelpMenu(false);
+				}
+			});
+			$(document).on('click', '.tl-help-menu-open-holder', function (e) {
+				openAndLockHelpMenu(false);
+			});
+			$(document).on('click', '.navbar-inner', function (e) {
+				openAndLockHelpMenu(false);
+			});
+			$(document).on('click', '#help_form_show_btn', function (e) {
+				var NOTIFY_HELP_FORM_APPEAR_ENDPOINT = "https://demo77.talentlms.com/intercom/notify";
+				myportal.app.ajax(NOTIFY_HELP_FORM_APPEAR_ENDPOINT, {
+					type: "POST",
+					dataType: "json",
+					data: {
+						trigger: "user_clicked_contact_support",
+						myToken: window.myToken || ""
+					}
+				}, false);
+			});
+
+			$(document).on('click', '#chat_with_support_btn', function (e) {
+				e.preventDefault();
+				if ($(this).hasClass('chat-enabled') && $(this).hasClass('online')) {
+					if (chatButtonMode == 'show') {
+						widgetHandler('showAndOpen', true);
+					}
+					else if (chatButtonMode == 'hide') {
+						widgetHandler('hideAndClose', true);
+					}
+				}
+				else if ($(this).hasClass('chat-enabled') && $(this).hasClass('offline')) {
+					$('#help_form_show_btn').trigger('click');
+				}
+				else if ($(this).hasClass('chat-disabled')) {
+					window.location = $(this).attr('href');
+				}
+			});
+
+			var isFileUploaded = false;
+			var lockSuccessForm = function (lock) {
+				$('#success_manager_form')[lock ? 'addClass' : 'removeClass']('tl-help-menu_form--lock');
+				$('#success_submit_btn').attr('disabled', lock ? 'disabled' : null);
+			};
+			var validateSuccessForm = function () {
+				var subject = $('#success_input_subject').val().trim();
+				var message = $('#success_input_message').val().trim();
+				var isValid = subject.length > 0 && message.length > 0;;
+				return isValid;
+			};
+			$('#success_input_message,#success_input_subject').on('keyup', function (e) {
+				var isValid = validateSuccessForm();
+				if (!isFileUploaded) {
+					$('#success_submit_btn').attr('disabled', isValid ? null : 'disabled');
+				}
+			});
+			var submitSuccessForm = function () {
+				lockSuccessForm(true);
+				setState("success-manager-form-state", "sending");
+				setState("success-manager-form-view", "sending");
+				var successForm = $('#success_manager_form');
+				var successMessageTTL = 5000; // How much time will display the success message
+				var data = new FormData(successForm.get(0));
+				var onSuccessSend = function () {
+					setState("success-manager-form-view", "success");
+					setTimeout(function () {
+						lockSuccessForm(false);
+						initSuccessForm();
+					}, successMessageTTL);
+				};
+				var onFailedSend = function (errors) {
+					setState("success-manager-form-view", "compose");
+					setState("success-manager-form-state", "unsend");
+					lockSuccessForm(false);
+					var defaultErrorMessage = "Can't send the message. Please try again later.";
+					var errorMessage = defaultErrorMessage;
+					try {
+						if (errors.length === 0) {
+							errors.push(defaultErrorMessage);
+						}
+					} catch (e) {
+						errors = [defaultErrorMessage];
+					}
+					for (var i = 0; i < errors.length; i++) {
+						myportal.app.notify({
+							type: "error",
+							message: errors[i]
+						});
+					}
+				};
+				myportal.app.ajax(successForm.attr('data-submiturl'), {
+					type: "POST",
+					dataType: "json",
+					data: data,
+					cache: false,
+					processData: false,
+					contentType: false,
+					success: (function (onSuccessSend, onFailedSend) {
+						return function (response) {
+							if (response.success) {
+								onSuccessSend();
+							} else {
+								var errors = [];
+								for (var i in response.data) {
+									if (response.data.hasOwnProperty(i) && typeof response.data[i] !== "undefined") {
+										errors.push(response.data[i]);
+									}
+								}
+								onFailedSend(errors);
+							}
+						};
+					})(onSuccessSend, onFailedSend),
+					error: (function (onSuccessSend, onFailedSend) {
+						return function (response) {
+							var errors = [];
+							try {
+								errors = [decodeURIComponent(response.responseJSON.message)];
+							} catch (e) {
+								errors = [];
+							}
+							onFailedSend(errors);
+						};
+					})(onSuccessSend, onFailedSend)
+				});
+			};
+			var resetSuccessManagerAttachment = function () {
+				setState("success-manager-form-attachment", "select-file");
+				$('input[name="success_attachment"]').val('');
+				$('input[name="success_attachment_hash"]').val('');
+				$('input[name="success_attachment_name"]').val('');
+				$('input[name="success_attachment_id"]').val('');
+				$('#success-attachment-filename').text('');
+				$('#success-attachment-area').hide();
+				$('#success_attachment_namespace .fileinput-button').show();
+			};
+			var initSuccessForm = function () {
+				setState("success-manager-form-state", "unsend");
+				setState("success-manager-form-view", "compose");
+				resetSuccessManagerAttachment();
+				$('#success_submit_btn').attr('disabled', 'disabled');
+				$('#success_input_message').val('');
+				$('#success_input_subject').val('');
+			};
+			initSuccessForm();
+
+			$('#success_attachment_namespace').fileupload({
+				autoUpload: true,
+				disableInputButton: false,
+				replaceFileInput: true,
+				acceptFileTypes: /(\.|\/)(gif|jpg|jpeg|png|doc|docx|pdf)$/i,
+				maxFileSize: 10485760,
+				uploadTemplateId: 'success-template-upload',
+				dropZone: null,
+				add: function (e, data) {
+					var that = this;
+					var $this = $(this);
+					var validation = data.process(function () {
+						return $this.fileupload('process', data);
+					});
+
+					validation.done(function () {
+						isFileUploaded = true;
+						$('#success_submit_btn').attr('disabled', 'disabled');
+						$.blueimp.fileupload.prototype.options.add.call(that, e, data);
+					});
+
+					validation.fail(function (data) {
+						$('#success_attachment_namespace .note.error').html("<i class='icon-attention-circled tl-cursor-default'></i> " + data.files[data.index].error);
+					});
+				},
+				done: function (e, data) {
+					isFileUploaded = false;
+					var isValid = validateSuccessForm();
+					$('#success_submit_btn').attr('disabled', isValid ? null : 'disabled');
+
+					$('#success_attachment_namespace table .files').html('');
+				}
+			});
+
+			$('#success_attachment_namespace').bind('fileuploadstart', function () {
+				myportal.app.isUploading = true;
+				keepSessionAlive = setInterval(function () { $.get("https://demo77.talentlms.com/index/ping"); }, 300000);
+				$('#success_attachment_namespace .file-wrapper').hide();
+			});
+
+			$('#success_attachment_namespace').bind('fileuploadstop', function () {
+				myportal.app.isUploading = false;
+				clearInterval(keepSessionAlive);
+			});
+
+			$('#success_attachment_namespace').bind('fileuploadalways', function (e, data) {
+				$('#success_attachment_namespace .file-wrapper').show();
+			});
+
+			$('#success-attachment-clear').click(function () {
+				resetSuccessManagerAttachment();
+			});
+
+			$('#success_attachment_namespace').bind('fileuploaddone', function (e, data) {
+				if (data.result.success) {
+					$('input[name="success_attachment_hash"]').val(data.result.data.file_hash);
+					$('input[name="success_attachment_name"]').val(data.result.data.filename);
+					$('input[name="success_attachment_id"]').val(data.result.data.file_id);
+					$('#success-attachment-filename').attr("title", data.result.data.filename).text(data.result.data.filename.slice(0, 27));
+					$('#success_attachment_namespace .fileinput-button').hide();
+					$('#success-attachment-area').show();
+				} else {
+					$('#success_attachment_namespace .note.error').html("<i class='icon-attention-circled tl-cursor-default'></i> " + data.result.error);
+				}
+			});
+
+			$('#success_submit_btn').on('click', function (e) {
+				e.stopPropagation();
+				e.preventDefault();
+				submitSuccessForm();
+			});
+		});
+
+		function buildCmsMenu() {
+			$('#tl-cms-page-dropdown-more .dropdown-menu li').each(function () {
+				$('#tl-cms-page-dropdown-more').before($(this));
+			});
+
+			$('#tl-cms-page-dropdown-more').hide();
+
+			if ($(window).width() < 980) {
+				$('.nav-collapse li.tl-cms-page').fadeIn(100);
+				return;
+			}
+
+			var availableNavSpace = $('.nav-collapse').width();
+			var cmsMenuEntriesSpace = 0;
+			$('.nav-collapse li:not(.tl-cms-page)').each(function () { availableNavSpace -= $(this).outerWidth(true); });
+			availableNavSpace -= $('.brand').outerWidth(true);
+			$('.nav-collapse li.tl-cms-page').each(function () { cmsMenuEntriesSpace += $(this).outerWidth(true); });
+
+			if (cmsMenuEntriesSpace > availableNavSpace) {
+				$('#tl-cms-page-dropdown-more').fadeIn(100);
+				$('#tl-cms-page-dropdown-more-divider').fadeIn(100);
+				availableNavSpace -= $('#tl-cms-page-dropdown-more').outerWidth(true);
+				availableNavSpace -= $('#tl-cms-page-dropdown-more-divider').outerWidth(true);
+			}
+
+			var firstIteration = true;
+			cmsMenuEntriesSpace = 0;
+
+			$('.nav-collapse li.tl-cms-page').each(function (index) {
+				cmsMenuEntriesSpace += $(this).outerWidth(true);
+
+				if (cmsMenuEntriesSpace > availableNavSpace) {
+					$(this).appendTo('#tl-cms-page-dropdown-more .dropdown-menu');
+				}
+				else {
+					if (firstIteration) {
+						$(this).prependTo('.nav-collapse ul[class!="dropdown-menu"]');
+						firstIteration = false;
+					}
+					else {
+						$('.nav-collapse li.tl-cms-page').eq(index - 1).after($(this));
+					}
+				}
+			});
+			$('.nav-collapse li.tl-cms-page').fadeIn(100);
+		}
+	</script>
+
+	<script id="tl-template-upload-ticket" type="text/x-tmpl">
+{% for (var i=0, file; file=o.files[i]; i++) { %}
+	<tr class="template-upload fade">
+		<td>
+			<strong class="error text-danger"></strong>
+			<div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+				<div class="bar bar-success progress-bar progress-bar-success" style="width: 0%;"></div>
+			</div>
+		</td>
+	</tr>
+{% } %}
+</script>
+
+	<script id="success-template-upload" type="text/x-tmpl">
+{% for (var i=0, file; file=o.files[i]; i++) { %}
+	<tr class="template-upload fade">
+		<td>
+			<strong class="error text-danger"></strong>
+			<div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+				<div class="bar bar-success progress-bar progress-bar-success" style="width: 0%;"></div>
+			</div>
+		</td>
+	</tr>
+{% } %}
+</script>
+
+	<div class="container ">
+
+
+
+		<div class="row">
+			<div class="span12">
+				<div class="tl-title tl-ellipsis">
+					<span class="tl-box-title-options"><a href="https://demo77.talentlms.com/dashboard"
+							title="Home">Home</a><span>&nbsp;/&nbsp;</span><a
+							href="https://demo77.talentlms.com/user/index/gridPref:reset"
+							title="Users">Users</a><span>&nbsp;/&nbsp;</span></span>Add user
+				</div>
+				<div class="tl-box tl-box-border ">
+					<div class="row">
+						<div class="span12">
+							<script type="text/javascript">
+								$(document).ready(function () {
+									$('#fileupload').submit(function (event) {
+										if ($(this).attr('id') == 'tl-account-certifications' && $('#mode').val() == 1) {
+											$('#update-certificate').removeClass('disabled').button('reset');
+										}
+
+										if ($(this).attr('id') == 'tl-account-themes' && $('#mode').val() == 1) {
+											$('#update-theme').removeClass('disabled').button('reset');
+										}
+
+										if (($(this).attr('id') == 'add-coupon-form' || $(this).attr('id') == 'edit-coupon-form') && $('#tl-discount-type').val() == '1') {
+											$("input[name='fixed_amount_discount']").val(123456789.11);
+										}
+										else if (($(this).attr('id') == 'add-coupon-form' || $(this).attr('id') == 'edit-coupon-form') && $('#tl-discount-type').val() == '2') {
+											$("input[name='percentage_discount']").val(99.101);
+										}
+
+										myportal.app.submitForm = new Array();
+
+										if (typeof (myportal.app.validForm) == 'undefined' || myportal.app.validForm == false) {
+											myportal.app.validForm = true;
+										}
+
+										$('#1517838944').closest('.controls').find('.help-block:first').empty();
+										$('#1517838944').parents('.control-group').removeClass('error');
+										$('#1509381366').closest('.controls').find('.help-block:first').empty();
+										$('#1509381366').parents('.control-group').removeClass('error');
+										$('#1064055782').closest('.controls').find('.help-block:first').empty();
+										$('#1064055782').parents('.control-group').removeClass('error');
+										$('#713134184').closest('.controls').find('.help-block:first').empty();
+										$('#713134184').parents('.control-group').removeClass('error');
+										$('#1831204494').closest('.controls').find('.help-block:first').empty();
+										$('#1831204494').parents('.control-group').removeClass('error');
+										$('#239097383').closest('.controls').find('.help-block:first').empty();
+										$('#239097383').parents('.control-group').removeClass('error');
+										$('#status').closest('.controls').find('.help-block:first').empty();
+										$('#status').parents('.control-group').removeClass('error');
+										$('#1455889802').closest('.controls').find('.help-block:first').empty();
+										$('#1455889802').parents('.control-group').removeClass('error');
+										$('#1443904430').closest('.controls').find('.help-block:first').empty();
+										$('#1443904430').parents('.control-group').removeClass('error');
+										$('#1689698766').closest('.controls').find('.help-block:first').empty();
+										$('#1689698766').parents('.control-group').removeClass('error');
+										$('#1025251186').closest('.controls').find('.help-block:first').empty();
+										$('#1025251186').parents('.control-group').removeClass('error');
+										$('#fileupload_input').closest('.controls').find('.help-block:first').empty();
+										$('#fileupload_input').parents('.control-group').removeClass('error');
+										$('#deactivate_user').closest('.controls').find('.help-block:first').empty();
+										$('#deactivate_user').parents('.control-group').removeClass('error');
+										$('#deactivation_date').closest('.controls').find('.help-block:first').empty();
+										$('#deactivation_date').parents('.control-group').removeClass('error');
+
+										myportal.app.submitForm['1517838944'] = new Array();
+										myportal.app.submitForm['1517838944']['mandatory'] = true;
+										myportal.app.submitForm['1517838944']['no_url'] = true;
+										myportal.app.submitForm['1517838944']['no_ipv4'] = true;
+										myportal.app.submitForm['1517838944']['no_ipv6'] = true;
+										myportal.app.submitForm['1517838944']['maxlength'] = true;
+										myportal.app.submitForm['1509381366'] = new Array();
+										myportal.app.submitForm['1509381366']['mandatory'] = true;
+										myportal.app.submitForm['1509381366']['no_url'] = true;
+										myportal.app.submitForm['1509381366']['no_ipv4'] = true;
+										myportal.app.submitForm['1509381366']['no_ipv6'] = true;
+										myportal.app.submitForm['1509381366']['maxlength'] = true;
+										myportal.app.submitForm['1064055782'] = new Array();
+										myportal.app.submitForm['1064055782']['mandatory'] = true;
+										myportal.app.submitForm['1064055782']['maxlength'] = true;
+										myportal.app.submitForm['1064055782']['email'] = true;
+										myportal.app.submitForm['1064055782']['user_unique_email'] = true;
+										myportal.app.submitForm['713134184'] = new Array();
+										myportal.app.submitForm['713134184']['mandatory'] = true;
+										myportal.app.submitForm['713134184']['maxlength'] = true;
+										myportal.app.submitForm['713134184']['login'] = true;
+										myportal.app.submitForm['713134184']['user_unique_login'] = true;
+										myportal.app.submitForm['1831204494'] = new Array();
+										myportal.app.submitForm['1831204494']['maxlength'] = true;
+										myportal.app.submitForm['1831204494']['not_only_spaces'] = true;
+										myportal.app.submitForm['1831204494']['strong_password'] = true;
+										myportal.app.submitForm['239097383'] = new Array();
+										myportal.app.submitForm['239097383']['maxlength'] = true;
+										myportal.app.submitForm['status'] = new Array();
+										myportal.app.submitForm['status']['maxlength'] = true;
+										myportal.app.submitForm['1455889802'] = new Array();
+										myportal.app.submitForm['1455889802']['maxlength'] = true;
+										myportal.app.submitForm['1443904430'] = new Array();
+										myportal.app.submitForm['1443904430']['uint_id'] = true;
+										myportal.app.submitForm['1443904430']['maxlength'] = true;
+										myportal.app.submitForm['1689698766'] = new Array();
+										myportal.app.submitForm['1689698766']['maxlength'] = true;
+										myportal.app.submitForm['1025251186'] = new Array();
+										myportal.app.submitForm['1025251186']['maxlength'] = true;
+										myportal.app.submitForm['fileupload_input'] = new Array();
+										myportal.app.submitForm['fileupload_input']['maxlength'] = true;
+										myportal.app.submitForm['deactivate_user'] = new Array();
+										myportal.app.submitForm['deactivate_user']['maxlength'] = true;
+										myportal.app.submitForm['deactivation_date'] = new Array();
+										myportal.app.submitForm['deactivation_date']['date'] = true;
+										myportal.app.submitForm['deactivation_date']['maxlength'] = true;
+
+										myportal.app.validateMandatory('1517838944', decodeURIComponent('%27First%20name%27%20is%20required'));
+										myportal.app.validateNoUrl('1517838944', decodeURIComponent('This%20is%20not%20a%20valid%20%27First%20name%27'), new Array('.AAA', '.AARP', '.ABARTH', '.ABB', '.ABBOTT', '.ABBVIE', '.ABC', '.ABLE', '.ABOGADO', '.ABUDHABI', '.AC', '.ACADEMY', '.ACCENTURE', '.ACCOUNTANT', '.ACCOUNTANTS', '.ACO', '.ACTOR', '.AD', '.ADAC', '.ADS', '.ADULT', '.AE', '.AEG', '.AERO', '.AETNA', '.AF', '.AFAMILYCOMPANY', '.AFL', '.AFRICA', '.AG', '.AGAKHAN', '.AGENCY', '.AI', '.AIG', '.AIRBUS', '.AIRFORCE', '.AIRTEL', '.AKDN', '.AL', '.ALFAROMEO', '.ALIBABA', '.ALIPAY', '.ALLFINANZ', '.ALLSTATE', '.ALLY', '.ALSACE', '.ALSTOM', '.AM', '.AMAZON', '.AMERICANEXPRESS', '.AMERICANFAMILY', '.AMEX', '.AMFAM', '.AMICA', '.AMSTERDAM', '.ANALYTICS', '.ANDROID', '.ANQUAN', '.ANZ', '.AO', '.AOL', '.APARTMENTS', '.APP', '.APPLE', '.AQ', '.AQUARELLE', '.AR', '.ARAB', '.ARAMCO', '.ARCHI', '.ARMY', '.ARPA', '.ART', '.ARTE', '.AS', '.ASDA', '.ASIA', '.ASSOCIATES', '.AT', '.ATHLETA', '.ATTORNEY', '.AU', '.AUCTION', '.AUDI', '.AUDIBLE', '.AUDIO', '.AUSPOST', '.AUTHOR', '.AUTO', '.AUTOS', '.AVIANCA', '.AW', '.AWS', '.AX', '.AXA', '.AZ', '.AZURE', '.BA', '.BABY', '.BAIDU', '.BANAMEX', '.BANANAREPUBLIC', '.BAND', '.BANK', '.BAR', '.BARCELONA', '.BARCLAYCARD', '.BARCLAYS', '.BAREFOOT', '.BARGAINS', '.BASEBALL', '.BASKETBALL', '.BAUHAUS', '.BAYERN', '.BB', '.BBC', '.BBT', '.BBVA', '.BCG', '.BCN', '.BD', '.BE', '.BEATS', '.BEAUTY', '.BEER', '.BENTLEY', '.BERLIN', '.BEST', '.BESTBUY', '.BET', '.BF', '.BG', '.BH', '.BHARTI', '.BI', '.BIBLE', '.BID', '.BIKE', '.BING', '.BINGO', '.BIO', '.BIZ', '.BJ', '.BLACK', '.BLACKFRIDAY', '.BLOCKBUSTER', '.BLOG', '.BLOOMBERG', '.BLUE', '.BM', '.BMS', '.BMW', '.BN', '.BNPPARIBAS', '.BO', '.BOATS', '.BOEHRINGER', '.BOFA', '.BOM', '.BOND', '.BOO', '.BOOK', '.BOOKING', '.BOSCH', '.BOSTIK', '.BOSTON', '.BOT', '.BOUTIQUE', '.BOX', '.BR', '.BRADESCO', '.BRIDGESTONE', '.BROADWAY', '.BROKER', '.BROTHER', '.BRUSSELS', '.BS', '.BT', '.BUDAPEST', '.BUGATTI', '.BUILD', '.BUILDERS', '.BUSINESS', '.BUY', '.BUZZ', '.BV', '.BW', '.BY', '.BZ', '.BZH', '.CA', '.CAB', '.CAFE', '.CAL', '.CALL', '.CALVINKLEIN', '.CAM', '.CAMERA', '.CAMP', '.CANCERRESEARCH', '.CANON', '.CAPETOWN', '.CAPITAL', '.CAPITALONE', '.CAR', '.CARAVAN', '.CARDS', '.CARE', '.CAREER', '.CAREERS', '.CARS', '.CASA', '.CASE', '.CASH', '.CASINO', '.CAT', '.CATERING', '.CATHOLIC', '.CBA', '.CBN', '.CBRE', '.CBS', '.CC', '.CD', '.CENTER', '.CEO', '.CERN', '.CF', '.CFA', '.CFD', '.CG', '.CH', '.CHANEL', '.CHANNEL', '.CHARITY', '.CHASE', '.CHAT', '.CHEAP', '.CHINTAI', '.CHRISTMAS', '.CHROME', '.CHURCH', '.CI', '.CIPRIANI', '.CIRCLE', '.CISCO', '.CITADEL', '.CITI', '.CITIC', '.CITY', '.CITYEATS', '.CK', '.CL', '.CLAIMS', '.CLEANING', '.CLICK', '.CLINIC', '.CLINIQUE', '.CLOTHING', '.CLOUD', '.CLUB', '.CLUBMED', '.CM', '.CN', '.CO', '.COACH', '.CODES', '.COFFEE', '.COLLEGE', '.COLOGNE', '.COM', '.COMCAST', '.COMMBANK', '.COMMUNITY', '.COMPANY', '.COMPARE', '.COMPUTER', '.COMSEC', '.CONDOS', '.CONSTRUCTION', '.CONSULTING', '.CONTACT', '.CONTRACTORS', '.COOKING', '.COOKINGCHANNEL', '.COOL', '.COOP', '.CORSICA', '.COUNTRY', '.COUPON', '.COUPONS', '.COURSES', '.CPA', '.CR', '.CREDIT', '.CREDITCARD', '.CREDITUNION', '.CRICKET', '.CROWN', '.CRS', '.CRUISE', '.CRUISES', '.CSC', '.CU', '.CUISINELLA', '.CV', '.CW', '.CX', '.CY', '.CYMRU', '.CYOU', '.CZ', '.DABUR', '.DAD', '.DANCE', '.DATA', '.DATE', '.DATING', '.DATSUN', '.DAY', '.DCLK', '.DDS', '.DE', '.DEAL', '.DEALER', '.DEALS', '.DEGREE', '.DELIVERY', '.DELL', '.DELOITTE', '.DELTA', '.DEMOCRAT', '.DENTAL', '.DENTIST', '.DESI', '.DESIGN', '.DEV', '.DHL', '.DIAMONDS', '.DIET', '.DIGITAL', '.DIRECT', '.DIRECTORY', '.DISCOUNT', '.DISCOVER', '.DISH', '.DIY', '.DJ', '.DK', '.DM', '.DNP', '.DO', '.DOCS', '.DOCTOR', '.DOG', '.DOMAINS', '.DOT', '.DOWNLOAD', '.DRIVE', '.DTV', '.DUBAI', '.DUCK', '.DUNLOP', '.DUPONT', '.DURBAN', '.DVAG', '.DVR', '.DZ', '.EARTH', '.EAT', '.EC', '.ECO', '.EDEKA', '.EDU', '.EDUCATION', '.EE', '.EG', '.EMAIL', '.EMERCK', '.ENERGY', '.ENGINEER', '.ENGINEERING', '.ENTERPRISES', '.EPSON', '.EQUIPMENT', '.ER', '.ERICSSON', '.ERNI', '.ES', '.ESQ', '.ESTATE', '.ET', '.ETISALAT', '.EU', '.EUROVISION', '.EUS', '.EVENTS', '.EXCHANGE', '.EXPERT', '.EXPOSED', '.EXPRESS', '.EXTRASPACE', '.FAGE', '.FAIL', '.FAIRWINDS', '.FAITH', '.FAMILY', '.FAN', '.FANS', '.FARM', '.FARMERS', '.FASHION', '.FAST', '.FEDEX', '.FEEDBACK', '.FERRARI', '.FERRERO', '.FI', '.FIAT', '.FIDELITY', '.FIDO', '.FILM', '.FINAL', '.FINANCE', '.FINANCIAL', '.FIRE', '.FIRESTONE', '.FIRMDALE', '.FISH', '.FISHING', '.FIT', '.FITNESS', '.FJ', '.FK', '.FLICKR', '.FLIGHTS', '.FLIR', '.FLORIST', '.FLOWERS', '.FLY', '.FM', '.FO', '.FOO', '.FOOD', '.FOODNETWORK', '.FOOTBALL', '.FORD', '.FOREX', '.FORSALE', '.FORUM', '.FOUNDATION', '.FOX', '.FR', '.FREE', '.FRESENIUS', '.FRL', '.FROGANS', '.FRONTDOOR', '.FRONTIER', '.FTR', '.FUJITSU', '.FUN', '.FUND', '.FURNITURE', '.FUTBOL', '.FYI', '.GA', '.GAL', '.GALLERY', '.GALLO', '.GALLUP', '.GAME', '.GAMES', '.GAP', '.GARDEN', '.GAY', '.GB', '.GBIZ', '.GD', '.GDN', '.GE', '.GEA', '.GENT', '.GENTING', '.GEORGE', '.GF', '.GG', '.GGEE', '.GH', '.GI', '.GIFT', '.GIFTS', '.GIVES', '.GIVING', '.GL', '.GLADE', '.GLASS', '.GLE', '.GLOBAL', '.GLOBO', '.GM', '.GMAIL', '.GMBH', '.GMO', '.GMX', '.GN', '.GODADDY', '.GOLD', '.GOLDPOINT', '.GOLF', '.GOO', '.GOODYEAR', '.GOOG', '.GOOGLE', '.GOP', '.GOT', '.GOV', '.GP', '.GQ', '.GR', '.GRAINGER', '.GRAPHICS', '.GRATIS', '.GREEN', '.GRIPE', '.GROCERY', '.GROUP', '.GS', '.GT', '.GU', '.GUARDIAN', '.GUCCI', '.GUGE', '.GUIDE', '.GUITARS', '.GURU', '.GW', '.GY', '.HAIR', '.HAMBURG', '.HANGOUT', '.HAUS', '.HBO', '.HDFC', '.HDFCBANK', '.HEALTH', '.HEALTHCARE', '.HELP', '.HELSINKI', '.HERE', '.HERMES', '.HGTV', '.HIPHOP', '.HISAMITSU', '.HITACHI', '.HIV', '.HK', '.HKT', '.HM', '.HN', '.HOCKEY', '.HOLDINGS', '.HOLIDAY', '.HOMEDEPOT', '.HOMEGOODS', '.HOMES', '.HOMESENSE', '.HONDA', '.HORSE', '.HOSPITAL', '.HOST', '.HOSTING', '.HOT', '.HOTELES', '.HOTELS', '.HOTMAIL', '.HOUSE', '.HOW', '.HR', '.HSBC', '.HT', '.HU', '.HUGHES', '.HYATT', '.HYUNDAI', '.IBM', '.ICBC', '.ICE', '.ICU', '.ID', '.IE', '.IEEE', '.IFM', '.IKANO', '.IL', '.IM', '.IMAMAT', '.IMDB', '.IMMO', '.IMMOBILIEN', '.IN', '.INC', '.INDUSTRIES', '.INFINITI', '.INFO', '.ING', '.INK', '.INSTITUTE', '.INSURANCE', '.INSURE', '.INT', '.INTERNATIONAL', '.INTUIT', '.INVESTMENTS', '.IO', '.IPIRANGA', '.IQ', '.IR', '.IRISH', '.IS', '.ISMAILI', '.IST', '.ISTANBUL', '.IT', '.ITAU', '.ITV', '.JAGUAR', '.JAVA', '.JCB', '.JE', '.JEEP', '.JETZT', '.JEWELRY', '.JIO', '.JLL', '.JM', '.JMP', '.JNJ', '.JO', '.JOBS', '.JOBURG', '.JOT', '.JOY', '.JP', '.JPMORGAN', '.JPRS', '.JUEGOS', '.JUNIPER', '.KAUFEN', '.KDDI', '.KE', '.KERRYHOTELS', '.KERRYLOGISTICS', '.KERRYPROPERTIES', '.KFH', '.KG', '.KH', '.KI', '.KIA', '.KIM', '.KINDER', '.KINDLE', '.KITCHEN', '.KIWI', '.KM', '.KN', '.KOELN', '.KOMATSU', '.KOSHER', '.KP', '.KPMG', '.KPN', '.KR', '.KRD', '.KRED', '.KUOKGROUP', '.KW', '.KY', '.KYOTO', '.KZ', '.LA', '.LACAIXA', '.LAMBORGHINI', '.LAMER', '.LANCASTER', '.LANCIA', '.LAND', '.LANDROVER', '.LANXESS', '.LASALLE', '.LAT', '.LATINO', '.LATROBE', '.LAW', '.LAWYER', '.LB', '.LC', '.LDS', '.LEASE', '.LECLERC', '.LEFRAK', '.LEGAL', '.LEGO', '.LEXUS', '.LGBT', '.LI', '.LIDL', '.LIFE', '.LIFEINSURANCE', '.LIFESTYLE', '.LIGHTING', '.LIKE', '.LILLY', '.LIMITED', '.LIMO', '.LINCOLN', '.LINDE', '.LINK', '.LIPSY', '.LIVE', '.LIVING', '.LIXIL', '.LK', '.LLC', '.LLP', '.LOAN', '.LOANS', '.LOCKER', '.LOCUS', '.LOFT', '.LOL', '.LONDON', '.LOTTE', '.LOTTO', '.LOVE', '.LPL', '.LPLFINANCIAL', '.LR', '.LS', '.LT', '.LTD', '.LTDA', '.LU', '.LUNDBECK', '.LUXE', '.LUXURY', '.LV', '.LY', '.MA', '.MACYS', '.MADRID', '.MAIF', '.MAISON', '.MAKEUP', '.MAN', '.MANAGEMENT', '.MANGO', '.MAP', '.MARKET', '.MARKETING', '.MARKETS', '.MARRIOTT', '.MARSHALLS', '.MASERATI', '.MATTEL', '.MBA', '.MC', '.MCKINSEY', '.MD', '.ME', '.MED', '.MEDIA', '.MEET', '.MELBOURNE', '.MEME', '.MEMORIAL', '.MEN', '.MENU', '.MERCKMSD', '.MG', '.MH', '.MIAMI', '.MICROSOFT', '.MIL', '.MINI', '.MINT', '.MIT', '.MITSUBISHI', '.MK', '.ML', '.MLB', '.MLS', '.MM', '.MMA', '.MN', '.MO', '.MOBI', '.MOBILE', '.MODA', '.MOE', '.MOI', '.MOM', '.MONASH', '.MONEY', '.MONSTER', '.MORMON', '.MORTGAGE', '.MOSCOW', '.MOTO', '.MOTORCYCLES', '.MOV', '.MOVIE', '.MP', '.MQ', '.MR', '.MS', '.MSD', '.MT', '.MTN', '.MTR', '.MU', '.MUSEUM', '.MUTUAL', '.MV', '.MW', '.MX', '.MY', '.MZ', '.NA', '.NAB', '.NAGOYA', '.NAME', '.NATURA', '.NAVY', '.NBA', '.NC', '.NE', '.NEC', '.NET', '.NETBANK', '.NETFLIX', '.NETWORK', '.NEUSTAR', '.NEW', '.NEWS', '.NEXT', '.NEXTDIRECT', '.NEXUS', '.NF', '.NFL', '.NG', '.NGO', '.NHK', '.NI', '.NICO', '.NIKE', '.NIKON', '.NINJA', '.NISSAN', '.NISSAY', '.NL', '.NO', '.NOKIA', '.NORTHWESTERNMUTUAL', '.NORTON', '.NOW', '.NOWRUZ', '.NOWTV', '.NP', '.NR', '.NRA', '.NRW', '.NTT', '.NU', '.NYC', '.NZ', '.OBI', '.OBSERVER', '.OFF', '.OFFICE', '.OKINAWA', '.OLAYAN', '.OLAYANGROUP', '.OLDNAVY', '.OLLO', '.OM', '.OMEGA', '.ONE', '.ONG', '.ONL', '.ONLINE', '.OOO', '.OPEN', '.ORACLE', '.ORANGE', '.ORG', '.ORGANIC', '.ORIGINS', '.OSAKA', '.OTSUKA', '.OTT', '.OVH', '.PA', '.PAGE', '.PANASONIC', '.PARIS', '.PARS', '.PARTNERS', '.PARTS', '.PARTY', '.PASSAGENS', '.PAY', '.PCCW', '.PE', '.PET', '.PF', '.PFIZER', '.PG', '.PH', '.PHARMACY', '.PHD', '.PHILIPS', '.PHONE', '.PHOTO', '.PHOTOGRAPHY', '.PHOTOS', '.PHYSIO', '.PICS', '.PICTET', '.PICTURES', '.PID', '.PIN', '.PING', '.PINK', '.PIONEER', '.PIZZA', '.PK', '.PL', '.PLACE', '.PLAY', '.PLAYSTATION', '.PLUMBING', '.PLUS', '.PM', '.PN', '.PNC', '.POHL', '.POKER', '.POLITIE', '.PORN', '.POST', '.PR', '.PRAMERICA', '.PRAXI', '.PRESS', '.PRIME', '.PRO', '.PROD', '.PRODUCTIONS', '.PROF', '.PROGRESSIVE', '.PROMO', '.PROPERTIES', '.PROPERTY', '.PROTECTION', '.PRU', '.PRUDENTIAL', '.PS', '.PT', '.PUB', '.PW', '.PWC', '.PY', '.QA', '.QPON', '.QUEBEC', '.QUEST', '.QVC', '.RACING', '.RADIO', '.RAID', '.RE', '.READ', '.REALESTATE', '.REALTOR', '.REALTY', '.RECIPES', '.RED', '.REDSTONE', '.REDUMBRELLA', '.REHAB', '.REISE', '.REISEN', '.REIT', '.RELIANCE', '.REN', '.RENT', '.RENTALS', '.REPAIR', '.REPORT', '.REPUBLICAN', '.REST', '.RESTAURANT', '.REVIEW', '.REVIEWS', '.REXROTH', '.RICH', '.RICHARDLI', '.RICOH', '.RIL', '.RIO', '.RIP', '.RMIT', '.RO', '.ROCHER', '.ROCKS', '.RODEO', '.ROGERS', '.ROOM', '.RS', '.RSVP', '.RU', '.RUGBY', '.RUHR', '.RUN', '.RW', '.RWE', '.RYUKYU', '.SA', '.SAARLAND', '.SAFE', '.SAFETY', '.SAKURA', '.SALE', '.SALON', '.SAMSCLUB', '.SAMSUNG', '.SANDVIK', '.SANDVIKCOROMANT', '.SANOFI', '.SAP', '.SARL', '.SAS', '.SAVE', '.SAXO', '.SB', '.SBI', '.SBS', '.SC', '.SCA', '.SCB', '.SCHAEFFLER', '.SCHMIDT', '.SCHOLARSHIPS', '.SCHOOL', '.SCHULE', '.SCHWARZ', '.SCIENCE', '.SCJOHNSON', '.SCOT', '.SD', '.SE', '.SEARCH', '.SEAT', '.SECURE', '.SECURITY', '.SEEK', '.SELECT', '.SENER', '.SERVICES', '.SES', '.SEVEN', '.SEW', '.SEX', '.SEXY', '.SFR', '.SG', '.SH', '.SHANGRILA', '.SHARP', '.SHAW', '.SHELL', '.SHIA', '.SHIKSHA', '.SHOES', '.SHOP', '.SHOPPING', '.SHOUJI', '.SHOW', '.SHOWTIME', '.SI', '.SILK', '.SINA', '.SINGLES', '.SITE', '.SJ', '.SK', '.SKI', '.SKIN', '.SKY', '.SKYPE', '.SL', '.SLING', '.SM', '.SMART', '.SMILE', '.SN', '.SNCF', '.SO', '.SOCCER', '.SOCIAL', '.SOFTBANK', '.SOFTWARE', '.SOHU', '.SOLAR', '.SOLUTIONS', '.SONG', '.SONY', '.SOY', '.SPA', '.SPACE', '.SPORT', '.SPOT', '.SR', '.SRL', '.SS', '.ST', '.STADA', '.STAPLES', '.STAR', '.STATEBANK', '.STATEFARM', '.STC', '.STCGROUP', '.STOCKHOLM', '.STORAGE', '.STORE', '.STREAM', '.STUDIO', '.STUDY', '.STYLE', '.SU', '.SUCKS', '.SUPPLIES', '.SUPPLY', '.SUPPORT', '.SURF', '.SURGERY', '.SUZUKI', '.SV', '.SWATCH', '.SWIFTCOVER', '.SWISS', '.SX', '.SY', '.SYDNEY', '.SYSTEMS', '.SZ', '.TAB', '.TAIPEI', '.TALK', '.TAOBAO', '.TARGET', '.TATAMOTORS', '.TATAR', '.TATTOO', '.TAX', '.TAXI', '.TC', '.TCI', '.TD', '.TDK', '.TEAM', '.TECH', '.TECHNOLOGY', '.TEL', '.TEMASEK', '.TENNIS', '.TEVA', '.TF', '.TG', '.TH', '.THD', '.THEATER', '.THEATRE', '.TIAA', '.TICKETS', '.TIENDA', '.TIFFANY', '.TIPS', '.TIRES', '.TIROL', '.TJ', '.TJMAXX', '.TJX', '.TK', '.TKMAXX', '.TL', '.TM', '.TMALL', '.TN', '.TO', '.TODAY', '.TOKYO', '.TOOLS', '.TOP', '.TORAY', '.TOSHIBA', '.TOTAL', '.TOURS', '.TOWN', '.TOYOTA', '.TOYS', '.TR', '.TRADE', '.TRADING', '.TRAINING', '.TRAVEL', '.TRAVELCHANNEL', '.TRAVELERS', '.TRAVELERSINSURANCE', '.TRUST', '.TRV', '.TT', '.TUBE', '.TUI', '.TUNES', '.TUSHU', '.TV', '.TVS', '.TW', '.TZ', '.UA', '.UBANK', '.UBS', '.UG', '.UK', '.UNICOM', '.UNIVERSITY', '.UNO', '.UOL', '.UPS', '.US', '.UY', '.UZ', '.VA', '.VACATIONS', '.VANA', '.VANGUARD', '.VC', '.VE', '.VEGAS', '.VENTURES', '.VERISIGN', '.VERSICHERUNG', '.VET', '.VG', '.VI', '.VIAJES', '.VIDEO', '.VIG', '.VIKING', '.VILLAS', '.VIN', '.VIP', '.VIRGIN', '.VISA', '.VISION', '.VIVA', '.VIVO', '.VLAANDEREN', '.VN', '.VODKA', '.VOLKSWAGEN', '.VOLVO', '.VOTE', '.VOTING', '.VOTO', '.VOYAGE', '.VU', '.VUELOS', '.WALES', '.WALMART', '.WALTER', '.WANG', '.WANGGOU', '.WATCH', '.WATCHES', '.WEATHER', '.WEATHERCHANNEL', '.WEBCAM', '.WEBER', '.WEBSITE', '.WED', '.WEDDING', '.WEIBO', '.WEIR', '.WF', '.WHOSWHO', '.WIEN', '.WIKI', '.WILLIAMHILL', '.WIN', '.WINDOWS', '.WINE', '.WINNERS', '.WME', '.WOLTERSKLUWER', '.WOODSIDE', '.WORK', '.WORKS', '.WORLD', '.WOW', '.WS', '.WTC', '.WTF', '.XBOX', '.XEROX', '.XFINITY', '.XIHUAN', '.XIN', '.XN--11B4C3D', '.XN--1CK2E1B', '.XN--1QQW23A', '.XN--2SCRJ9C', '.XN--30RR7Y', '.XN--3BST00M', '.XN--3DS443G', '.XN--3E0B707E', '.XN--3HCRJ9C', '.XN--3OQ18VL8PN36A', '.XN--3PXU8K', '.XN--42C2D9A', '.XN--45BR5CYL', '.XN--45BRJ9C', '.XN--45Q11C', '.XN--4DBRK0CE', '.XN--4GBRIM', '.XN--54B7FTA0CC', '.XN--55QW42G', '.XN--55QX5D', '.XN--5SU34J936BGSG', '.XN--5TZM5G', '.XN--6FRZ82G', '.XN--6QQ986B3XL', '.XN--80ADXHKS', '.XN--80AO21A', '.XN--80AQECDR1A', '.XN--80ASEHDB', '.XN--80ASWG', '.XN--8Y0A063A', '.XN--90A3AC', '.XN--90AE', '.XN--90AIS', '.XN--9DBQ2A', '.XN--9ET52U', '.XN--9KRT00A', '.XN--B4W605FERD', '.XN--BCK1B9A5DRE4C', '.XN--C1AVG', '.XN--C2BR7G', '.XN--CCK2B3B', '.XN--CCKWCXETD', '.XN--CG4BKI', '.XN--CLCHC0EA0B2G2A9GCD', '.XN--CZR694B', '.XN--CZRS0T', '.XN--CZRU2D', '.XN--D1ACJ3B', '.XN--D1ALF', '.XN--E1A4C', '.XN--ECKVDTC9D', '.XN--EFVY88H', '.XN--FCT429K', '.XN--FHBEI', '.XN--FIQ228C5HS', '.XN--FIQ64B', '.XN--FIQS8S', '.XN--FIQZ9S', '.XN--FJQ720A', '.XN--FLW351E', '.XN--FPCRJ9C3D', '.XN--FZC2C9E2C', '.XN--FZYS8D69UVGM', '.XN--G2XX48C', '.XN--GCKR3F0F', '.XN--GECRJ9C', '.XN--GK3AT1E', '.XN--H2BREG3EVE', '.XN--H2BRJ9C', '.XN--H2BRJ9C8C', '.XN--HXT814E', '.XN--I1B6B1A6A2E', '.XN--IMR513N', '.XN--IO0A7I', '.XN--J1AEF', '.XN--J1AMH', '.XN--J6W193G', '.XN--JLQ480N2RG', '.XN--JLQ61U9W7B', '.XN--JVR189M', '.XN--KCRX77D1X4A', '.XN--KPRW13D', '.XN--KPRY57D', '.XN--KPUT3I', '.XN--L1ACC', '.XN--LGBBAT1AD8J', '.XN--MGB9AWBF', '.XN--MGBA3A3EJT', '.XN--MGBA3A4F16A', '.XN--MGBA7C0BBN0A', '.XN--MGBAAKC7DVF', '.XN--MGBAAM7A8H', '.XN--MGBAB2BD', '.XN--MGBAH1A3HJKRD', '.XN--MGBAI9AZGQP6J', '.XN--MGBAYH7GPA', '.XN--MGBBH1A', '.XN--MGBBH1A71E', '.XN--MGBC0A9AZCG', '.XN--MGBCA7DZDO', '.XN--MGBCPQ6GPA1A', '.XN--MGBERP4A5D4AR', '.XN--MGBGU82A', '.XN--MGBI4ECEXP', '.XN--MGBPL2FH', '.XN--MGBT3DHD', '.XN--MGBTX2B', '.XN--MGBX4CD0AB', '.XN--MIX891F', '.XN--MK1BU44C', '.XN--MXTQ1M', '.XN--NGBC5AZD', '.XN--NGBE9E0A', '.XN--NGBRX', '.XN--NODE', '.XN--NQV7F', '.XN--NQV7FS00EMA', '.XN--NYQY26A', '.XN--O3CW4H', '.XN--OGBPF8FL', '.XN--OTU796D', '.XN--P1ACF', '.XN--P1AI', '.XN--PGBS0DH', '.XN--PSSY2U', '.XN--Q7CE6A', '.XN--Q9JYB4C', '.XN--QCKA1PMC', '.XN--QXA6A', '.XN--QXAM', '.XN--RHQV96G', '.XN--ROVU88B', '.XN--RVC1E0AM3E', '.XN--S9BRJ9C', '.XN--SES554G', '.XN--T60B56A', '.XN--TCKWE', '.XN--TIQ49XQYJ', '.XN--UNUP4Y', '.XN--VERMGENSBERATER-CTB', '.XN--VERMGENSBERATUNG-PWB', '.XN--VHQUV', '.XN--VUQ861B', '.XN--W4R85EL8FHU5DNRA', '.XN--W4RS40L', '.XN--WGBH1C', '.XN--WGBL6A', '.XN--XHQ521B', '.XN--XKC2AL3HYE2A', '.XN--XKC2DL3A5EE0H', '.XN--Y9A3AQ', '.XN--YFRO4I67O', '.XN--YGBI2AMMX', '.XN--ZFR164B', '.XXX', '.XYZ', '.YACHTS', '.YAHOO', '.YAMAXUN', '.YANDEX', '.YE', '.YODOBASHI', '.YOGA', '.YOKOHAMA', '.YOU', '.YOUTUBE', '.YT', '.YUN', '.ZA', '.ZAPPOS', '.ZARA', '.ZERO', '.ZIP', '.ZM', '.ZONE', '.ZUERICH', '.ZW'));
+										myportal.app.validateNoIpV4('1517838944', decodeURIComponent('This%20is%20not%20a%20valid%20%27First%20name%27'));
+										myportal.app.validateNoIpV6('1517838944', decodeURIComponent('This%20is%20not%20a%20valid%20%27First%20name%27'));
+										myportal.app.validateMaxLength('1517838944', decodeURIComponent('%27First%20name%27%20cannot%20exceed%2050%20characters'), 50);
+										myportal.app.validateMandatory('1509381366', decodeURIComponent('%27Last%20name%27%20is%20required'));
+										myportal.app.validateNoUrl('1509381366', decodeURIComponent('This%20is%20not%20a%20valid%20%27Last%20name%27'), new Array('.AAA', '.AARP', '.ABARTH', '.ABB', '.ABBOTT', '.ABBVIE', '.ABC', '.ABLE', '.ABOGADO', '.ABUDHABI', '.AC', '.ACADEMY', '.ACCENTURE', '.ACCOUNTANT', '.ACCOUNTANTS', '.ACO', '.ACTOR', '.AD', '.ADAC', '.ADS', '.ADULT', '.AE', '.AEG', '.AERO', '.AETNA', '.AF', '.AFAMILYCOMPANY', '.AFL', '.AFRICA', '.AG', '.AGAKHAN', '.AGENCY', '.AI', '.AIG', '.AIRBUS', '.AIRFORCE', '.AIRTEL', '.AKDN', '.AL', '.ALFAROMEO', '.ALIBABA', '.ALIPAY', '.ALLFINANZ', '.ALLSTATE', '.ALLY', '.ALSACE', '.ALSTOM', '.AM', '.AMAZON', '.AMERICANEXPRESS', '.AMERICANFAMILY', '.AMEX', '.AMFAM', '.AMICA', '.AMSTERDAM', '.ANALYTICS', '.ANDROID', '.ANQUAN', '.ANZ', '.AO', '.AOL', '.APARTMENTS', '.APP', '.APPLE', '.AQ', '.AQUARELLE', '.AR', '.ARAB', '.ARAMCO', '.ARCHI', '.ARMY', '.ARPA', '.ART', '.ARTE', '.AS', '.ASDA', '.ASIA', '.ASSOCIATES', '.AT', '.ATHLETA', '.ATTORNEY', '.AU', '.AUCTION', '.AUDI', '.AUDIBLE', '.AUDIO', '.AUSPOST', '.AUTHOR', '.AUTO', '.AUTOS', '.AVIANCA', '.AW', '.AWS', '.AX', '.AXA', '.AZ', '.AZURE', '.BA', '.BABY', '.BAIDU', '.BANAMEX', '.BANANAREPUBLIC', '.BAND', '.BANK', '.BAR', '.BARCELONA', '.BARCLAYCARD', '.BARCLAYS', '.BAREFOOT', '.BARGAINS', '.BASEBALL', '.BASKETBALL', '.BAUHAUS', '.BAYERN', '.BB', '.BBC', '.BBT', '.BBVA', '.BCG', '.BCN', '.BD', '.BE', '.BEATS', '.BEAUTY', '.BEER', '.BENTLEY', '.BERLIN', '.BEST', '.BESTBUY', '.BET', '.BF', '.BG', '.BH', '.BHARTI', '.BI', '.BIBLE', '.BID', '.BIKE', '.BING', '.BINGO', '.BIO', '.BIZ', '.BJ', '.BLACK', '.BLACKFRIDAY', '.BLOCKBUSTER', '.BLOG', '.BLOOMBERG', '.BLUE', '.BM', '.BMS', '.BMW', '.BN', '.BNPPARIBAS', '.BO', '.BOATS', '.BOEHRINGER', '.BOFA', '.BOM', '.BOND', '.BOO', '.BOOK', '.BOOKING', '.BOSCH', '.BOSTIK', '.BOSTON', '.BOT', '.BOUTIQUE', '.BOX', '.BR', '.BRADESCO', '.BRIDGESTONE', '.BROADWAY', '.BROKER', '.BROTHER', '.BRUSSELS', '.BS', '.BT', '.BUDAPEST', '.BUGATTI', '.BUILD', '.BUILDERS', '.BUSINESS', '.BUY', '.BUZZ', '.BV', '.BW', '.BY', '.BZ', '.BZH', '.CA', '.CAB', '.CAFE', '.CAL', '.CALL', '.CALVINKLEIN', '.CAM', '.CAMERA', '.CAMP', '.CANCERRESEARCH', '.CANON', '.CAPETOWN', '.CAPITAL', '.CAPITALONE', '.CAR', '.CARAVAN', '.CARDS', '.CARE', '.CAREER', '.CAREERS', '.CARS', '.CASA', '.CASE', '.CASH', '.CASINO', '.CAT', '.CATERING', '.CATHOLIC', '.CBA', '.CBN', '.CBRE', '.CBS', '.CC', '.CD', '.CENTER', '.CEO', '.CERN', '.CF', '.CFA', '.CFD', '.CG', '.CH', '.CHANEL', '.CHANNEL', '.CHARITY', '.CHASE', '.CHAT', '.CHEAP', '.CHINTAI', '.CHRISTMAS', '.CHROME', '.CHURCH', '.CI', '.CIPRIANI', '.CIRCLE', '.CISCO', '.CITADEL', '.CITI', '.CITIC', '.CITY', '.CITYEATS', '.CK', '.CL', '.CLAIMS', '.CLEANING', '.CLICK', '.CLINIC', '.CLINIQUE', '.CLOTHING', '.CLOUD', '.CLUB', '.CLUBMED', '.CM', '.CN', '.CO', '.COACH', '.CODES', '.COFFEE', '.COLLEGE', '.COLOGNE', '.COM', '.COMCAST', '.COMMBANK', '.COMMUNITY', '.COMPANY', '.COMPARE', '.COMPUTER', '.COMSEC', '.CONDOS', '.CONSTRUCTION', '.CONSULTING', '.CONTACT', '.CONTRACTORS', '.COOKING', '.COOKINGCHANNEL', '.COOL', '.COOP', '.CORSICA', '.COUNTRY', '.COUPON', '.COUPONS', '.COURSES', '.CPA', '.CR', '.CREDIT', '.CREDITCARD', '.CREDITUNION', '.CRICKET', '.CROWN', '.CRS', '.CRUISE', '.CRUISES', '.CSC', '.CU', '.CUISINELLA', '.CV', '.CW', '.CX', '.CY', '.CYMRU', '.CYOU', '.CZ', '.DABUR', '.DAD', '.DANCE', '.DATA', '.DATE', '.DATING', '.DATSUN', '.DAY', '.DCLK', '.DDS', '.DE', '.DEAL', '.DEALER', '.DEALS', '.DEGREE', '.DELIVERY', '.DELL', '.DELOITTE', '.DELTA', '.DEMOCRAT', '.DENTAL', '.DENTIST', '.DESI', '.DESIGN', '.DEV', '.DHL', '.DIAMONDS', '.DIET', '.DIGITAL', '.DIRECT', '.DIRECTORY', '.DISCOUNT', '.DISCOVER', '.DISH', '.DIY', '.DJ', '.DK', '.DM', '.DNP', '.DO', '.DOCS', '.DOCTOR', '.DOG', '.DOMAINS', '.DOT', '.DOWNLOAD', '.DRIVE', '.DTV', '.DUBAI', '.DUCK', '.DUNLOP', '.DUPONT', '.DURBAN', '.DVAG', '.DVR', '.DZ', '.EARTH', '.EAT', '.EC', '.ECO', '.EDEKA', '.EDU', '.EDUCATION', '.EE', '.EG', '.EMAIL', '.EMERCK', '.ENERGY', '.ENGINEER', '.ENGINEERING', '.ENTERPRISES', '.EPSON', '.EQUIPMENT', '.ER', '.ERICSSON', '.ERNI', '.ES', '.ESQ', '.ESTATE', '.ET', '.ETISALAT', '.EU', '.EUROVISION', '.EUS', '.EVENTS', '.EXCHANGE', '.EXPERT', '.EXPOSED', '.EXPRESS', '.EXTRASPACE', '.FAGE', '.FAIL', '.FAIRWINDS', '.FAITH', '.FAMILY', '.FAN', '.FANS', '.FARM', '.FARMERS', '.FASHION', '.FAST', '.FEDEX', '.FEEDBACK', '.FERRARI', '.FERRERO', '.FI', '.FIAT', '.FIDELITY', '.FIDO', '.FILM', '.FINAL', '.FINANCE', '.FINANCIAL', '.FIRE', '.FIRESTONE', '.FIRMDALE', '.FISH', '.FISHING', '.FIT', '.FITNESS', '.FJ', '.FK', '.FLICKR', '.FLIGHTS', '.FLIR', '.FLORIST', '.FLOWERS', '.FLY', '.FM', '.FO', '.FOO', '.FOOD', '.FOODNETWORK', '.FOOTBALL', '.FORD', '.FOREX', '.FORSALE', '.FORUM', '.FOUNDATION', '.FOX', '.FR', '.FREE', '.FRESENIUS', '.FRL', '.FROGANS', '.FRONTDOOR', '.FRONTIER', '.FTR', '.FUJITSU', '.FUN', '.FUND', '.FURNITURE', '.FUTBOL', '.FYI', '.GA', '.GAL', '.GALLERY', '.GALLO', '.GALLUP', '.GAME', '.GAMES', '.GAP', '.GARDEN', '.GAY', '.GB', '.GBIZ', '.GD', '.GDN', '.GE', '.GEA', '.GENT', '.GENTING', '.GEORGE', '.GF', '.GG', '.GGEE', '.GH', '.GI', '.GIFT', '.GIFTS', '.GIVES', '.GIVING', '.GL', '.GLADE', '.GLASS', '.GLE', '.GLOBAL', '.GLOBO', '.GM', '.GMAIL', '.GMBH', '.GMO', '.GMX', '.GN', '.GODADDY', '.GOLD', '.GOLDPOINT', '.GOLF', '.GOO', '.GOODYEAR', '.GOOG', '.GOOGLE', '.GOP', '.GOT', '.GOV', '.GP', '.GQ', '.GR', '.GRAINGER', '.GRAPHICS', '.GRATIS', '.GREEN', '.GRIPE', '.GROCERY', '.GROUP', '.GS', '.GT', '.GU', '.GUARDIAN', '.GUCCI', '.GUGE', '.GUIDE', '.GUITARS', '.GURU', '.GW', '.GY', '.HAIR', '.HAMBURG', '.HANGOUT', '.HAUS', '.HBO', '.HDFC', '.HDFCBANK', '.HEALTH', '.HEALTHCARE', '.HELP', '.HELSINKI', '.HERE', '.HERMES', '.HGTV', '.HIPHOP', '.HISAMITSU', '.HITACHI', '.HIV', '.HK', '.HKT', '.HM', '.HN', '.HOCKEY', '.HOLDINGS', '.HOLIDAY', '.HOMEDEPOT', '.HOMEGOODS', '.HOMES', '.HOMESENSE', '.HONDA', '.HORSE', '.HOSPITAL', '.HOST', '.HOSTING', '.HOT', '.HOTELES', '.HOTELS', '.HOTMAIL', '.HOUSE', '.HOW', '.HR', '.HSBC', '.HT', '.HU', '.HUGHES', '.HYATT', '.HYUNDAI', '.IBM', '.ICBC', '.ICE', '.ICU', '.ID', '.IE', '.IEEE', '.IFM', '.IKANO', '.IL', '.IM', '.IMAMAT', '.IMDB', '.IMMO', '.IMMOBILIEN', '.IN', '.INC', '.INDUSTRIES', '.INFINITI', '.INFO', '.ING', '.INK', '.INSTITUTE', '.INSURANCE', '.INSURE', '.INT', '.INTERNATIONAL', '.INTUIT', '.INVESTMENTS', '.IO', '.IPIRANGA', '.IQ', '.IR', '.IRISH', '.IS', '.ISMAILI', '.IST', '.ISTANBUL', '.IT', '.ITAU', '.ITV', '.JAGUAR', '.JAVA', '.JCB', '.JE', '.JEEP', '.JETZT', '.JEWELRY', '.JIO', '.JLL', '.JM', '.JMP', '.JNJ', '.JO', '.JOBS', '.JOBURG', '.JOT', '.JOY', '.JP', '.JPMORGAN', '.JPRS', '.JUEGOS', '.JUNIPER', '.KAUFEN', '.KDDI', '.KE', '.KERRYHOTELS', '.KERRYLOGISTICS', '.KERRYPROPERTIES', '.KFH', '.KG', '.KH', '.KI', '.KIA', '.KIM', '.KINDER', '.KINDLE', '.KITCHEN', '.KIWI', '.KM', '.KN', '.KOELN', '.KOMATSU', '.KOSHER', '.KP', '.KPMG', '.KPN', '.KR', '.KRD', '.KRED', '.KUOKGROUP', '.KW', '.KY', '.KYOTO', '.KZ', '.LA', '.LACAIXA', '.LAMBORGHINI', '.LAMER', '.LANCASTER', '.LANCIA', '.LAND', '.LANDROVER', '.LANXESS', '.LASALLE', '.LAT', '.LATINO', '.LATROBE', '.LAW', '.LAWYER', '.LB', '.LC', '.LDS', '.LEASE', '.LECLERC', '.LEFRAK', '.LEGAL', '.LEGO', '.LEXUS', '.LGBT', '.LI', '.LIDL', '.LIFE', '.LIFEINSURANCE', '.LIFESTYLE', '.LIGHTING', '.LIKE', '.LILLY', '.LIMITED', '.LIMO', '.LINCOLN', '.LINDE', '.LINK', '.LIPSY', '.LIVE', '.LIVING', '.LIXIL', '.LK', '.LLC', '.LLP', '.LOAN', '.LOANS', '.LOCKER', '.LOCUS', '.LOFT', '.LOL', '.LONDON', '.LOTTE', '.LOTTO', '.LOVE', '.LPL', '.LPLFINANCIAL', '.LR', '.LS', '.LT', '.LTD', '.LTDA', '.LU', '.LUNDBECK', '.LUXE', '.LUXURY', '.LV', '.LY', '.MA', '.MACYS', '.MADRID', '.MAIF', '.MAISON', '.MAKEUP', '.MAN', '.MANAGEMENT', '.MANGO', '.MAP', '.MARKET', '.MARKETING', '.MARKETS', '.MARRIOTT', '.MARSHALLS', '.MASERATI', '.MATTEL', '.MBA', '.MC', '.MCKINSEY', '.MD', '.ME', '.MED', '.MEDIA', '.MEET', '.MELBOURNE', '.MEME', '.MEMORIAL', '.MEN', '.MENU', '.MERCKMSD', '.MG', '.MH', '.MIAMI', '.MICROSOFT', '.MIL', '.MINI', '.MINT', '.MIT', '.MITSUBISHI', '.MK', '.ML', '.MLB', '.MLS', '.MM', '.MMA', '.MN', '.MO', '.MOBI', '.MOBILE', '.MODA', '.MOE', '.MOI', '.MOM', '.MONASH', '.MONEY', '.MONSTER', '.MORMON', '.MORTGAGE', '.MOSCOW', '.MOTO', '.MOTORCYCLES', '.MOV', '.MOVIE', '.MP', '.MQ', '.MR', '.MS', '.MSD', '.MT', '.MTN', '.MTR', '.MU', '.MUSEUM', '.MUTUAL', '.MV', '.MW', '.MX', '.MY', '.MZ', '.NA', '.NAB', '.NAGOYA', '.NAME', '.NATURA', '.NAVY', '.NBA', '.NC', '.NE', '.NEC', '.NET', '.NETBANK', '.NETFLIX', '.NETWORK', '.NEUSTAR', '.NEW', '.NEWS', '.NEXT', '.NEXTDIRECT', '.NEXUS', '.NF', '.NFL', '.NG', '.NGO', '.NHK', '.NI', '.NICO', '.NIKE', '.NIKON', '.NINJA', '.NISSAN', '.NISSAY', '.NL', '.NO', '.NOKIA', '.NORTHWESTERNMUTUAL', '.NORTON', '.NOW', '.NOWRUZ', '.NOWTV', '.NP', '.NR', '.NRA', '.NRW', '.NTT', '.NU', '.NYC', '.NZ', '.OBI', '.OBSERVER', '.OFF', '.OFFICE', '.OKINAWA', '.OLAYAN', '.OLAYANGROUP', '.OLDNAVY', '.OLLO', '.OM', '.OMEGA', '.ONE', '.ONG', '.ONL', '.ONLINE', '.OOO', '.OPEN', '.ORACLE', '.ORANGE', '.ORG', '.ORGANIC', '.ORIGINS', '.OSAKA', '.OTSUKA', '.OTT', '.OVH', '.PA', '.PAGE', '.PANASONIC', '.PARIS', '.PARS', '.PARTNERS', '.PARTS', '.PARTY', '.PASSAGENS', '.PAY', '.PCCW', '.PE', '.PET', '.PF', '.PFIZER', '.PG', '.PH', '.PHARMACY', '.PHD', '.PHILIPS', '.PHONE', '.PHOTO', '.PHOTOGRAPHY', '.PHOTOS', '.PHYSIO', '.PICS', '.PICTET', '.PICTURES', '.PID', '.PIN', '.PING', '.PINK', '.PIONEER', '.PIZZA', '.PK', '.PL', '.PLACE', '.PLAY', '.PLAYSTATION', '.PLUMBING', '.PLUS', '.PM', '.PN', '.PNC', '.POHL', '.POKER', '.POLITIE', '.PORN', '.POST', '.PR', '.PRAMERICA', '.PRAXI', '.PRESS', '.PRIME', '.PRO', '.PROD', '.PRODUCTIONS', '.PROF', '.PROGRESSIVE', '.PROMO', '.PROPERTIES', '.PROPERTY', '.PROTECTION', '.PRU', '.PRUDENTIAL', '.PS', '.PT', '.PUB', '.PW', '.PWC', '.PY', '.QA', '.QPON', '.QUEBEC', '.QUEST', '.QVC', '.RACING', '.RADIO', '.RAID', '.RE', '.READ', '.REALESTATE', '.REALTOR', '.REALTY', '.RECIPES', '.RED', '.REDSTONE', '.REDUMBRELLA', '.REHAB', '.REISE', '.REISEN', '.REIT', '.RELIANCE', '.REN', '.RENT', '.RENTALS', '.REPAIR', '.REPORT', '.REPUBLICAN', '.REST', '.RESTAURANT', '.REVIEW', '.REVIEWS', '.REXROTH', '.RICH', '.RICHARDLI', '.RICOH', '.RIL', '.RIO', '.RIP', '.RMIT', '.RO', '.ROCHER', '.ROCKS', '.RODEO', '.ROGERS', '.ROOM', '.RS', '.RSVP', '.RU', '.RUGBY', '.RUHR', '.RUN', '.RW', '.RWE', '.RYUKYU', '.SA', '.SAARLAND', '.SAFE', '.SAFETY', '.SAKURA', '.SALE', '.SALON', '.SAMSCLUB', '.SAMSUNG', '.SANDVIK', '.SANDVIKCOROMANT', '.SANOFI', '.SAP', '.SARL', '.SAS', '.SAVE', '.SAXO', '.SB', '.SBI', '.SBS', '.SC', '.SCA', '.SCB', '.SCHAEFFLER', '.SCHMIDT', '.SCHOLARSHIPS', '.SCHOOL', '.SCHULE', '.SCHWARZ', '.SCIENCE', '.SCJOHNSON', '.SCOT', '.SD', '.SE', '.SEARCH', '.SEAT', '.SECURE', '.SECURITY', '.SEEK', '.SELECT', '.SENER', '.SERVICES', '.SES', '.SEVEN', '.SEW', '.SEX', '.SEXY', '.SFR', '.SG', '.SH', '.SHANGRILA', '.SHARP', '.SHAW', '.SHELL', '.SHIA', '.SHIKSHA', '.SHOES', '.SHOP', '.SHOPPING', '.SHOUJI', '.SHOW', '.SHOWTIME', '.SI', '.SILK', '.SINA', '.SINGLES', '.SITE', '.SJ', '.SK', '.SKI', '.SKIN', '.SKY', '.SKYPE', '.SL', '.SLING', '.SM', '.SMART', '.SMILE', '.SN', '.SNCF', '.SO', '.SOCCER', '.SOCIAL', '.SOFTBANK', '.SOFTWARE', '.SOHU', '.SOLAR', '.SOLUTIONS', '.SONG', '.SONY', '.SOY', '.SPA', '.SPACE', '.SPORT', '.SPOT', '.SR', '.SRL', '.SS', '.ST', '.STADA', '.STAPLES', '.STAR', '.STATEBANK', '.STATEFARM', '.STC', '.STCGROUP', '.STOCKHOLM', '.STORAGE', '.STORE', '.STREAM', '.STUDIO', '.STUDY', '.STYLE', '.SU', '.SUCKS', '.SUPPLIES', '.SUPPLY', '.SUPPORT', '.SURF', '.SURGERY', '.SUZUKI', '.SV', '.SWATCH', '.SWIFTCOVER', '.SWISS', '.SX', '.SY', '.SYDNEY', '.SYSTEMS', '.SZ', '.TAB', '.TAIPEI', '.TALK', '.TAOBAO', '.TARGET', '.TATAMOTORS', '.TATAR', '.TATTOO', '.TAX', '.TAXI', '.TC', '.TCI', '.TD', '.TDK', '.TEAM', '.TECH', '.TECHNOLOGY', '.TEL', '.TEMASEK', '.TENNIS', '.TEVA', '.TF', '.TG', '.TH', '.THD', '.THEATER', '.THEATRE', '.TIAA', '.TICKETS', '.TIENDA', '.TIFFANY', '.TIPS', '.TIRES', '.TIROL', '.TJ', '.TJMAXX', '.TJX', '.TK', '.TKMAXX', '.TL', '.TM', '.TMALL', '.TN', '.TO', '.TODAY', '.TOKYO', '.TOOLS', '.TOP', '.TORAY', '.TOSHIBA', '.TOTAL', '.TOURS', '.TOWN', '.TOYOTA', '.TOYS', '.TR', '.TRADE', '.TRADING', '.TRAINING', '.TRAVEL', '.TRAVELCHANNEL', '.TRAVELERS', '.TRAVELERSINSURANCE', '.TRUST', '.TRV', '.TT', '.TUBE', '.TUI', '.TUNES', '.TUSHU', '.TV', '.TVS', '.TW', '.TZ', '.UA', '.UBANK', '.UBS', '.UG', '.UK', '.UNICOM', '.UNIVERSITY', '.UNO', '.UOL', '.UPS', '.US', '.UY', '.UZ', '.VA', '.VACATIONS', '.VANA', '.VANGUARD', '.VC', '.VE', '.VEGAS', '.VENTURES', '.VERISIGN', '.VERSICHERUNG', '.VET', '.VG', '.VI', '.VIAJES', '.VIDEO', '.VIG', '.VIKING', '.VILLAS', '.VIN', '.VIP', '.VIRGIN', '.VISA', '.VISION', '.VIVA', '.VIVO', '.VLAANDEREN', '.VN', '.VODKA', '.VOLKSWAGEN', '.VOLVO', '.VOTE', '.VOTING', '.VOTO', '.VOYAGE', '.VU', '.VUELOS', '.WALES', '.WALMART', '.WALTER', '.WANG', '.WANGGOU', '.WATCH', '.WATCHES', '.WEATHER', '.WEATHERCHANNEL', '.WEBCAM', '.WEBER', '.WEBSITE', '.WED', '.WEDDING', '.WEIBO', '.WEIR', '.WF', '.WHOSWHO', '.WIEN', '.WIKI', '.WILLIAMHILL', '.WIN', '.WINDOWS', '.WINE', '.WINNERS', '.WME', '.WOLTERSKLUWER', '.WOODSIDE', '.WORK', '.WORKS', '.WORLD', '.WOW', '.WS', '.WTC', '.WTF', '.XBOX', '.XEROX', '.XFINITY', '.XIHUAN', '.XIN', '.XN--11B4C3D', '.XN--1CK2E1B', '.XN--1QQW23A', '.XN--2SCRJ9C', '.XN--30RR7Y', '.XN--3BST00M', '.XN--3DS443G', '.XN--3E0B707E', '.XN--3HCRJ9C', '.XN--3OQ18VL8PN36A', '.XN--3PXU8K', '.XN--42C2D9A', '.XN--45BR5CYL', '.XN--45BRJ9C', '.XN--45Q11C', '.XN--4DBRK0CE', '.XN--4GBRIM', '.XN--54B7FTA0CC', '.XN--55QW42G', '.XN--55QX5D', '.XN--5SU34J936BGSG', '.XN--5TZM5G', '.XN--6FRZ82G', '.XN--6QQ986B3XL', '.XN--80ADXHKS', '.XN--80AO21A', '.XN--80AQECDR1A', '.XN--80ASEHDB', '.XN--80ASWG', '.XN--8Y0A063A', '.XN--90A3AC', '.XN--90AE', '.XN--90AIS', '.XN--9DBQ2A', '.XN--9ET52U', '.XN--9KRT00A', '.XN--B4W605FERD', '.XN--BCK1B9A5DRE4C', '.XN--C1AVG', '.XN--C2BR7G', '.XN--CCK2B3B', '.XN--CCKWCXETD', '.XN--CG4BKI', '.XN--CLCHC0EA0B2G2A9GCD', '.XN--CZR694B', '.XN--CZRS0T', '.XN--CZRU2D', '.XN--D1ACJ3B', '.XN--D1ALF', '.XN--E1A4C', '.XN--ECKVDTC9D', '.XN--EFVY88H', '.XN--FCT429K', '.XN--FHBEI', '.XN--FIQ228C5HS', '.XN--FIQ64B', '.XN--FIQS8S', '.XN--FIQZ9S', '.XN--FJQ720A', '.XN--FLW351E', '.XN--FPCRJ9C3D', '.XN--FZC2C9E2C', '.XN--FZYS8D69UVGM', '.XN--G2XX48C', '.XN--GCKR3F0F', '.XN--GECRJ9C', '.XN--GK3AT1E', '.XN--H2BREG3EVE', '.XN--H2BRJ9C', '.XN--H2BRJ9C8C', '.XN--HXT814E', '.XN--I1B6B1A6A2E', '.XN--IMR513N', '.XN--IO0A7I', '.XN--J1AEF', '.XN--J1AMH', '.XN--J6W193G', '.XN--JLQ480N2RG', '.XN--JLQ61U9W7B', '.XN--JVR189M', '.XN--KCRX77D1X4A', '.XN--KPRW13D', '.XN--KPRY57D', '.XN--KPUT3I', '.XN--L1ACC', '.XN--LGBBAT1AD8J', '.XN--MGB9AWBF', '.XN--MGBA3A3EJT', '.XN--MGBA3A4F16A', '.XN--MGBA7C0BBN0A', '.XN--MGBAAKC7DVF', '.XN--MGBAAM7A8H', '.XN--MGBAB2BD', '.XN--MGBAH1A3HJKRD', '.XN--MGBAI9AZGQP6J', '.XN--MGBAYH7GPA', '.XN--MGBBH1A', '.XN--MGBBH1A71E', '.XN--MGBC0A9AZCG', '.XN--MGBCA7DZDO', '.XN--MGBCPQ6GPA1A', '.XN--MGBERP4A5D4AR', '.XN--MGBGU82A', '.XN--MGBI4ECEXP', '.XN--MGBPL2FH', '.XN--MGBT3DHD', '.XN--MGBTX2B', '.XN--MGBX4CD0AB', '.XN--MIX891F', '.XN--MK1BU44C', '.XN--MXTQ1M', '.XN--NGBC5AZD', '.XN--NGBE9E0A', '.XN--NGBRX', '.XN--NODE', '.XN--NQV7F', '.XN--NQV7FS00EMA', '.XN--NYQY26A', '.XN--O3CW4H', '.XN--OGBPF8FL', '.XN--OTU796D', '.XN--P1ACF', '.XN--P1AI', '.XN--PGBS0DH', '.XN--PSSY2U', '.XN--Q7CE6A', '.XN--Q9JYB4C', '.XN--QCKA1PMC', '.XN--QXA6A', '.XN--QXAM', '.XN--RHQV96G', '.XN--ROVU88B', '.XN--RVC1E0AM3E', '.XN--S9BRJ9C', '.XN--SES554G', '.XN--T60B56A', '.XN--TCKWE', '.XN--TIQ49XQYJ', '.XN--UNUP4Y', '.XN--VERMGENSBERATER-CTB', '.XN--VERMGENSBERATUNG-PWB', '.XN--VHQUV', '.XN--VUQ861B', '.XN--W4R85EL8FHU5DNRA', '.XN--W4RS40L', '.XN--WGBH1C', '.XN--WGBL6A', '.XN--XHQ521B', '.XN--XKC2AL3HYE2A', '.XN--XKC2DL3A5EE0H', '.XN--Y9A3AQ', '.XN--YFRO4I67O', '.XN--YGBI2AMMX', '.XN--ZFR164B', '.XXX', '.XYZ', '.YACHTS', '.YAHOO', '.YAMAXUN', '.YANDEX', '.YE', '.YODOBASHI', '.YOGA', '.YOKOHAMA', '.YOU', '.YOUTUBE', '.YT', '.YUN', '.ZA', '.ZAPPOS', '.ZARA', '.ZERO', '.ZIP', '.ZM', '.ZONE', '.ZUERICH', '.ZW'));
+										myportal.app.validateNoIpV4('1509381366', decodeURIComponent('This%20is%20not%20a%20valid%20%27Last%20name%27'));
+										myportal.app.validateNoIpV6('1509381366', decodeURIComponent('This%20is%20not%20a%20valid%20%27Last%20name%27'));
+										myportal.app.validateMaxLength('1509381366', decodeURIComponent('%27Last%20name%27%20cannot%20exceed%2050%20characters'), 50);
+										myportal.app.validateMandatory('1064055782', decodeURIComponent('%27Email%20address%27%20is%20required'));
+										myportal.app.validateMaxLength('1064055782', decodeURIComponent('%27Email%20address%27%20cannot%20exceed%20150%20characters'), 150);
+										myportal.app.validateEmail('1064055782', decodeURIComponent('This%20is%20not%20a%20valid%20%27Email%20address%27'));
+										myportal.app.validateUserUniqueEmail('1064055782', 'https://demo77.talentlms.com/user/checkuniqueemail/email:##user-email##,excludedId:-1');
+										myportal.app.validateMandatory('713134184', decodeURIComponent('%27Username%27%20is%20required'));
+										myportal.app.validateMaxLength('713134184', decodeURIComponent('%27Username%27%20cannot%20exceed%20150%20characters'), 150);
+										myportal.app.validateLogin('713134184', decodeURIComponent('This%20is%20not%20a%20valid%20%27Username%27'));
+										myportal.app.validateUserUniqueLogin('713134184', 'https://demo77.talentlms.com/user/checkuniquelogin/login:##user-login##,excludedId:-1');
+										myportal.app.validateMaxLength('1831204494', decodeURIComponent('%27Password%27%20cannot%20exceed%2030%20characters'), 30);
+										myportal.app.validateNotOnlySpaces('1831204494', decodeURIComponent('This%20is%20not%20a%20valid%20%27Password%27'));
+										myportal.app.validateStrongPassword('1831204494', decodeURIComponent('%27Password%27%20is%20not%20strong%20enough%20%28should%20have%20at%20least%20%281%29%20upper%20case%20letter%2C%20at%20least%20%281%29%20lower%20case%20letter%2C%20at%20least%20%281%29%20number%2C%20at%20least%20%288%29%20characters%20in%20length%29'));
+										myportal.app.validateMaxLength('239097383', decodeURIComponent('%27Bio%27%20cannot%20exceed%20800%20characters'), 800);
+										myportal.app.validateMaxLength('status', decodeURIComponent('%27Active%27%20cannot%20exceed%2080%20characters'), 80);
+										myportal.app.validateMaxLength('1455889802', decodeURIComponent('%27Exclude%20from%20emails%27%20cannot%20exceed%2080%20characters'), 80);
+										myportal.app.validateUintId('1443904430', decodeURIComponent('This%20is%20not%20a%20valid%20%27User%20type%27'));
+										myportal.app.validateMaxLength('1443904430', decodeURIComponent('%27User%20type%27%20cannot%20exceed%2080%20characters'), 80);
+										myportal.app.validateMaxLength('1689698766', decodeURIComponent('%27Time%20zone%27%20cannot%20exceed%2080%20characters'), 80);
+										myportal.app.validateMaxLength('1025251186', decodeURIComponent('%27Language%27%20cannot%20exceed%2080%20characters'), 80);
+										myportal.app.validateMaxLength('fileupload_input', decodeURIComponent('%27Upload%20profile%20pic%27%20cannot%20exceed%2080%20characters'), 80);
+										myportal.app.validateMaxLength('deactivate_user', decodeURIComponent('%27Deactivate%20at%27%20cannot%20exceed%2080%20characters'), 80);
+										myportal.app.validateDate('deactivation_date', decodeURIComponent('This%20is%20not%20a%20valid%20%27Deactivation%20date%27'), 'dd/mm/yyyy');
+										myportal.app.validateMaxLength('deactivation_date', decodeURIComponent('%27Deactivation%20date%27%20cannot%20exceed%2080%20characters'), 80);
+
+
+										if (typeof (myportal.app.submitForm) != 'undefined') {
+											var submitMe = true;
+											var errorElement = false;
+
+											for (var index in myportal.app.submitForm) {
+												for (var index_ in myportal.app.submitForm[index]) {
+													if (myportal.app.submitForm[index][index_] == false) {
+														submitMe = false;
+														errorElement = index;
+														myportal.app.validForm = false;
+														break;
+													}
+												}
+											}
+										}
+
+										if (typeof (myportal.app.submitForm) != 'undefined' && submitMe == false) {
+											event.preventDefault();
+											$(this).find("input[type=submit]").next('.dropdown-toggle').removeClass('disabled');
+											$(this).find("input[type=submit]").button('reset');
+											$(this).find("input[type=submit]").blur();
+
+
+											if (($(this).attr('id') == 'tl-account-themes' || $(this).attr('id') == 'tl-account-certifications') && !myportal.app.validForm) { // make sure that the tab with the error is shown
+												var errorTab = $('#' + errorElement).parents('.tab-pane').attr('id');
+												$('li a[href="#' + errorTab + '"]').tab('show');
+											}
+
+											if (($(this).attr('id') == 'tl-account-certifications' && $('#mode').val() == 1) || ($(this).attr('id') == 'tl-account-themes' && $('#mode').val() == 1)) {
+												$('#save-as-new-button').removeClass('disabled').removeAttr("disabled").val(myportal.app.translate('save-as-new'));
+											}
+
+											if (($(this).attr('id') == 'add-coupon-form' || $(this).attr('id') == 'edit-coupon-form') && $('#tl-discount-type').val() == '1') {
+												$("input[name='fixed_amount_discount']").val('');
+											}
+											else if (($(this).attr('id') == 'add-coupon-form' || $(this).attr('id') == 'edit-coupon-form') && $('#tl-discount-type').val() == '2') {
+												$("input[name='percentage_discount']").val('');
+											}
+										}
+									});
+								});
+							</script>
+							<form name="form" method="post" action="https://demo77.talentlms.com/user/create"
+								class="tl-form form-horizontal" id="fileupload" enctype="multipart/form-data"><input
+									type="hidden" name="_track_form" value="1666798243" class="" id="855195460"><input
+									type="hidden" name="_redirect_" value="" class="" id="_redirect_"><input
+									type="hidden" name="_myToken" value="04f7d19e22a2f074c665b12c1c575d68" class=""
+									id="_myToken"><input type="hidden" name="preview_crop_x" value="" class="crop_x"
+									id="preview_crop_x"><input type="hidden" name="preview_crop_y" value=""
+									class="crop_y" id="preview_crop_y"><input type="hidden" name="preview_crop_width"
+									value="" class="crop_width" id="preview_crop_width"><input type="hidden"
+									name="preview_crop_height" value="" class="" id="preview_crop_height"><input
+									type="hidden" name="preview_crop_img_width" value="" class="crop_img_width"
+									id="preview_crop_img_width"><input type="hidden" name="preview_crop_img_height"
+									value="" class="crop_img_height" id="preview_crop_img_height">
+								<div class="row">
+									<div class="span12">
+										<div class="row">
+											<div class="span8">
+												<div class="control-group ">
+													<label class="control-label tl-mandatory-label"
+														for="1517838944">First name</label>
+													<div class="controls">
+														<div class="input-append tl-countdown"><input type="text"
+																name="name" value="" class="" id="1517838944"
+																placeholder="e.g. John" autocomplete="off"
+																data-lpignore="true" data-form-type="other" tabindex=""
+																data-provide="limit" data-counter="#counter-1517838944"
+																data-maxchars="50" style="border-radius: 4px;"><span
+																class="add-on" id="counter-1517838944"
+																style="display: none;">50</span></div> <span
+															class="help-block"></span>
+													</div>
+												</div>
+												<div class="control-group ">
+													<label class="control-label tl-mandatory-label"
+														for="1509381366">Last name</label>
+													<div class="controls">
+														<div class="input-append tl-countdown"><input type="text"
+																name="surname" value="" class="" id="1509381366"
+																placeholder="e.g. Doe" autocomplete="off"
+																data-lpignore="true" data-form-type="other" tabindex=""
+																data-provide="limit" data-counter="#counter-1509381366"
+																data-maxchars="50"><span class="add-on"
+																id="counter-1509381366"></span></div> <span
+															class="help-block"></span>
+													</div>
+												</div>
+												<div class="control-group ">
+													<label class="control-label tl-mandatory-label"
+														for="1064055782">Email address</label>
+													<div class="controls">
+														<div class="input-append tl-countdown"><input type="text"
+																name="email" value="" class=" tl-form-email-field"
+																id="1064055782" placeholder="e.g. jdoe@example.com"
+																autocomplete="off" data-lpignore="true"
+																data-form-type="other" tabindex="" data-provide="limit"
+																data-counter="#counter-1064055782"
+																data-maxchars="150"><span class="add-on"
+																id="counter-1064055782"></span></div> <span
+															class="help-block"></span>
+													</div>
+												</div>
+											</div>
+											<!-- <div class="span3 tl-select-picture-namespace text-center pull-left" -->
+											<div id="avatar_namespace">
+												<div class="row">
+													<!-- <div class="span3"> -->
+													<div>
+														<table style="width: 100%;">
+															<tbody class="files">
+																<tr class="template-upload fade in">
+																	<td><span class="preview"><img
+																				src="images/default_user2x.png"
+																				class="image80x80" alt="Avatar"></span>
+																	</td>
+																</tr>
+															</tbody>
+														</table>
+														<script>
+															var fileUploadErrors = {
+																maxFileSize: "File is too big",
+																minFileSize: "File is too small",
+																acceptFileTypes: "File type not accepted",
+																maxNumberOfFiles: "Max number of files exceeded",
+																uploadedBytes: "Uploaded bytes exceed file size",
+																emptyResult: "Empty file upload result"
+															};
+														</script>
+														<script id="template-upload" type="text/x-tmpl">
+					{% for (var i=0, file; file=o.files[i]; i++) { %}
+						<tr class="template-upload fade">
+							<td><span class="preview" style="display: inline-block; position: relative;"><i style="position: absolute; z-index: 2; right: 2px; bottom: 7px;" class="btn btn-mini icon-scissors tl-crop-switch" ></i></span></td>
+						</tr>
+					{% } %}
+				</script>
+														<script id="template-download" type="text/html">
+					{% for (var i=0, files=o.files, l=files.length, file=files[0]; i<l; file=files[++i]) { %}
+						<tr class="template-download fade">
+							{% if (file.error) { %}
+								<td class="error" colspan="2"><span class="label important">Error</span> {%=fileUploadErrors[file.error] || file.error%}</td>
+								<td></td>
+							{% } else { %}
+								<td class="preview" style="text-align: center; vertical-align: middle;">{% if (file.thumbnail_url) { %}
+								<img src="{%=file.thumbnail_url%}">
+							{% } %}</td>
+							{% } %}
+						</tr>
+					{% } %}
+				</script> <span class="fileinput-button">
+															<span class="file-wrapper text-center"><input type="file"
+																	name="avatar[]" accept="image/*" tabindex="-1"><a
+																	class="tl-tool-tip inputbtn" tabindex="-1"
+																	rel="tooltip" data-placement="bottom"
+																	data-original-title="<u>Accepted files</u>: gif, jpg, jpeg, png<br/><u>Max file size</u>: 3 MB"
+																	data-html="true" href="javascript:void(0);"
+																	id="fileupload_input">Upload profile pic</a>
+																<div class="note error text-error"> </div>
+															</span>
+															<script
+																type="text/javascript">$(document).ready(function () { $('.tl-tool-tip').tooltip({ container: 'body' }); });</script>
+															<span
+																class="progress progress-success progress-striped active fade "
+																style="position: relative;">
+																<div class="info"
+																	style="position: absolute; width: 100%; text-align: center; font-weight: 600;">
+																</div>
+																<div class="bar" style="width: 0%;"></div>
+															</span>
+														</span>
+														<span id="note" style="color: #B94A48"> </span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<hr style="margin-top: 0px;">
+								<div class="control-group ">
+									<label class="control-label tl-mandatory-label" for="713134184">Username</label>
+									<div class="controls">
+										<div class="input-append tl-countdown"><input type="text" name="login" value=""
+												class=" tl-form-username-field" id="713134184" placeholder="e.g. jdoe"
+												autocomplete="off" data-lpignore="true" data-form-type="other"
+												tabindex="" data-provide="limit" data-counter="#counter-713134184"
+												data-maxchars="150"><span class="add-on" id="counter-713134184"></span>
+										</div> <span class="help-block"></span>
+									</div>
+								</div>
+								<div class="control-group ">
+									<label class="control-label" for="1831204494">Password</label>
+									<div class="controls">
+										<div class="input-append tl-countdown"><input type="password" name="password"
+												value="" class=" tl-form-password-field" id="1831204494"
+												placeholder="Blank for random password" autocomplete="new-password"
+												tabindex="" data-provide="limit" data-counter="#counter-1831204494"
+												data-maxchars="30"><span class="add-on" id="counter-1831204494"></span>
+										</div>
+										<div class="tl-js-tooltip-trigger" data-placement="right">
+											<i class="icon-info-circle tl-info-icon" data-original-title=""
+												title=""></i>
+											<div class="tl-tooltip-content-inject">
+												<div class="tl-tooltip-content">
+													A random strong password is automatically generated when adding new
+													users. </div>
+												<div class="tl-tooltip-footer">
+													<a target="_blank"
+														href="https://help.talentlms.com/hc/en-us/articles/360014659633-What-are-the-available-password-security-policies">
+														Learn more </a>
+												</div>
+											</div>
+										</div>
+										<span class="help-block"></span>
+									</div>
+								</div>
+								<hr>
+								<div class="control-group ">
+									<label class="control-label" for="239097383">Bio</label>
+									<div class="controls">
+										<div class="input-append tl-countdown"><textarea name="description"
+												class="span6" id="239097383"
+												placeholder="Short description up to 800 characters" rows="3"
+												tabindex="" data-provide="limit" data-counter="#counter-239097383"
+												data-maxchars="800"></textarea><span class="add-on textarea-countdown"
+												id="counter-239097383"></span></div> <span class="help-block"></span>
+									</div>
+								</div>
+								<div class="control-group ">
+									<label class="control-label" for="s2id_autogen1">User type</label>
+									<div class="controls">
+										<div class="select2-container tl-select2" id="s2id_1443904430"
+											style="width: 220px;"><a href="javascript:void(0)" onclick="return false;"
+												class="select2-choice" tabindex="-1"> <span
+													class="select2-chosen">Learner-Type</span><abbr
+													class="select2-search-choice-close"></abbr> <span
+													class="select2-arrow"><b></b></span></a><input
+												class="select2-focusser select2-offscreen" type="text"
+												id="s2id_autogen1" tabindex="">
+											<div class="select2-drop select2-display-none select2-with-searchbox">
+												<div class="select2-search"> <input type="text" autocomplete="off"
+														autocorrect="off" autocapitalize="off" spellcheck="false"
+														class="select2-input"> </div>
+												<ul class="select2-results"> </ul>
+											</div>
+										</div><select name="acl_user_type_id" class="tl-select2 select2-offscreen"
+											id="1443904430" tabindex="-1">
+											<option value="1">SuperAdmin</option>
+											<option value="2">Admin-Type</option>
+											<option value="3">Trainer-Type</option>
+											<option value="4" selected="">Learner-Type</option>
+										</select>
+										<div class="tl-js-tooltip-trigger" data-placement="right">
+											<i class="icon-info-circle tl-info-icon" data-original-title=""
+												title=""></i>
+											<div class="tl-tooltip-content-inject">
+												<div class="tl-tooltip-content">
+													Control the user's permissions by assigning them to a custom user
+													type. </div>
+												<div class="tl-tooltip-footer">
+													<a target="_blank"
+														href="https://help.talentlms.com/hc/en-us/articles/360014574734-TalentLMS-user-types-guide">
+														Learn more </a>
+												</div>
+											</div>
+										</div>
+										<span class="help-block"></span>
+									</div>
+								</div>
+								<div class="control-group ">
+									<label class="control-label" for="s2id_autogen2">Time zone</label>
+									<div class="controls">
+										<div class="select2-container tl-select2" id="s2id_1689698766"
+											style="width: 220px;"><a href="javascript:void(0)" onclick="return false;"
+												class="select2-choice" tabindex="-1"> <span class="select2-chosen">(GMT
+													+05:30) Mumbai, Kolkata, Madras, New Delhi</span><abbr
+													class="select2-search-choice-close"></abbr> <span
+													class="select2-arrow"><b></b></span></a><input
+												class="select2-focusser select2-offscreen" type="text"
+												id="s2id_autogen2" tabindex="">
+											<div class="select2-drop select2-display-none select2-with-searchbox">
+												<div class="select2-search"> <input type="text" autocomplete="off"
+														autocorrect="off" autocapitalize="off" spellcheck="false"
+														class="select2-input"> </div>
+												<ul class="select2-results"> </ul>
+											</div>
+										</div><select name="timezone" class="tl-select2 select2-offscreen"
+											id="1689698766" tabindex="-1">
+											<option value="38">(GMT -01:00) Cape Verde</option>
+											<option value="-2">(GMT -02:00) Atlantic islands</option>
+											<option value="37">(GMT -02:00) Greenland</option>
+											<option value="-3">(GMT -03:00) Buenos Aires, Georgetown, Brasilia</option>
+											<option value="-44c">(GMT -03:00) Halifax, Nova Scotia, Canada /
+												Hamilton,Bermuda</option>
+											<option value="34">(GMT -03:00) Montevideo, Uruguay</option>
+											<option value="35">(GMT -03:00) Recife, Araguaina, Brazil</option>
+											<option value="-4">(GMT -03:00) Santiago, Chile</option>
+											<option value="-44">(GMT -03:00) Santiago, Chile</option>
+											<option value="36">(GMT -03:00) Sao Paulo, Brazil</option>
+											<option value="-3.5">(GMT -03:30) Newfoundland</option>
+											<option value="-44b">(GMT -04:00) Canada/Atlantic (Atlantic Standard Time)
+											</option>
+											<option value="-4.5">(GMT -04:00) Caracas, Venezuela</option>
+											<option value="-5">(GMT -04:00) Eastern Time (US &amp; Canada)</option>
+											<option value="33">(GMT -04:00) Guyana</option>
+											<option value="30">(GMT -04:00) Indiana (East), USA</option>
+											<option value="32">(GMT -04:00) La Paz, Bolivia</option>
+											<option value="29">(GMT -04:00) Montreal, Quebec, Toronto, Ontario, Canada
+											</option>
+											<option value="31">(GMT -04:00) Puerto Rico</option>
+											<option value="-5b">(GMT -05:00) Bogotá, Quito</option>
+											<option value="24">(GMT -05:00) Central Time (US &amp; Canada)</option>
+											<option value="27">(GMT -05:00) Lima, Peru</option>
+											<option value="25">(GMT -05:00) Mexico City</option>
+											<option value="28">(GMT -05:00) Monterrey, Mexico</option>
+											<option value="26">(GMT -05:00) Panama</option>
+											<option value="-6">(GMT -05:00) Winnipeg</option>
+											<option value="23">(GMT -06:00) Chihuahua, Mexico</option>
+											<option value="21">(GMT -06:00) Costa Rica</option>
+											<option value="17">(GMT -06:00) Edmonton, Canada</option>
+											<option value="19">(GMT -06:00) El Salvador</option>
+											<option value="18">(GMT -06:00) Guatemala</option>
+											<option value="20">(GMT -06:00) Managua, Nicaragua</option>
+											<option value="-7">(GMT -06:00) Mazatlan</option>
+											<option value="-7a">(GMT -06:00) Mountain Time (US &amp; Canada)</option>
+											<option value="-6b">(GMT -06:00) Regina, Saskatchewan, Canada</option>
+											<option value="22">(GMT -06:00) Tegucigalpa, Honduras</option>
+											<option value="-7b">(GMT -07:00) Arizona / Mountain Time, no DST (US &amp;
+												Canada)</option>
+											<option value="-8">(GMT -07:00) Pacific Time (US &amp; Canada)</option>
+											<option value="16">(GMT -07:00) Tijuana, Baja California, Mexico</option>
+											<option value="15">(GMT -07:00) Vancouver, Canada</option>
+											<option value="-9">(GMT -08:00) Alaska</option>
+											<option value="14">(GMT -08:00) Juneau City, Borough, Alaska</option>
+											<option value="-10">(GMT -10:00) Hawaii</option>
+											<option value="13">(GMT -11:00) Midway Islands, Samoa</option>
+											<option value="-11">(GMT -11:00) Pago Pago</option>
+											<option value="-1">(GMT +00:00) Azores</option>
+											<option value="42">(GMT +00:00) Nouakchott, Mauritania</option>
+											<option value="40">(GMT +00:00) Reykjavik, Iceland</option>
+											<option value="39">(GMT +00:00) UTC</option>
+											<option value="46">(GMT +01:00) Algiers, Algeria</option>
+											<option value="41">(GMT +01:00) Casablanca, Morocco</option>
+											<option value="43">(GMT +01:00) Dublin, Ireland</option>
+											<option value="0">(GMT +01:00) Greenwich Mean Time: Edinburgh, Lisbon,
+												London</option>
+											<option value="44">(GMT +01:00) Lisbon, Portugal</option>
+											<option value="47">(GMT +01:00) Tunis, Tunisia</option>
+											<option value="45">(GMT +01:00) West Central Africa</option>
+											<option value="53">(GMT +02:00) Amsterdam, Netherlands</option>
+											<option value="48">(GMT +02:00) Belgrade, Bratislava, Ljubljana</option>
+											<option value="52">(GMT +02:00) Berlin, Germany</option>
+											<option value="51">(GMT +02:00) Brussels, Belgium</option>
+											<option value="63">(GMT +02:00) Budapest, Hungary</option>
+											<option value="65">(GMT +02:00) Cairo, Egypt</option>
+											<option value="50">(GMT +02:00) Copenhagen, Denmark</option>
+											<option value="60">(GMT +02:00) Harare, Zimbabwe / Pretoria, South Africa
+											</option>
+											<option value="2b">(GMT +02:00) Johannesburg, South Africa</option>
+											<option value="66">(GMT +02:00) Khartoum, Sudan</option>
+											<option value="57">(GMT +02:00) Luxembourg</option>
+											<option value="59">(GMT +02:00) Madrid, Spain</option>
+											<option value="49">(GMT +02:00) Oslo, Norway</option>
+											<option value="1">(GMT +02:00) Paris, Vilnius, West Central Africa</option>
+											<option value="62">(GMT +02:00) Prague, Czech Republic</option>
+											<option value="54">(GMT +02:00) Rome, Italy</option>
+											<option value="55">(GMT +02:00) Stockholm, Sweden</option>
+											<option value="64">(GMT +02:00) Tripoli, Libya</option>
+											<option value="56">(GMT +02:00) Vienna, Austria</option>
+											<option value="61">(GMT +02:00) Warsaw, Poland</option>
+											<option value="58">(GMT +02:00) Zurich, Switzerland</option>
+											<option value="82">(GMT +03:00) Aden</option>
+											<option value="76">(GMT +03:00) Amman, Jordan</option>
+											<option value="2">(GMT +03:00) Athens, Greece</option>
+											<option value="77">(GMT +03:00) Baghdad, Iraq</option>
+											<option value="80">(GMT +03:00) Bahrain</option>
+											<option value="73">(GMT +03:00) Beirut, Lebanon</option>
+											<option value="71">(GMT +03:00) Bucharest, Romania</option>
+											<option value="74">(GMT +03:00) Damascus, Syria</option>
+											<option value="83">(GMT +03:00) Djibouti</option>
+											<option value="67">(GMT +03:00) Helsinki, Finland</option>
+											<option value="70">(GMT +03:00) Istanbul, Turkey</option>
+											<option value="75">(GMT +03:00) Jerusalem</option>
+											<option value="85">(GMT +03:00) Kiev, Ukraine</option>
+											<option value="78">(GMT +03:00) Kuwait</option>
+											<option value="86">(GMT +03:00) Minsk, Belarus</option>
+											<option value="84">(GMT +03:00) Mogadishu, Somalia</option>
+											<option value="3">(GMT +03:00) Moscow, St. Petersburg, Volgograd</option>
+											<option value="68">(GMT +03:00) Nairobi, Kenya</option>
+											<option value="72">(GMT +03:00) Nicosia, Cyprus</option>
+											<option value="81">(GMT +03:00) Qatar</option>
+											<option value="79">(GMT +03:00) Riyadh, Saudi Arabia</option>
+											<option value="69">(GMT +03:00) Sofia, Bulgaria</option>
+											<option value="3.5">(GMT +03:30) Tehran, Iran</option>
+											<option value="88">(GMT +04:00) Baku, Azerbaijan</option>
+											<option value="4b">(GMT +04:00) Dubai</option>
+											<option value="87">(GMT +04:00) Muscat, Oman</option>
+											<option value="4">(GMT +04:30) Kabul</option>
+											<option value="90">(GMT +05:00) Islamabad, Tashkent</option>
+											<option value="5">(GMT +05:00) Karachi, Pakistan</option>
+											<option value="89">(GMT +05:00) Yekaterinburg, Russia</option>
+											<option value="5.5" selected="">(GMT +05:30) Mumbai, Kolkata, Madras, New
+												Delhi</option>
+											<option value="91">(GMT +05:45) Kathmandu, Nepal</option>
+											<option value="92">(GMT +06:00) Almaty</option>
+											<option value="93">(GMT +06:00) Astana, Dhaka</option>
+											<option value="6.5">(GMT +06:30) Rangoon, Myanmar</option>
+											<option value="94">(GMT +07:00) Bangkok, Thailand</option>
+											<option value="96">(GMT +07:00) Jakarta, Indonesia</option>
+											<option value="7">(GMT +07:00) Krasnoyarsk, Russia</option>
+											<option value="6">(GMT +07:00) Novosibirsk, Russia</option>
+											<option value="95">(GMT +07:00) Vietnam</option>
+											<option value="98">(GMT +08:00) Beijing, Shanghai, China</option>
+											<option value="8">(GMT +08:00) Hong Kong, Urumqi</option>
+											<option value="97">(GMT +08:00) Irkutsk, Russia / Ulaanbaatar, Mongolia
+											</option>
+											<option value="100">(GMT +08:00) Kuala Lumpur, Malaysia</option>
+											<option value="8b">(GMT +08:00) Perth, Australia</option>
+											<option value="101">(GMT +08:00) Singapore</option>
+											<option value="99">(GMT +08:00) Taipei, Taiwan</option>
+											<option value="9">(GMT +09:00) Osaka, Sapporo, Tokyo, Japan</option>
+											<option value="103">(GMT +09:00) Seoul, South Korea</option>
+											<option value="102">(GMT +09:00) Yakutsk, Russia</option>
+											<option value="9.5b">(GMT +09:30) Darwin, Australia</option>
+											<option value="10b">(GMT +10:00) Brisbane, Australia</option>
+											<option value="105">(GMT +10:00) Guam / Port Moresby, Papua New Guinea
+											</option>
+											<option value="104">(GMT +10:00) Vladivostok, Russia</option>
+											<option value="9.5">(GMT +10:30) Adelaide, Australia</option>
+											<option value="10">(GMT +11:00) Canberra, Melbourne, Sydney, Australia
+											</option>
+											<option value="106">(GMT +11:00) Hobart, Tasmania</option>
+											<option value="11">(GMT +11:00) Magadan, Russia / Solomon Islands</option>
+											<option value="107">(GMT +11:00) New Caledonia</option>
+											<option value="-12">(GMT +12:00) Eniwetok, Kwajalein</option>
+											<option value="12">(GMT +12:00) Fiji, Marshall Islands</option>
+											<option value="108">(GMT +12:00) Kamchatka, Russia</option>
+											<option value="109">(GMT +13:00) Apia, Samoa</option>
+											<option value="12b">(GMT +13:00) Auckland, Wellington, New Zealand</option>
+										</select> <span class="help-block"></span>
+									</div>
+								</div>
+								<div class="control-group ">
+									<label class="control-label" for="s2id_autogen3">Language</label>
+									<div class="controls">
+										<div class="select2-container tl-select2" id="s2id_1025251186"
+											style="width: 220px;"><a href="javascript:void(0)" onclick="return false;"
+												class="select2-choice" tabindex="-1"> <span
+													class="select2-chosen">English</span><abbr
+													class="select2-search-choice-close"></abbr> <span
+													class="select2-arrow"><b></b></span></a><input
+												class="select2-focusser select2-offscreen" type="text"
+												id="s2id_autogen3" tabindex="">
+											<div class="select2-drop select2-display-none select2-with-searchbox">
+												<div class="select2-search"> <input type="text" autocomplete="off"
+														autocorrect="off" autocapitalize="off" spellcheck="false"
+														class="select2-input"> </div>
+												<ul class="select2-results"> </ul>
+											</div>
+										</div><select name="language" class="tl-select2 select2-offscreen"
+											id="1025251186" tabindex="-1">
+											<option value="en" selected="">English</option>
+											<option value="es">Español (Spanish)</option>
+											<option value="de">Deutsch (German)</option>
+											<option value="fr">Français (French)</option>
+											<option value="el">Ελληνικά (Greek)</option>
+											<option value="it">Italiano (Italian)</option>
+											<option value="ru">Pусский (Russian)</option>
+											<option value="fi">Suomi (Finnish)</option>
+											<option value="sr">Српски (Serbian)</option>
+											<option value="uk">Українська (Ukrainian)</option>
+											<option value="ca">Català (Catalan)</option>
+											<option value="lv">Latviešu (Latvian)</option>
+											<option value="cs">Čeština (Czech)</option>
+											<option value="sl">Slovenščina (Slovenian)</option>
+											<option value="sk">Slovenský (Slovak)</option>
+											<option value="tr">Türkçe (Turkish)</option>
+											<option value="pt">Português (Portuguese)</option>
+											<option value="zh_cn">简体字 (Chinese Simplified)</option>
+											<option value="zh_tw">繁體字 (Chinese Traditional)</option>
+											<option value="nl">Nederlands (Dutch)</option>
+											<option value="ja">日本語 (Japanese)</option>
+											<option value="vi">Tiếng Việt (Vietnamese)</option>
+											<option value="hr">Hrvatski (Croatian)</option>
+											<option value="ka">ქართული (Georgian)</option>
+											<option value="bs_ba">босански (Bosnian - Bosnia and Herzegovina)</option>
+											<option value="he">עברית (Hebrew)</option>
+											<option value="ar_ae">العربية (Arabic - United Arab Emirates)</option>
+											<option value="lt">Lietuvių kalba (Lithuanian)</option>
+											<option value="et">Eesti [beta] (Estonian)</option>
+											<option value="fa_ir">فارسی [beta] (Persian - Iran)</option>
+											<option value="hu">Magyar nyelv [beta] (Hungarian)</option>
+											<option value="sv">Svenska [beta] (Swedish)</option>
+											<option value="no">Norsk [beta] (Norwegian)</option>
+											<option value="hy">հայերէն [beta] (Armenian)</option>
+											<option value="mn">монгол хэл [beta] (Mongolian)</option>
+											<option value="da">Dansk [beta] (Danish)</option>
+											<option value="pl">Polski [beta] (Polish)</option>
+											<option value="ko">한국어 [beta] (Korean)</option>
+											<option value="id">Bahasa Indonesia [beta] (Indonesian)</option>
+											<option value="th">ภาษาไทย [beta] (Thai)</option>
+											<option value="pt_br">Português Brasileira [beta] (Portuguese Brazil)
+											</option>
+											<option value="ro">Română [beta] (Romanian)</option>
+										</select> <span class="help-block"></span>
+									</div>
+								</div>
+
+								<div class="control-group ">
+									<label class="control-label"></label>
+									<div class="controls form-inline">
+										<label class="checkbox inline"><input type="checkbox" name="status" checked=""
+												class="" id="status" tabindex="">Active</label>
+									</div>
+								</div>
+								<div id="tl-user-deactivate-wrapper" class="control-group  ">
+									<label class="control-label"></label>
+									<div class="controls form-inline">
+										<label class="checkbox inline"><input type="checkbox" name="deactivate_user"
+												class="" id="deactivate_user" tabindex="">Deactivate at&nbsp;<span
+												id="tl-user-deactivate-more">...</span></label>
+										<div class="checkbox inline"
+											style="display: none; max-height: 23px; padding-top: 0px; margin-left: 0px;">
+											<input type="text" name="deactivation_date" value="" class="span2"
+												id="deactivation_date" placeholder="Select a date" autocomplete="off"
+												data-lpignore="true" data-form-type="other" tabindex="">
+										</div>
+										<span class="help-block"></span>
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label"></label>
+									<div class="controls form-inline">
+										<label class="checkbox inline">
+											<input type="checkbox" name="restrict_email" class="" id="1455889802"
+												tabindex="">Exclude from emails
+											<div class="tl-js-tooltip-trigger" data-placement="right">
+												<i class="icon-info-circle tl-info-icon" data-original-title=""
+													title=""></i>
+												<div class="tl-tooltip-content-inject">
+													<div class="tl-tooltip-content">
+														Check if you'd like to exclude the user from all automated
+														notifications, except for essential system emails (i.e.,
+														password and username reset). </div>
+													<div class="tl-tooltip-footer">
+														<a target="_blank"
+															href="https://help.talentlms.com/hc/en-us/articles/360014574714-How-to-exclude-Users-from-email-notifications">
+															Learn more </a>
+													</div>
+												</div>
+											</div>
+										</label>
+									</div>
+								</div>
+
+								<div class="form-actions">
+									<div class="btn-group dropup">
+										<input type="submit" name="submit_personal_details" value="Add user"
+											class="btn btn-primary" id="1736676539" style="height: 28px;"
+											data-loading-text="Saving..." tabindex=""> <a
+											class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+											href="#"><span class="caret"></span></a>
+										<ul class="dropdown-menu" style="">
+											<li><a href="javascript:void(0);"
+													onclick="$('#_redirect_').val('https://demo77.talentlms.com/user/create');$('#fileupload').submit()">Add
+													user and add another</a></li>
+										</ul>
+										<span class="help-inline">or <a
+												href="https://demo77.talentlms.com/user/index">cancel</a></span>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+				<script type="text/javascript">
+					$(document).ready(function () {
+						var optionsCropModal = {
+							buttons: [
+								getModalChangeButton()
+							]
+						}
+
+						initCropModal(optionsCropModal);
+
+						var courseImageUploader = generalImageUploadOptions("#avatar_namespace");
+						var uploaderOptions = generalImageCropOptions("#avatar_namespace");
+						var uploaderImageOptions = uploaderOptions.uploaderImageOptions;
+
+						uploaderOptions.cropOptions.selectionMaxWidth = 80;
+						uploaderOptions.cropOptions.selectionMinWidth = 80;
+						uploaderOptions.canvasSize.width = 80;
+						uploaderOptions.canvasSize.height = 80;
+
+						var uploaderBindOptions = {
+							cropOptions: uploaderOptions.cropOptions,
+							canvasSize: uploaderOptions.canvasSize
+						}
+
+						uploaderImageOptions.previewMaxWidth = 80;
+
+						uploaderImageOptions.add = function (e, data) {
+							var that = this;
+							var $this = $(this);
+							var validation = data.process(function () {
+								return $this.fileupload('process', data);
+							});
+							validation.done(function () {
+								$('#avatar_namespace tr.template-upload').eq(0).remove();
+								$.blueimp.fileupload.prototype.options.add.call(that, e, data);
+							});
+							validation.fail(function (data) {
+								$('#avatar_namespace').find('input[type="file"]').val('');
+								$('#avatar_namespace .note.error').html("<i class='icon-attention-circled tl-cursor-default'></i> " + data.files[data.index].error);
+							});
+						}
+
+						courseImageUploader.changePhoto();
+
+						initUploader('#avatar_namespace', uploaderImageOptions, uploaderBindOptions);
+
+
+						$("#deactivation_date").on('keypress', function (ev) {
+							var key = ev.keyCode || ev.charCode;
+
+							if (key == 8 || key == 46) {
+								$(this).val('');
+								$("#deactivation_date").dtpicker('hide');
+								toggleDeactivationField(false);
+								$("#deactivate_user").prop('checked', false);
+							}
+							return false;
+						});
+
+						var nowTemp = new Date();
+						var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
+						var deactivateUserStatusChanged = false;
+						var deactivateUserClicked = false;
+
+						$("html").on('mousedown', function (ev) {
+							deactivateUserClicked = ($(ev.target).children('#deactivate_user').length > 0 || $(ev.target).prop('id') == 'deactivate_user') ? true : false;
+						});
+
+						$("#deactivation_date").dtpicker({
+							format: datepickerFormat,
+							onRender: function (date) {
+								return date.valueOf() < now.valueOf() ? 'disabled' : '';
+							}
+						}).on('changeDate', function (ev) {
+							if (ev.viewMode === 'days') {
+								$("#deactivation_date").dtpicker('hide');
+								$("#deactivate_user").prop('checked', true);
+							}
+						}).on('hide', function (ev) {
+							if (($("#deactivation_date").val() == '' || ev.date.getTime() < now.getTime()) && $("#deactivate_user").prop('checked')) {
+								$("#deactivation_date").val('');
+								$("#deactivation_date").dtpicker('update');
+								toggleDeactivationField(false);
+								$("#deactivate_user").prop('checked', false);
+								deactivateUserStatusChanged = deactivateUserClicked;
+							}
+						});
+
+						$("#deactivate_user").on('click', function (ev, param) {
+							if (!deactivateUserStatusChanged) {
+								if ($(this).is(':checked')) {
+									toggleDeactivationField(true);
+									$("#deactivation_date").focus();
+								}
+								else {
+									toggleDeactivationField(false);
+									$("#deactivation_date").val('');
+								}
+							}
+							else {
+								deactivateUserStatusChanged = false;
+								$("#deactivate_user").prop('checked', false);
+							}
+						});
+
+						$("#status").on('click', function () {
+							$(this).is(':checked') ? $("#tl-user-deactivate-wrapper").slideDown() : $("#tl-user-deactivate-wrapper").slideUp();
+						});
+						$("#status").is(':checked') ? $("#tl-user-deactivate-wrapper").show() : $("#tl-user-deactivate-wrapper").hide();
+					});
+
+					function toggleDeactivationField(show) {
+						if (show) {
+							$("#tl-user-deactivate-more").hide();
+							$("#deactivation_date").closest('div').show();
+						}
+						else {
+							$("#tl-user-deactivate-more").show();
+							$("#deactivation_date").closest('div').hide();
+						}
+					}
+				</script>
+			</div>
+		</div>
+
+		<footer class="footer text-right">
+			<a class="tl-bold-link tl-upgrade-link" href="https://demo77.talentlms.com/account/subscription_index">
+				Upgrade </a>
+			<a href="#" class="secured_site_icon" id="tl-footer-secured" title="This is a secured site">
+				<span class="tl-icon-stacked">
+					<i class="icon-circle tl-icon-stacked-1"></i>
+					<i class="icon-lock-1 tl-icon-stacked-2"></i>
+				</span>
+			</a>
+			TalentLMS 4.15
+		</footer>
+		<div id="secured_site_modal" class="modal fade secured-site-modal hide" tabindex="-1">
+			<div class="modal-header">
+				<a class="close" data-dismiss="modal">×</a>
+				<h3 class="secured-site-modal_header">
+					This is a secured site </h3>
+			</div>
+			<div class="modal-body">
+				<div class="secured-site-modal_img-container">
+					<a href="http://www.positivessl.com" class="none-decoration" target="_blank"
+						title="SSL Certificate Authority">
+						<img src="https://d3j0t7vrtr92dk.cloudfront.net/images/secured-site-header.png"
+							alt="SSL Certificate Authority" title="SSL Certificate Authority">
+					</a>
+				</div>
+				<div class="secured-site-modal_text">
+					<p>
+						A secure site is a web site that is protected from prying eyes. When information passes back and
+						forth between our server and your computer, all the information is encrypted. That means that if
+						anyone were to 'listen in' and see this data, they will not be able to decrypt or read what it
+						means. </p>
+					<p>
+						demo77 uses this security (known as SSL) throughout the site and all its subdomains to make sure
+						that <b>your personal information is not accessible by anyone but yourself</b>. </p>
+				</div>
+			</div>
+		</div>
+		<div id="tl-gamification-points-message" class="hide hidden-phone text-center tl-bold-item"></div>
+		<div id="tl-gamification-badges-message" class="hide hidden-phone">
+			<div class="tl-badge-image-message-wrapper">
+				<img class="tl-badge-image pull-left image60x60">
+				<div class="tl-badge-message text-center tl-bold-item"></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade hide" id="tl-export-to-csv-modal" style="outline: none;" tabindex="-1">
+		<div class="modal-header">
+			<h3>Save as CSV</h3>
+		</div>
+		<div class="modal-body">
+			<div class="text-center">Creating the export file. Please wait...</div>
+			<div class="progress progress-striped progress-success active" style="margin: 15px 0px;">
+				<div class="bar" style="width: 100%;"></div>
+			</div>
+		</div>
+		<div class="modal-footer">
+			<div class="pull-left span4 text-left hide" style="margin: 0px 5px 0px 0px;">
+				<span>Please wait while the operation is cancelled</span>
+			</div>
+			<div class="pull-right">
+				<a href="javascript:void(0)" class="btn" id="tl-cancel-export">Cancel</a>
+			</div>
+		</div>
+	</div>
+	<div id="tl-export-to-csv-token" class="hide"></div>
+
+	<div class="modal fade hide" id="tl-confirm" style="outline: none;" tabindex="-1">
+		<div class="modal-header">
+			<a href="javascript:void(0)" class="close" data-dismiss="modal">×</a>
+			<h3 class="tl-modal-header">Notice</h3>
+		</div>
+		<div class="modal-body">
+			<p id="tl-modal-body"></p>
+		</div>
+		<div class="modal-footer">
+			<a id="tl-confirm-submit" class="btn btn-danger"><i class="icon-trash"></i>&nbsp;Delete</a>
+			<a id="tl-confirm-continue" class="btn btn-danger hide"><i class="icon-trash"></i>&nbsp;Delete, don't keep
+				asking</a>
+			<a class="btn" data-dismiss="modal">Cancel</a>
+		</div>
+	</div>
+	<div class="modal fade hide" id="tl-confirm-double" style="outline: none;" tabindex="-1">
+		<div class="modal-header">
+			<a href="javascript:void(0)" class="close" data-dismiss="modal">×</a>
+			<h3 class="tl-modal-header-double">Notice</h3>
+		</div>
+		<div class="modal-body">
+			<p id="tl-modal-body-double"></p>
+		</div>
+		<div class="modal-footer">
+			<a id="tl-confirm-submit-double" class="btn btn-danger"><i class="icon-trash"></i>&nbsp;Delete</a>
+			<a id="tl-confirm-submit-double2" class="btn btn-danger"></a>
+			<a class="btn" data-dismiss="modal">Cancel</a>
+		</div>
+	</div>
+	<div class="modal fade hide" id="tl_leavepage_confirm" style="outline: none;" tabindex="-1">
+		<div class="modal-header">
+			<a href="javascript:void(0)" class="close" data-dismiss="modal">×</a>
+			<h3>Notice</h3>
+		</div>
+		<div class="modal-body">
+			<p></p>
+		</div>
+		<div class="modal-footer">
+			<a id="tl-leavepage" class="btn btn-danger"><i class="icon-trash"></i>&nbsp;Discard changes</a>
+			<a class="btn" data-dismiss="modal">Cancel</a>
+		</div>
+	</div>
+
+
+	<div class="modal fade hide" id="tl-relogin-modal" style="outline: none;" tabindex="-1">
+		<div class="modal-header text-center">
+			<h3>Just to be safe, we logged you out</h3>
+		</div>
+		<div class="modal-body">
+			<div class="text-center" style="padding: 10px 0px;">
+				<img src="https://d3j0t7vrtr92dk.cloudfront.net/images/lockout.svg">
+				<div style="margin-top: 15px;">Enter your password to pick up where you left off</div>
+				<form name="tl-relogin-form" method="post" action="https://demo77.talentlms.com/user/create"
+					class="tl-form form-horizontal" id="tl-relogin-form"
+					data-submiturl="https://demo77.talentlms.com/index/relogin"><input type="hidden"
+						name="_track_tl-relogin-form" value="1666798243" class="" id="1966078525"><input type="hidden"
+						name="_redirect_" value="" class="" id="_redirect_"><input type="hidden" name="_myToken"
+						value="04f7d19e22a2f074c665b12c1c575d68" class="" id="_myToken"><input type="hidden"
+						name="appear_as_supervisor_after_relogin" value="" class="" id="483536326"><input type="hidden"
+						name="relogin_role" value="administrator" class="" id="2075249189"><input type="hidden"
+						name="relogin_username" value="coir.high" class="" id="1800165327">
+					<div class="control-group ">
+						<div class="controls">
+							<input type="password" name="relogin_password" value="" class="span4" id="934996336"
+								placeholder="password" autocomplete="off" tabindex=""> <span class="help-block"></span>
+						</div>
+					</div>
+					<input type="submit" name="submit_relogin" value="Login" class="btn btn-primary" id="417219681"
+						data-loading-text="Logging in..." tabindex="">
+				</form>
+				<div><a href="https://demo77.talentlms.com/index">Logout</a></div>
+			</div>
+		</div>
+	</div>
+
+
+	<script type="text/javascript">
+		$('body').on('touchstart.dropdown', '.dropdown-menu', function (e) { e.stopPropagation(); });	// Fix for https://github.com/twitter/bootstrap/issues/2975#issuecomment-6659992, should be removed if fixed in twitter bs 2.1.2 (or whenever)
+		myportal.app.translations['search'] = "Search";
+		myportal.app.translations['Completed'] = "Completed";
+		myportal.app.translations['cancel'] = "Cancel";
+		myportal.app.translations['ok'] = "Ok";
+		myportal.app.translations['save'] = "Save";
+		myportal.app.translations['save-as-new'] = "Save as new";
+		myportal.app.translations['more'] = "more";
+		myportal.app.translations['less'] = "less";
+		myportal.app.translations['remove'] = "Remove";
+		myportal.app.translations['reset'] = "Reset";
+		myportal.app.translations['refresh'] = "Refresh";
+		myportal.app.translations['notice'] = "Notice";
+		myportal.app.translations['reset-remove-certification'] = "Reset & remove certificate";
+		myportal.app.translations['activate'] = "activate";
+		myportal.app.translations['deactivate'] = "deactivate";
+		myportal.app.translations['search-courses'] = "Search courses";
+		myportal.app.translations['add-image'] = "Add image";
+		myportal.app.translations['change-image'] = "Change image";
+		myportal.app.translations['accepted-files'] = "Accepted files";
+		myportal.app.translations['max-file-size'] = "Max file size";
+		myportal.app.translations['switch-editor'] = "Switch between HTML and Source view";
+		myportal.app.translations['grid-more-results'] = "Show more results per page";
+		myportal.app.translations['grid-less-results'] = "Show less results per page";
+		myportal.app.translations['image-course-files'] = "Use an image from course files";
+		myportal.app.translations['use-image-url'] = "Use an image URL (http://...)";
+		myportal.app.translations['width'] = "Width";
+		myportal.app.translations['padding'] = "Padding";
+		myportal.app.translations['align-default'] = "Align (default)";
+		myportal.app.translations['align-left'] = "Align left";
+		myportal.app.translations['align-right'] = "Align right";
+		myportal.app.translations['make-changes'] = "Save changes";
+		myportal.app.translations['grid-start-end-total'] = "_START_ to _END_ of _TOTAL_";
+		myportal.app.translations['matrix-of-total'] = "of _TOTAL_";
+		myportal.app.translations['matrix-more-less-results'] = "Show more/less results per page";
+		myportal.app.translations['matrix-search-input-threshold'] = "Please use 3+ characters";
+		myportal.app.translations['search-users'] = "Search users";
+		myportal.app.translations['export'] = "Export";
+		myportal.app.translations['save-as-csv'] = "Save as CSV";
+		myportal.app.translations['active-file-upload'] = "There is an active file upload transfer";
+		myportal.app.translations['upload-leave-page'] = "Are you sure you want to leave this page? File upload will stop and you will lose all uploaded data.";
+		myportal.app.translations['unsaved-changes'] = "There are unsaved changes";
+		myportal.app.translations['changes-leave-page'] = "Are you sure you want to leave this page? You will lose all unsaved changes.";
+		myportal.app.translations['discard-draft'] = "Are you sure you want to delete the autosave? This action cannot be undone.";
+		myportal.app.translations['restore-draft'] = "Are you sure you want to restore the autosave? This action cannot be undone.";
+		myportal.app.translations['add'] = "Add";
+		myportal.app.translations['added'] = "Added";
+		myportal.app.translations['processing'] = "Processing...";
+		myportal.app.translations['validate'] = "Validate";
+		myportal.app.translations['click-to-start'] = "Start";
+		myportal.app.translations['reset-password'] = "Reset password";
+		myportal.app.translations['operation-completed-successfully'] = "Operation completed successfully";
+		myportal.app.translations['points'] = "points";
+		myportal.app.translations['badges'] = "badges";
+		myportal.app.translations['help-videos-unavailable'] = "Videos are not currently available";
+		myportal.app.translations['next'] = "Next";
+		myportal.app.translations['previous'] = "Previous";
+		myportal.app.translations['your-rating'] = "Your rating";
+		myportal.app.translations['reset-your-rating'] = "Reset your rating";
+		myportal.app.translations['creating-export'] = "Creating the export file. Please wait...";
+		myportal.app.translations['no-results-found'] = "No results were found. Please try again.";
+		myportal.app.translations['login'] = "Login";
+		myportal.app.translations['crop'] = "Crop";
+		myportal.app.translations['apply'] = "Apply";
+		myportal.app.translations['preview-certification-error'] = "An error occurred while generating the preview, try again later";
+		myportal.app.translations['preview'] = "Preview";
+		myportal.app.translations['wait-preview-generation'] = "Please wait while generating the preview";
+		myportal.app.translations['youtube'] = 'Youtube';
+		myportal.app.translations['uploaded-video'] = 'Uploaded video';
+		myportal.app.translations['days'] = 'days';
+		myportal.app.translations['pick-an-expiration-date'] = 'Pick an expiration date';
+		myportal.app.translations['duration'] = 'Duration';
+		myportal.app.translations['start-date'] = 'Start date';
+		myportal.app.translations['expiration-date'] = 'Expiration date';
+		myportal.app.translations['time-limit'] = 'Time limit';
+		myportal.app.translations['start-date-and-time-limit'] = 'Start date & Time limit';
+		myportal.app.translations['dtable-error'] = 'Failed to execute action (operation timed out)';
+		myportal.app.translations['generic-error'] = 'Oops, something went wrong! Please try reloading the page';
+
+		var isMobile = false;
+		var isRtl = false;
+		var general_css = 'https://demo77.talentlms.com/index/css/fmt:1666788628,tn:41,tv:0,ct:1';
+		var editorMaxUploadSize = '10485760';
+		var editorFormattedMaxUploadSize = '10 MB';
+		var editorAcceptedFileTypes = 'gif|jpg|jpeg|png';
+		var editorFormattedAcceptedFileTypes = 'gif, jpg, jpeg, png';
+		var imageAcceptedFileTypes = 'gif|jpg|jpeg|png';
+		var imageMaxUploadSize = '3145728';
+
+		var courseImageCanvasSizeWidth = '120';
+		var courseImageCanvasSizeHeight = '80';
+
+		var datepickerFormat = 'dd/mm/yyyy';
+		var showSelect2 = true;
+		var currentUserId = "1";
+		var currentUserName = "Mohit Gupta";
+		var currentUserEmail = "coir.high@gmail.com";
+		var currentUserCreatedOn = "1660556604";
+		var currentUserIntercomHash = '';
+		var myToken = "04f7d19e22a2f074c665b12c1c575d68";
+		var myEffectiveDomain = 'demo77.talentlms.com';
+		var myAdminDomain = '';
+		var gridExportChunkSize = 5000;
+		var gridExportProgressThreshold = 100;
+		var isDummy = false;
+		var sessionMaxLifeTime = 10800;
+		var checkSessionExpirationUrl = 'https://demo77.talentlms.com/index/checksessionexpiration';
+		var logourRedirectUrl = '';
+		var reloginRedirectUrl = 'https://demo77.talentlms.com/user/create';
+		var enableRelogin = true;
+		var currency = '<span class="dollar-price">&#36;</span>';
+	</script>
+
+	<script type="text/javascript"></script>
+	<script type="text/javascript">
+		window.getTestIdAttr = function () {
+			return window.testIDAttr || "";
+		};
+		window.printTestId = function (testID) {
+			if (window.testEnvActive && (typeof testID !== 'undefined')) {
+				return window.getTestIdAttr() + '=' + testID;
+			} else {
+				return '';
+			}
+		};
+		jQuery.fn.printTestId = function (testID) {
+			var el = $(this[0]);
+			if (window.testEnvActive && (typeof testID !== 'undefined')) {
+				el.attr(window.getTestIdAttr(), testID);
+			}
+			return this;
+		};
+	</script>
+
+	<script>
+
+		var intercomAppId = "g4iweqc2";
+		window.intercomSettings.app_id = intercomAppId;
+		window.intercomSettings.user_id = "production-d627090-u1";
+		(function () {
+			var w = window;
+			var ic = w.Intercom;
+			if (typeof ic === "function") {
+				ic('reattach_activator');
+				ic('update', intercomSettings);
+			}
+			else {
+				var d = document;
+				var i = function () { i.c(arguments) };
+				i.q = [];
+				i.c = function (args) { i.q.push(args) };
+				w.Intercom = i;
+
+				function l() {
+					var s = d.createElement('script');
+					s.type = 'text/javascript';
+					s.async = true;
+					s.src = 'https://widget.intercom.io/widget/' + intercomAppId;
+					var x = d.getElementsByTagName('script')[0];
+					x.parentNode.insertBefore(s, x);
+				}
+
+				if (w.attachEvent) { w.attachEvent('onload', l); }
+				else { w.addEventListener('load', l, false); }
+			}
+		})();
+	</script>
+
+
+
+
+	<ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content" id="ui-id-1" tabindex="0"
+		style="display: none;"></ul><span role="status" aria-live="assertive" aria-relevant="additions"
+		class="ui-helper-hidden-accessible"></span>
+	<div class="modal hide fade" id="tl-crop-modal" tabindex="-1">
+		<div class="modal-header tl-crop-modal-header">
+			<h3>Crop</h3><a href="javascript:void(0)" class="close tl-crop-close-modal" data-dismiss="modal">×</a>
+		</div>
+		<div class="modal-body text-center">
+			<div class="tl-crop-area"></div>
+		</div>
+		<div class="modal-footer">
+			<div class="btn-group dropup pull-left tl-crop-modal-group-buttons"><button type="button"
+					class="btn btn-primary tl-change-image">Change image</button></div><button type="button"
+				class="btn btn-primary tl-process-crop">Apply</button>
+		</div>
+	</div>
+	<div class="dtpicker dropdown-menu">
+		<div class="dtpicker-days" style="display: block;">
+			<table class=" table-condensed">
+				<thead>
+					<tr>
+						<th class="prev">‹</th>
+						<th colspan="5" class="switch">October 2022</th>
+						<th class="next">›</th>
+					</tr>
+					<tr>
+						<th class="dow">Su</th>
+						<th class="dow">Mo</th>
+						<th class="dow">Tu</th>
+						<th class="dow">We</th>
+						<th class="dow">Th</th>
+						<th class="dow">Fr</th>
+						<th class="dow">Sa</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="day disabled old">25</td>
+						<td class="day disabled old">26</td>
+						<td class="day disabled old">27</td>
+						<td class="day disabled old">28</td>
+						<td class="day disabled old">29</td>
+						<td class="day disabled old">30</td>
+						<td class="day disabled">1</td>
+					</tr>
+					<tr>
+						<td class="day disabled">2</td>
+						<td class="day disabled">3</td>
+						<td class="day disabled">4</td>
+						<td class="day disabled">5</td>
+						<td class="day disabled">6</td>
+						<td class="day disabled">7</td>
+						<td class="day disabled">8</td>
+					</tr>
+					<tr>
+						<td class="day disabled">9</td>
+						<td class="day disabled">10</td>
+						<td class="day disabled">11</td>
+						<td class="day disabled">12</td>
+						<td class="day disabled">13</td>
+						<td class="day disabled">14</td>
+						<td class="day disabled">15</td>
+					</tr>
+					<tr>
+						<td class="day disabled">16</td>
+						<td class="day disabled">17</td>
+						<td class="day disabled">18</td>
+						<td class="day disabled">19</td>
+						<td class="day disabled">20</td>
+						<td class="day disabled">21</td>
+						<td class="day disabled">22</td>
+					</tr>
+					<tr>
+						<td class="day disabled">23</td>
+						<td class="day disabled">24</td>
+						<td class="day disabled">25</td>
+						<td class="day  active">26</td>
+						<td class="day ">27</td>
+						<td class="day ">28</td>
+						<td class="day ">29</td>
+					</tr>
+					<tr>
+						<td class="day ">30</td>
+						<td class="day ">31</td>
+						<td class="day  new">1</td>
+						<td class="day  new">2</td>
+						<td class="day  new">3</td>
+						<td class="day  new">4</td>
+						<td class="day  new">5</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="dtpicker-months" style="display: none;">
+			<table class="table-condensed">
+				<thead>
+					<tr>
+						<th class="prev">‹</th>
+						<th colspan="5" class="switch">2022</th>
+						<th class="next">›</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td colspan="7"><span class="month">Jan</span><span class="month">Feb</span><span
+								class="month">Mar</span><span class="month">Apr</span><span
+								class="month">May</span><span class="month">Jun</span><span
+								class="month">Jul</span><span class="month">Aug</span><span
+								class="month">Sep</span><span class="month active">Oct</span><span
+								class="month">Nov</span><span class="month">Dec</span></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="dtpicker-years" style="display: none;">
+			<table class="table-condensed">
+				<thead>
+					<tr>
+						<th class="prev">‹</th>
+						<th colspan="5" class="switch">2020-2029</th>
+						<th class="next">›</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td colspan="7"><span class="year old">2019</span><span class="year">2020</span><span
+								class="year">2021</span><span class="year active">2022</span><span
+								class="year">2023</span><span class="year">2024</span><span
+								class="year">2025</span><span class="year">2026</span><span
+								class="year">2027</span><span class="year">2028</span><span
+								class="year">2029</span><span class="year old">2030</span></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div><iframe id="intercom-frame"
+		style="position: absolute !important; opacity: 0 !important; width: 1px !important; height: 1px !important; top: 0 !important; left: 0 !important; border: none !important; display: block !important; z-index: -1 !important; pointer-events: none;"
+		aria-hidden="true" tabindex="-1" title="Intercom"></iframe>
+	<div class="intercom-lightweight-app">
+		<style id="intercom-lightweight-app-style" type="text/css">
+			@keyframes intercom-lightweight-app-launcher {
+				from {
+					opacity: 0;
+					transform: scale(0.5);
+				}
+
+				to {
+					opacity: 1;
+					transform: scale(1);
+				}
+			}
+
+			@keyframes intercom-lightweight-app-gradient {
+				from {
+					opacity: 0;
+				}
+
+				to {
+					opacity: 1;
+				}
+			}
+
+			@keyframes intercom-lightweight-app-messenger {
+
+				from {
+					opacity: 0;
+					transform: translateY(20px);
+				}
+
+				to {
+					opacity: 1;
+					transform: translateY(0);
+				}
+
+			}
+
+			.intercom-lightweight-app {
+				position: fixed;
+				z-index: 2147483001;
+				width: 0;
+				height: 0;
+				font-family: intercom-font, "Helvetica Neue", "Apple Color Emoji", Helvetica, Arial, sans-serif;
+			}
+
+			.intercom-lightweight-app-gradient {
+				position: fixed;
+				z-index: 2147483002;
+				width: 500px;
+				height: 500px;
+				bottom: 0;
+				right: 0;
+				pointer-events: none;
+				background: radial-gradient(ellipse at bottom right,
+						rgba(29, 39, 54, 0.16) 0%,
+						rgba(29, 39, 54, 0) 72%);
+				animation: intercom-lightweight-app-gradient 200ms ease-out;
+			}
+
+			.intercom-lightweight-app-launcher {
+				position: fixed;
+				z-index: 2147483003;
+				padding: 0 !important;
+				margin: 0 !important;
+				border: none;
+				bottom: 20px;
+				right: 20px;
+				max-width: 60px;
+				width: 60px;
+				max-height: 60px;
+				height: 60px;
+				border-radius: 50%;
+				background: #0071b2;
+				cursor: pointer;
+				box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.06), 0 2px 32px 0 rgba(0, 0, 0, 0.16);
+				transition: transform 167ms cubic-bezier(0.33, 0.00, 0.00, 1.00);
+				box-sizing: content-box;
+			}
+
+
+
+
+			.intercom-lightweight-app-launcher:focus {
+				outline: none;
+
+
+			}
+
+			.intercom-lightweight-app-launcher-icon {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 60px;
+				height: 60px;
+				transition: transform 100ms linear, opacity 80ms linear;
+			}
+
+			.intercom-lightweight-app-launcher-icon-open {
+
+				opacity: 1;
+				transform: rotate(0deg) scale(1);
+
+			}
+
+			.intercom-lightweight-app-launcher-icon-open svg {
+				width: 28px;
+				height: 32px;
+			}
+
+			.intercom-lightweight-app-launcher-icon-open svg path {
+				fill: rgb(255, 255, 255);
+			}
+
+			.intercom-lightweight-app-launcher-icon-self-serve {
+
+				opacity: 1;
+				transform: rotate(0deg) scale(1);
+
+			}
+
+			.intercom-lightweight-app-launcher-icon-self-serve svg {
+				height: 56px;
+			}
+
+			.intercom-lightweight-app-launcher-icon-self-serve svg path {
+				fill: rgb(255, 255, 255);
+			}
+
+			.intercom-lightweight-app-launcher-custom-icon-open {
+				max-height: 36px;
+				max-width: 36px;
+
+
+				opacity: 1;
+				transform: rotate(0deg) scale(1);
+
+			}
+
+			.intercom-lightweight-app-launcher-icon-minimize {
+
+				opacity: 0;
+				transform: rotate(-60deg) scale(0);
+
+			}
+
+			.intercom-lightweight-app-launcher-icon-minimize svg path {
+				fill: rgb(255, 255, 255);
+			}
+
+			.intercom-lightweight-app-messenger {
+				position: fixed;
+				z-index: 2147483003;
+				overflow: hidden;
+				background-color: white;
+				animation: intercom-lightweight-app-messenger 250ms cubic-bezier(0, 1.2, 1, 1);
+				transform-origin: bottom right;
+
+				width: 376px;
+				height: calc(100% - 40px);
+				max-height: 704px;
+				min-height: 250px;
+				right: 20px;
+				bottom: 20px;
+				box-shadow: 0 5px 40px rgba(0, 0, 0, 0.16);
+
+				border-radius: 8px;
+			}
+
+			.intercom-lightweight-app-messenger-header {
+				height: 75px;
+				background: linear-gradient(135deg,
+						rgb(0, 113, 178) 0%,
+						rgb(0, 48, 76) 100%);
+			}
+
+			.intercom-lightweight-app-messenger-footer {
+				position: absolute;
+				bottom: 0;
+				width: 100%;
+				min-height: 81px;
+				background: #fff;
+				font-size: 14px;
+				line-height: 21px;
+				border-top: 1px solid rgba(0, 0, 0, 0.05);
+				box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.05);
+			}
+
+			@media print {
+				.intercom-lightweight-app {
+					display: none;
+				}
+			}
+		</style>
+	</div>
+</body>
+
+</html>

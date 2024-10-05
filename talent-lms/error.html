@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<title>The page you're looking for can't be found</title>
+
+	<style>
+		body {
+			margin: 0;
+		}
+
+		.outer-container {
+			position: absolute;
+			display: table;
+			width: 100%;
+			height: 100%;
+		}
+
+		.inner-container {
+			display: table-cell;
+			vertical-align: middle;
+			text-align: center;
+		}
+
+		#tl-error-message {
+			display: inline-block;
+			padding: 0 5px 0 5px;
+			font-size: 24px;
+			color: #216eb9;
+			font-family: 'Lato', 'Open Sans', sans-serif;
+		}
+
+		img {
+			width: 100%;
+			max-width: 928px;
+		}
+
+		a {
+			color: #ff7c00;
+			text-decoration: none;
+		}
+
+		@media (max-width: 720px) {
+			#tl-error-message {
+				font-size: 18px;
+			}
+		}
+
+		@media (max-width: 420px) {
+			#tl-error-message {
+				font-size: 14px;
+			}
+		}
+
+		@-ms-viewport {
+			width: device-width;
+		}
+	</style>
+</head>
+
+<body id="tl-main-body">
+	<div class="outer-container">
+		<div class="inner-container">
+			<div id="tl-error-message">
+				<img alt="The page you're looking for can't be found" src="images/error404.png">
+				<p>
+					The page you're looking for can't be found <br>
+					<a href="https://demo77.talentlms.com/index">Click here</a> to go home
+				</p>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

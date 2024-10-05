@@ -1,0 +1,2741 @@
+<html lang="en">
+<head>
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="demo77">
+    <meta property="og:title" content="demo77">
+    <meta property="og:image" content="images/talent_bigger.png">
+    <meta property="og:description"
+        content="TalentLMS - Cloud based, Lean Learning Platform with an Emphasis on Usability and Easy Course Creation">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0">
+    <meta http-equiv="Content-Language" content="en">
+    <meta charset="utf-8">
+    <meta name="keywords" content="lms, elearning, learning platform, cloud, saas">
+    <meta name="description"
+        content="TalentLMS - Cloud based, Lean Learning Platform with an Emphasis on Usability and Easy Course Creation">
+    <title>LMS | Home</title>
+    <!-- css -->
+    <link href="css/animate.min.css" rel="stylesheet" type="text/css">
+    <link href="css/reset.css" rel="stylesheet" type="text/css">
+    <link href="css/jquery.fileupload.css" rel="stylesheet" type="text/css">
+    <link href="css/jquery.fileupload-ui-custom.css" rel="stylesheet" type="text/css">
+    <link href="css/toastr.min.css" rel="stylesheet" type="text/css">
+    <link href="favicon.ico" rel="shortcut icon">
+    <!-- js library -->
+    <script src="js/lib/shim.latest.js" type="text/javascript"></script>
+    <script src="js/lib/jquery.min.js" type="text/javascript"></script>
+    <script src="js/lib/tmpl.min.js" type="text/javascript"></script>
+    <script src="js/lib/load-image.all.min.js" type="text/javascript"></script>
+    <script src="js/lib/canvas-to-blob.min.js" type="text/javascript"></script>
+    <script src="js/lib/uploader-544.min.js" type="text/javascript"></script>
+    <script src="js/lib/highcharts.js" type="text/javascript"></script>
+    <script src="js/lib/highcharts.js" type="text/javascript"></script>
+    <script>window.intercomSettings = {};</script>
+</head>
+
+<body class="tl-body">
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="container-fluid nav-container" id="tl-navigation-bar-handler">
+                <a class="btn btn-navbar hamburger hamburger--slider hamburger--small hamburger--collapse"
+                    data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                    </span>
+                </a>
+                <a class="brand" href="#/dashboard"><img src="images/talent_bigger.png" class="avatar-square"></a>
+                <div id="tl-loading-pane" class="hide affix text-center" style="display: none;">
+                    <p><img src="images/loading-small.gif" class="tl-loader-small"></p>
+                </div>
+                <div class="nav-collapse collapse">
+                    <ul class="nav pull-right">
+                        <li class="dropdown" id="tl-dropdown-roles">
+                            <a href="#" class="dropdown-toggle tl-nabvar-roles-button" data-toggle="dropdown">
+                                <span title="M. Gupta">M. Gupta</span> | <b>Instructor</b> &nbsp;
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li id="tl-administrator-option" class="tl-role-change-btn">
+                                    <a href="#/dashboard/index/role:administrator" class="">
+                                        <i class="tl-select-icon"></i>
+                                        Administrator </a>
+                                </li>
+                                <li id="tl-trainer-option" class="tl-role-change-btn">
+                                    <a href="#/dashboard/index/role:trainer" class="active">
+                                        <i class="tl-select-icon-selected"></i>
+                                        Instructor </a>
+                                </li>
+                                <li id="tl-learner-option" class="tl-role-change-btn">
+                                    <a href="#/dashboard/index/role:learner" class="">
+                                        <i class="tl-select-icon"></i>
+                                        Learner </a>
+                                </li>
+                                <li class="divider"></li>
+                                <li id="tl-myinfo-option">
+                                    <a href="#/user/info/id:1">
+                                        <i class="tl-icon16 icon-address-card"></i>
+                                        My info </a>
+                                </li>
+                                <li id="tl-mycourses-option">
+                                    <a href="#/user/courses/id:1">
+                                        <i class="tl-icon16 icon-book"></i>
+                                        My courses </a>
+                                </li>
+                                <li id="tl-mycertifications-option">
+                                    <a href="#/reports/userinfo/id:1#certifications">
+                                        <i class="tl-icon16 icon-trophy"></i>
+                                        My certificates </a>
+                                </li>
+                                <li id="tl-myprogress-option">
+                                    <a href="#/reports/userinfo/id:1">
+                                        <i class="tl-icon16 icon-user-chart"></i>
+                                        My progress </a>
+                                </li>
+                                <li id="tl-mygroups-option">
+                                    <a href="#/user/groups/id:1">
+                                        <i class="tl-icon16 icon-users"></i>
+                                        My groups </a>
+                                </li>
+                                <li id="tl-mybranches-option">
+                                    <a href="#/user/branches/id:1">
+                                        <i class="tl-icon16 icon-split"></i>
+                                        My branches </a>
+                                </li>
+                                <li id="tl-myfiles-option">
+                                    <a href="#/user/files/id:1">
+                                        <i class="tl-icon16 icon-doc-alt-1"></i>
+                                        My files </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" id="tl-dropdown-messages">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Messages&nbsp;<b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="#/message">
+                                        <i class="tl-icon16 icon-inbox"></i>Go to Inbox </a>
+                                </li>
+                                <li>
+                                    <a href="#/message/create">
+                                        <i class="tl-icon16 icon-mail-1"></i>Send message </a>
+                                </li>
+                                <li class="divider"></li>
+                                <li><a href="javascript:void(0)">No messages</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown hidden-phone hidden-tablet" id="tl-dropdown-help">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Help <b class="caret"></b>
+                            </a>
+                            <div class="dropdown-menu tl-help-menu border-box">
+                                <div class="tl-help-menu--open-holder"></div>
+                                <div class="d-row flex-nowrap align-items-stretch tl-help-menu--escape-open-holder">
+                                    <div class="d-col-auto">
+                                        <div class="tl-help-menu_left-panel" id="help_menu_left_panel">
+                                            <ul class="tl-help-menu_modes-list no-select">
+                                                <li>
+                                                    <div class="tl-help-menu_mode-button tl-help-menu_mode-button--internal active"
+                                                        data-state-scope="help-menu-mode" data-state-name="faqs"
+                                                        data-select-state="help-menu-mode:faqs">
+                                                        <span title="Knowledge base">Knowledge base</span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="tl-help-menu_mode-button tl-help-menu_mode-button--internal"
+                                                        data-state-scope="help-menu-mode" data-state-name="tour"
+                                                        data-select-state="help-menu-mode:tour">
+                                                        <span title="Tour">Tour</span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="tl-help-menu_mode-button tl-help-menu_mode-button--internal"
+                                                        data-state-scope="help-menu-mode" data-state-name="videos"
+                                                        data-select-state="help-menu-mode:videos">
+                                                        <span title="Videos">Videos</span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div id="help_form_show_btn"
+                                                        class="tl-help-menu_mode-button tl-help-menu_mode-button--internal"
+                                                        data-state-scope="help-menu-mode" data-state-name="form"
+                                                        data-select-state="help-menu-mode:form">
+                                                        <span title="Contact support">Contact support</span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div id="help_chat_show_btn"
+                                                        class="tl-help-menu_mode-button tl-help-menu_mode-button--internal"
+                                                        data-state-scope="help-menu-mode" data-state-name="chat"
+                                                        data-select-state="help-menu-mode:chat">
+                                                        <span title="Live support">Live support</span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div id="help_form_success_show_btn"
+                                                        class="tl-help-menu_mode-button tl-help-menu_mode-button--internal"
+                                                        data-state-scope="help-menu-mode" data-state-name="form-success"
+                                                        data-select-state="help-menu-mode:form-success">
+                                                        <span title="Success manager">Success manager</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="d-col">
+                                        <div class="tl-help-menu_right-panel">
+                                            <div class="tl-help-menu_screen tl-help-menu--no-anim tl-help-menu_screen--faqs tl-help-menu--handle-display active"
+                                                data-state-scope="help-menu-mode" data-state-name="faqs">
+                                                <div class="tl-help-menu_screen_part tl-help-menu--no-anim tl-help-menu--handle-display active"
+                                                    data-state-scope="help-menu-search-faqs" data-state-name="search">
+                                                    <div class="d-row">
+                                                        <div
+                                                            class="d-col tl-help-menu_screen_header tl-help-menu_screen--padx">
+                                                            <div class="tl-can-clear-input w-100">
+                                                                <input id="help_search_faqs" autocomplete="off"
+                                                                    type="text" maxlength="255"
+                                                                    class="tl-help-menu_text tl-help-menu_text--margin-fix"
+                                                                    placeholder="Search knowledge base">
+                                                                <div class="tl-clear-input-btn">
+                                                                    <i class="icon-remove"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="d-row">
+                                                        <div class="d-col">
+                                                            <div class="tl-help-menu_faqs-container">
+                                                                <div class="tl-help-menu--handle-display w-100 text-center"
+                                                                    data-state-scope="help-menu-faqs"
+                                                                    data-state-name="faqs-loading">
+                                                                    <ul
+                                                                        class="tl-help-menu_faqs-links-list overflow-hidden">
+                                                                        <li class="tl-help-menu--no-anim">
+                                                                            <div>
+                                                                                <div
+                                                                                    class="item-loading tl-help-menu_item-loading">
+                                                                                    <div
+                                                                                        class="tl-help-menu_item-loading_mask tl-help-menu_item-loading_mask--text-cover tl-help-menu_item-loading_mask--1-1">
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="tl-help-menu_item-loading_mask tl-help-menu_item-loading_mask--line-cover tl-help-menu_item-loading_mask--2">
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="tl-help-menu_item-loading_mask tl-help-menu_item-loading_mask--text-cover tl-help-menu_item-loading_mask--3-3">
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="tl-help-menu_item-loading_mask tl-help-menu_item-loading_mask--line-cover tl-help-menu_item-loading_mask--4">
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="tl-help-menu_item-loading_mask tl-help-menu_item-loading_mask--text-cover tl-help-menu_item-loading_mask--5">
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li class="tl-help-menu--no-anim">
+                                                                            <div>
+                                                                                <div
+                                                                                    class="item-loading tl-help-menu_item-loading">
+                                                                                    <div
+                                                                                        class="tl-help-menu_item-loading_mask tl-help-menu_item-loading_mask--text-cover tl-help-menu_item-loading_mask--1">
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="tl-help-menu_item-loading_mask tl-help-menu_item-loading_mask--line-cover tl-help-menu_item-loading_mask--2">
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="tl-help-menu_item-loading_mask tl-help-menu_item-loading_mask--text-cover tl-help-menu_item-loading_mask--3">
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="tl-help-menu_item-loading_mask tl-help-menu_item-loading_mask--line-cover tl-help-menu_item-loading_mask--4">
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="tl-help-menu_item-loading_mask tl-help-menu_item-loading_mask--text-cover tl-help-menu_item-loading_mask--5">
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li class="tl-help-menu--no-anim">
+                                                                            <div>
+                                                                                <div
+                                                                                    class="item-loading tl-help-menu_item-loading">
+                                                                                    <div
+                                                                                        class="tl-help-menu_item-loading_mask tl-help-menu_item-loading_mask--text-cover tl-help-menu_item-loading_mask--1-2">
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="tl-help-menu_item-loading_mask tl-help-menu_item-loading_mask--line-cover tl-help-menu_item-loading_mask--2">
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="tl-help-menu_item-loading_mask tl-help-menu_item-loading_mask--text-cover tl-help-menu_item-loading_mask--3-4">
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="tl-help-menu_item-loading_mask tl-help-menu_item-loading_mask--line-cover tl-help-menu_item-loading_mask--4-4">
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="tl-help-menu--handle-display w-100 text-center"
+                                                                    data-state-scope="help-menu-faqs"
+                                                                    data-state-name="faqs-empty">
+                                                                    <div class="tl-help-menu_inform-panel">
+                                                                        <img class="tl-help-menu_inform-panel_img"
+                                                                            src="images/help_menu/ES_NoArticles.svg">
+                                                                        <p>
+                                                                            No relevant articles found </p>
+                                                                    </div>
+                                                                </div>
+                                                                <ul id="help_menu_faqs_links"
+                                                                    class="tl-help-menu_faqs-links-list tl-help-menu--handle-display active"
+                                                                    data-state-scope="help-menu-faqs"
+                                                                    data-state-name="faqs-loaded">
+                                                                    <li>
+                                                                        <div><a data-article-id="360014658393"
+                                                                                href="https://help.talentlms.com/hc/en-us/articles/360014658393-Getting-started-with-TalentLMS"
+                                                                                target="_blank">
+                                                                                <h2>Getting started with TalentLMS</h2>
+                                                                            </a>
+                                                                            <p>you’re new to TalentLMS, you might need a
+                                                                                little help <em>starting</em> out. To
+                                                                                <em>get</em> things moving, let’s walk
+                                                                                you through your first steps
+                                                                            </p>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div><a data-article-id="360014657533"
+                                                                                href="https://help.talentlms.com/hc/en-us/articles/360014657533-How-to-set-prerequisites-for-a-course"
+                                                                                target="_blank">
+                                                                                <h2>How to set prerequisites for a
+                                                                                    course</h2>
+                                                                            </a>
+                                                                            <p>have completed “<em>Getting Started</em>
+                                                                                with eLearning” and “Content and
+                                                                                TalentLMS”, then choose “<em>Getting
+                                                                                    Started</em> with eLearning”</p>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div><a data-article-id="360014658673"
+                                                                                href="https://help.talentlms.com/hc/en-us/articles/360014658673-How-to-use-Postman-to-generate-TalentLMS-API-code-snippets-in-various-programming-languages"
+                                                                                target="_blank">
+                                                                                <h2>How to use Postman to generate
+                                                                                    TalentLMS API code snippets in
+                                                                                    various programming languages</h2>
+                                                                            </a>
+                                                                            <p>TalentLMS API call samples for the
+                                                                                Postman app, to help you <em>get</em>
+                                                                                familiar with our API and generate code
+                                                                                snippets in different</p>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div><a data-article-id="360019068419"
+                                                                                href="https://help.talentlms.com/hc/en-us/articles/360019068419-How-to-configure-SCIM-with-Azure-AD"
+                                                                                target="_blank">
+                                                                                <h2>How to configure SCIM with Azure AD
+                                                                                </h2>
+                                                                            </a>
+                                                                            <p>Configuration D. Known issues &amp;
+                                                                                troubleshooting Let’s <em>start</em>! A.
+                                                                                Features The supported user provisioning
+                                                                                features</p>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div><a data-article-id="360014659493"
+                                                                                href="https://help.talentlms.com/hc/en-us/articles/360014659493-How-to-configure-SSO-with-Okta"
+                                                                                target="_blank">
+                                                                                <h2>How to configure SSO with Okta</h2>
+                                                                            </a>
+                                                                            <p>Basic, Plus and Premium subscription
+                                                                                plans. To <em>get started</em>, you need
+                                                                                an Okta account to handle the sign-in
+                                                                                process</p>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div><a data-article-id="360014573894"
+                                                                                href="https://help.talentlms.com/hc/en-us/articles/360014573894-How-to-configure-SSO-with-an-LDAP-identity-provider"
+                                                                                target="_blank">
+                                                                                <h2>How to configure SSO with an LDAP
+                                                                                    identity provider</h2>
+                                                                            </a>
+                                                                            <p>Basic, Plus and Premium subscription
+                                                                                plans. To <em>get started</em>, you need
+                                                                                an LDAP identity provider (IdP) to
+                                                                                handle the</p>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div><a data-article-id="360014573854"
+                                                                                href="https://help.talentlms.com/hc/en-us/articles/360014573854-How-to-configure-SSO-with-OneLogin"
+                                                                                target="_blank">
+                                                                                <h2>How to configure SSO with OneLogin
+                                                                                </h2>
+                                                                            </a>
+                                                                            <p>Basic, Plus and Premium subscription
+                                                                                plans. To <em>get started</em>, you need
+                                                                                an OneLogin account to handle the
+                                                                                sign-in process</p>
+                                                                        </div>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tl-help-menu_screen_separator"></div>
+                                                    <div class="d-row">
+                                                        <div class="d-col text-center tl-help-menu_screen--padx">
+                                                            <a href="https://help.talentlms.com/hc/en-us/"
+                                                                class="btn btn-primary m-0" target="_blank">
+                                                                Go to knowledge base </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tl-help-menu_screen_part tl-help-menu--handle-display"
+                                                    data-state-scope="help-menu-search-faqs"
+                                                    data-state-name="preview-faq">
+                                                    <div id="help_search_faq_previewer"
+                                                        class="tl-help-menu_article-previewer">
+                                                        <div class="d-row">
+                                                            <div
+                                                                class="d-col tl-help-menu_screen_header tl-help-menu_screen--padx">
+                                                                <a class="tl-help-menu_article-previewer_title tl-help-menu--external-link"
+                                                                    href="#" target="_blank"></a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="d-row">
+                                                            <div class="d-col">
+                                                                <div
+                                                                    class="tl-help-menu_article-previewer_content tl-help-menu_screen--padx">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tl-help-menu_screen_separator"></div>
+                                                    <div class="tl-help-menu_screen--padx">
+                                                        <div class="d-row align-items-center">
+                                                            <div class="d-col-auto text-left">
+                                                                <div class="tl-help-menu_back-btn"
+                                                                    data-select-state="help-menu-search-faqs:search"
+                                                                    data-open-menu-left-panel="">
+                                                                    <i class="icon-chevron-left"></i>
+                                                                    <span>
+                                                                        Back </span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="d-col text-right"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tl-help-menu_screen tl-help-menu--handle-display"
+                                                data-state-scope="help-menu-mode" data-state-name="tour">
+                                                <div
+                                                    class="tl-help-menu_inform-panel tl-help-menu_inform-panel--pad-bottom">
+                                                    <img class="tl-help-menu_inform-panel_img"
+                                                        src="images/help_menu/ES_Tour.svg">
+                                                    <p>
+                                                        Restart the guided tour </p>
+                                                    <a id="restart_tour_btn" href="#" class="btn btn-primary">
+                                                        Restart tour </a>
+                                                </div>
+                                            </div>
+                                            <div class="tl-help-menu_screen tl-help-menu--handle-display"
+                                                data-state-scope="help-menu-mode" data-state-name="videos">
+                                                <div
+                                                    class="tl-help-menu_inform-panel tl-help-menu_inform-panel--pad-bottom">
+                                                    <img class="tl-help-menu_inform-panel_img"
+                                                        src="images/help_menu/ES_Videos.svg">
+                                                    <p>
+                                                        A vast collection of introductory videos </p>
+                                                    <a href="#/help/index/#videos" class="btn btn-primary">
+                                                        View videos </a>
+                                                </div>
+                                            </div>
+                                            <div class="tl-help-menu_screen tl-help-menu_screen--form tl-help-menu--handle-display"
+                                                data-state-scope="help-menu-mode" data-state-name="form">
+                                                <script type="text/javascript">
+                                                    $(document).ready(function () {
+                                                        $('#help_menu_form').submit(function (event) {
+                                                            if ($(this).attr('id') == 'tl-account-certifications' && $('#mode').val() == 1) {
+                                                                $('#update-certificate').removeClass('disabled').button('reset');
+                                                            }
+
+                                                            if ($(this).attr('id') == 'tl-account-themes' && $('#mode').val() == 1) {
+                                                                $('#update-theme').removeClass('disabled').button('reset');
+                                                            }
+
+                                                            if (($(this).attr('id') == 'add-coupon-form' || $(this).attr('id') == 'edit-coupon-form') && $('#tl-discount-type').val() == '1') {
+                                                                $("input[name='fixed_amount_discount']").val(123456789.11);
+                                                            }
+                                                            else if (($(this).attr('id') == 'add-coupon-form' || $(this).attr('id') == 'edit-coupon-form') && $('#tl-discount-type').val() == '2') {
+                                                                $("input[name='percentage_discount']").val(99.101);
+                                                            }
+
+                                                            myportal.app.submitForm = new Array();
+
+                                                            if (typeof (myportal.app.validForm) == 'undefined' || myportal.app.validForm == false) {
+                                                                myportal.app.validForm = true;
+                                                            }
+
+                                                            $('#help_input_subject').closest('.controls').find('.help-block:first').empty();
+                                                            $('#help_input_subject').parents('.control-group').removeClass('error');
+                                                            $('#help_input_message').closest('.controls').find('.help-block:first').empty();
+                                                            $('#help_input_message').parents('.control-group').removeClass('error');
+
+                                                            myportal.app.submitForm['help_input_subject'] = new Array();
+                                                            myportal.app.submitForm['help_input_subject']['mandatory'] = true;
+                                                            myportal.app.submitForm['help_input_subject']['maxlength'] = true;
+                                                            myportal.app.submitForm['help_input_message'] = new Array();
+                                                            myportal.app.submitForm['help_input_message']['mandatory'] = true;
+                                                            myportal.app.submitForm['help_input_message']['maxlength'] = true;
+
+                                                            myportal.app.validateMandatory('help_input_subject', decodeURIComponent('%27Subject%27%20is%20required'));
+                                                            myportal.app.validateMaxLength('help_input_subject', decodeURIComponent('%27Subject%27%20cannot%20exceed%20255%20characters'), 255);
+                                                            myportal.app.validateMandatory('help_input_message', decodeURIComponent('%27Message%27%20is%20required'));
+                                                            myportal.app.validateMaxLength('help_input_message', decodeURIComponent('%27Message%27%20cannot%20exceed%2010000%20characters'), 10000);
+
+
+                                                            if (typeof (myportal.app.submitForm) != 'undefined') {
+                                                                var submitMe = true;
+                                                                var errorElement = false;
+
+                                                                for (var index in myportal.app.submitForm) {
+                                                                    for (var index_ in myportal.app.submitForm[index]) {
+                                                                        if (myportal.app.submitForm[index][index_] == false) {
+                                                                            submitMe = false;
+                                                                            errorElement = index;
+                                                                            myportal.app.validForm = false;
+                                                                            break;
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+
+                                                            if (typeof (myportal.app.submitForm) != 'undefined' && submitMe == false) {
+                                                                event.preventDefault();
+                                                                $(this).find("input[type=submit]").next('.dropdown-toggle').removeClass('disabled');
+                                                                $(this).find("input[type=submit]").button('reset');
+                                                                $(this).find("input[type=submit]").blur();
+
+
+                                                                if (($(this).attr('id') == 'tl-account-themes' || $(this).attr('id') == 'tl-account-certifications') && !myportal.app.validForm) { // make sure that the tab with the error is shown
+                                                                    var errorTab = $('#' + errorElement).parents('.tab-pane').attr('id');
+                                                                    $('li a[href="#' + errorTab + '"]').tab('show');
+                                                                }
+
+                                                                if (($(this).attr('id') == 'tl-account-certifications' && $('#mode').val() == 1) || ($(this).attr('id') == 'tl-account-themes' && $('#mode').val() == 1)) {
+                                                                    $('#save-as-new-button').removeClass('disabled').removeAttr("disabled").val(myportal.app.translate('save-as-new'));
+                                                                }
+
+                                                                if (($(this).attr('id') == 'add-coupon-form' || $(this).attr('id') == 'edit-coupon-form') && $('#tl-discount-type').val() == '1') {
+                                                                    $("input[name='fixed_amount_discount']").val('');
+                                                                }
+                                                                else if (($(this).attr('id') == 'add-coupon-form' || $(this).attr('id') == 'edit-coupon-form') && $('#tl-discount-type').val() == '2') {
+                                                                    $("input[name='percentage_discount']").val('');
+                                                                }
+                                                            }
+                                                        });
+                                                    });
+                                                </script>
+                                                <form name="form" method="post" action="#/zendesk/createticket"
+                                                    class="tl-help-menu_screen_part tl-help-menu_form tl-help-menu--handle-display active"
+                                                    id="help_menu_form" data-state-scope="help-menu-form-view"
+                                                    data-state-name="compose" data-submiturl="#/zendesk/createticket"
+                                                    enctype="multipart/form-data"><input type="hidden"
+                                                        name="_track_form" value="1667149012" class=""
+                                                        id="64003038"><input type="hidden" name="_myToken"
+                                                        value="ef1dfa353a14f63c03ba3006b68cba6d" class=""
+                                                        id="_myToken"><input type="hidden" name="ticket_attachment_name"
+                                                        value="" class="" id="1425704588"><input type="hidden"
+                                                        name="ticket_s3_attachment" value="" class="" id="440809623">
+                                                    <div class="d-row">
+                                                        <div class="d-col">
+                                                            <input type="text" name="subject" value=""
+                                                                class="tl-help-menu_text" id="help_input_subject"
+                                                                placeholder="Describe the issue" autocomplete="off"
+                                                                data-lpignore="true" data-form-type="other" tabindex="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="d-row">
+                                                        <div class="d-col">
+                                                            <textarea name="msg" class="tl-help-menu_text-area"
+                                                                id="help_input_message"
+                                                                placeholder="Tell us what's going on in as much detail as possible.
+
+To help us solve your issue faster, tell us where you are in the platform and what you're trying to do. If possible, include the URL of the page you're on, the course name, username, user ID, user email, a screenshot, or any other specifics you can."
+                                                                tabindex=""></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="d-row">
+                                                        <div class="d-col">
+                                                            <div
+                                                                class="tl-help-menu_form-controls d-row align-items-center">
+                                                                <div
+                                                                    class="d-col d-flex align-items-center justify-content-start text-left tl-help-menu_form-controls_left-side">
+                                                                    <div id="ticket_attachment_namespace"
+                                                                        data-url="#/zendesk/uploadattachment">
+                                                                        <span
+                                                                            class="fileinput-button tl-cursor-pointer ">
+                                                                            <span
+                                                                                class="file-wrapper text-center"><input
+                                                                                    type="file" name="ticket_attachment"
+                                                                                    tabindex="-1"><a
+                                                                                    class="tl-tool-tip inputbtn"
+                                                                                    tabindex="-1" rel="tooltip"
+                                                                                    data-placement="bottom"
+                                                                                    data-original-title="<u>Accepted files</u>:<br/>gif, jpg, jpeg, png, doc, docx, pdf<br/><u>Max file size</u>: 10 MB<br/>"
+                                                                                    data-html="true"
+                                                                                    href="javascript:void(0);"
+                                                                                    id="help_ticket_attachment_input">
+                                                                                    <div
+                                                                                        class="btn btn-primary tl-help-menu_circled-btn">
+                                                                                        <i
+                                                                                            class="tl-help-menu_circled-btn_icon icon-doc-alt-1"></i>
+                                                                                    </div>Upload a file
+                                                                                </a>
+                                                                                <div class="note error text-error">
+                                                                                </div>
+                                                                            </span>
+                                                                            <script
+                                                                                type="text/javascript">$(document).ready(function () { $('.tl-tool-tip').tooltip({ container: 'body' }); });</script>
+                                                                            <span
+                                                                                class="progress progress-success progress-striped active fade "
+                                                                                style="position: relative;">
+                                                                                <div class="info"
+                                                                                    style="position: absolute; width: 100%; text-align: center; font-weight: 600;">
+                                                                                </div>
+                                                                                <div class="bar" style="width: 0%;">
+                                                                                </div>
+                                                                            </span>
+                                                                            <table style="width: 100%;">
+                                                                                <tbody class="files"></tbody>
+                                                                            </table>
+                                                                            <script>
+                                                                                var fileUploadErrors = {
+                                                                                    maxFileSize: "File is too big",
+                                                                                    minFileSize: "File is too small",
+                                                                                    acceptFileTypes: "File type not accepted",
+                                                                                    maxNumberOfFiles: "Max number of files exceeded",
+                                                                                    uploadedBytes: "Uploaded bytes exceed file size",
+                                                                                    emptyResult: "Empty file upload result"
+                                                                                };
+                                                                            </script>
+                                                                            <script id="template-upload"
+                                                                                type="text/x-tmpl">
+					{% for (var i=0, file; file=o.files[i]; i++) { %}
+						<tr class="template-upload fade">
+							<td>
+								<strong class="error text-danger"></strong>
+								<div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+									<div class="bar bar-success progress-bar progress-bar-success" style="width: 0%;"></div>
+								</div>
+							</td>
+						</tr>
+					{% } %}
+				</script>
+                                                                            <script id="template-download"
+                                                                                type="text/html">
+					{% for (var i=0, files=o.files, l=files.length, file=files[0]; i<l; file=files[++i]) { %}
+						<tr class="template-download fade">
+							{% if (file.error) { %}
+								<td class="error" colspan="2"><span class="label important">Error</span> {%=fileUploadErrors[file.error] || file.error%}</td>
+								<td></td>
+							{% } else { %}
+								<td class="preview" style="text-align: center; vertical-align: middle;">{% if (file.thumbnail_url) { %}
+								<img src="{%=file.thumbnail_url%}">
+							{% } %}</td>
+							{% } %}
+						</tr>
+					{% } %}
+				</script>
+                                                                        </span>
+                                                                        <span id="tl-ticket-attachment-area"
+                                                                            class="well-ticket-attachment hide"
+                                                                            style="display: none;">
+                                                                            <i
+                                                                                class="icon-attach tl-cursor-default"></i>&nbsp;
+                                                                            <span
+                                                                                id="tl-ticket-attachment-filename"></span>&nbsp;
+                                                                            <a id="tl-ticket-attachment-clear"
+                                                                                class="none-decoration"
+                                                                                href="javascript:void(0);"
+                                                                                title="cancel">
+                                                                                <i class="icon-remove"></i>
+                                                                            </a>
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                                <div
+                                                                    class="d-col d-flex align-items-center justify-content-end text-right">
+                                                                    <input type="submit" name="submit_btn" value="Next"
+                                                                        class="btn btn-primary m-0 tl-help-menu_submit-btn"
+                                                                        id="help_submit_btn" disabled="disabled"
+                                                                        tabindex="">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                                <div class="tl-help-menu--handle-display tl-help-menu_screen--padx"
+                                                    data-state-scope="help-menu-form-view" data-state-name="sending">
+                                                    <div class="tl-help-menu_form-done-screen tl-align-y-center">
+                                                        <div class="tl-help-menu_form-done-screen_msg">
+                                                            <img class="tl-help-menu_form-done-screen_msg_img"
+                                                                src="images/unknown_big.png">
+                                                            <div class="tl-help-menu_form-done-screen_msg_text">
+                                                                Submitting your request.<br>Please wait... </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tl-help-menu--handle-display tl-help-menu_screen--padx"
+                                                    data-state-scope="help-menu-form-view" data-state-name="success">
+                                                    <div class="tl-help-menu_form-done-screen tl-align-y-center">
+                                                        <div class="tl-help-menu_form-done-screen_msg">
+                                                            <img class="tl-help-menu_form-done-screen_msg_img"
+                                                                src="images/unknown_big.png">
+                                                            <div class="tl-help-menu_form-done-screen_msg_text">
+                                                                Thank you for your message.<br>We'll be in touch! </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tl-help-menu_screen_part tl-help-menu--handle-display"
+                                                    data-state-scope="help-menu-form-view"
+                                                    data-state-name="suggestions">
+                                                    <div class="d-row">
+                                                        <div
+                                                            class="d-col tl-help-menu_screen_header tl-help-menu_screen--padx">
+                                                            <h4 class="tl-help-menu_faqs-suggest-title">
+                                                                Before we send your request, do any of these articles
+                                                                help? </h4>
+                                                        </div>
+                                                    </div>
+                                                    <div class="d-row">
+                                                        <div class="d-col">
+                                                            <div class="tl-help-menu_faqs-container">
+                                                                <ul id="help_form_faq_suggestions"
+                                                                    class="tl-help-menu_faqs-links-list"></ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tl-help-menu_screen_separator"></div>
+                                                    <div class="tl-help-menu_screen--padx">
+                                                        <div class="d-row align-items-center">
+                                                            <div class="d-col-auto text-left">
+                                                                <div class="tl-help-menu_back-btn"
+                                                                    data-select-state="help-menu-form-view:compose">
+                                                                    <i class="icon-chevron-left"></i>
+                                                                    <span>
+                                                                        Back </span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="d-col text-right">
+                                                                <div id="help_submit_send_now"
+                                                                    class="btn btn-primary m-0" disabled="disabled">
+                                                                    <span class="tl-help-menu--handle-display active"
+                                                                        data-state-scope="help-menu-form-state"
+                                                                        data-state-name="unsend">
+                                                                        No, send my question </span>
+                                                                    <span class="tl-help-menu--handle-display"
+                                                                        data-state-scope="help-menu-form-state"
+                                                                        data-state-name="sending">
+                                                                        Sending... </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tl-help-menu_screen_part tl-help-menu--handle-display"
+                                                    data-state-scope="help-menu-form-view"
+                                                    data-state-name="preview-faq">
+                                                    <div id="help_form_faq_previewer"
+                                                        class="tl-help-menu_article-previewer">
+                                                        <div class="d-row">
+                                                            <div
+                                                                class="d-col tl-help-menu_screen_header tl-help-menu_screen--padx">
+                                                                <a class="tl-help-menu_article-previewer_title tl-help-menu--external-link"
+                                                                    href="#" target="_blank"></a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="d-row">
+                                                            <div class="d-col">
+                                                                <div
+                                                                    class="tl-help-menu_article-previewer_content tl-help-menu_screen--padx">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tl-help-menu_screen_separator"></div>
+                                                    <div class="tl-help-menu_screen--padx">
+                                                        <div class="d-row align-items-center">
+                                                            <div class="d-col-auto text-left">
+                                                                <div class="tl-help-menu_back-btn"
+                                                                    data-select-state="help-menu-form-view:suggestions"
+                                                                    data-open-menu-left-panel="">
+                                                                    <i class="icon-chevron-left"></i>
+                                                                    <span>
+                                                                        Back </span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="d-col text-right">
+                                                                <div data-close-help-menu=""
+                                                                    class="btn btn-primary m-0">
+                                                                    This answers my question </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tl-help-menu_screen tl-help-menu--handle-display"
+                                                data-state-scope="help-menu-mode" data-state-name="chat">
+                                                <div
+                                                    class="tl-help-menu_inform-panel tl-help-menu_inform-panel--pad-bottom">
+                                                    <img class="tl-help-menu_inform-panel_img"
+                                                        src="images/help_menu/LIVE_SUPPORT.svg">
+                                                    <p class="tl-chat-status">
+                                                        Live support is only available on Premium plans </p>
+                                                    <a id="chat_with_support_btn" href="#/account/subscription_index"
+                                                        class="btn btn-primary chat-disabled">
+                                                        Upgrade </a>
+                                                </div>
+                                            </div>
+                                            <div class="tl-help-menu_screen tl-help-menu--handle-display"
+                                                data-state-scope="help-menu-mode" data-state-name="form-success">
+                                                <div
+                                                    class="tl-help-menu_inform-panel tl-help-menu_inform-panel--pad-bottom">
+                                                    <img class="tl-help-menu_inform-panel_img"
+                                                        src="images/help_menu/LIVE_SUPPORT.svg">
+                                                    <p class="tl-success-status">
+                                                        Success managers are available only on annual Premium plans and
+                                                        above </p>
+                                                    <a id="success_upgrade_btn" href="#/account/subscription_index"
+                                                        class="btn btn-primary chat-disabled">
+                                                        Upgrade </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tl-help-menu-open-holder"></div>
+                        </li>
+                        <li class="divider-vertical spotlight-divider" style="margin-left: 0px; "></li>
+                        <li class="dropdown open hidden-phone hidden-tablet">
+                            <div class="tl-can-clear-input" style="margin-top: 10px;">
+                                <input id="tl-spotlight" autocomplete="off"
+                                    class="tl-nav-spotlight ui-autocomplete-input" placeholder="Search" type="text">
+                                <div class="tl-clear-input-btn">
+                                    <i class="icon-remove"></i>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="divider-vertical spotlight-divider" style="margin-right: 0px;"></li>
+                        <li class="hidden-desktop" id="tl-navbar-logout">
+                            <a id="navbar-logout" href="#/index/logout">
+                                Log out </a>
+                        </li>
+                        <li class="hidden-tablet hidden-phone" id="tl-navbar-logout-icon"><a id="navbar-logout"
+                                href="#/index/logout"><i class="icon-logout nav-logout" title="Log out"></i></a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="preview_modal_nav" class="modal fade preview-modal hide" tabindex="-1"></div>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+
+
+            $.ui.autocomplete.prototype._renderItemData = function (ul, item) {
+                var regex = new RegExp("" + safeRegexString(myportal.app.escapeHtml(this.term)), "i");
+                var term = item.label.replace(regex, "<span style='font-weight: 600;'>" + "$&" + "</span>");
+                if (item.highlightDetails) {
+                    var details = item.details.replace(regex, "<span style='font-weight: 600;'>" + "$&" + "</span>");
+                }
+                else {
+                    var details = item.details;
+                }
+                var imageUrl = item.imageUrl;
+                var imageClass = item.imageClass;
+                if (imageUrl) {
+                    if (item.fileType) {
+                        var illustrationTag = '<span class="label file-type-label file-type-label--' + item.fileCategory + '">' + item.fileType + '</span>';
+                    }
+                    else {
+                        var illustrationTag = '<img class="avatar-square image40x40 tl-nav-spotlight-image" src="' + imageUrl + '"> ';
+                    }
+                }
+                else if (imageClass) {
+                    var illustrationTag = '<div class="tl-icons-block"> ' +
+                        '<span class="tl-icon-stack"> ' +
+                        '<i class="icon-circle tl-icon-stack-background tl-spotlight-option-icon-background"></i> ' +
+                        '<i class="' + item.imageClass + ' tl-icon-stack-content"></i>' +
+                        '</span>' +
+                        '</div>';
+                }
+
+                if (!item.virtual) { // Normal search result item
+                    return $("<li></li>")
+                        .addClass("tl-spotlight-result-item")
+                        .data("ui-autocomplete-item", item)
+                        .printTestId('spotlight-result-' + item.category.toLowerCase() + '-' + item.id)
+                        .append('<div class="tl-spotlight-result-item_icon">' + illustrationTag + '</div>' +
+                            '<div class="tl-spotlight-result-item_text">' +
+                            '<div class="tl-spotlight-result-item_title">' + term + '</div>' +
+                            '<div class="tl-spotlight-result-item_details">' + details + '</div>' +
+                            '</div>')
+                        .appendTo(ul);
+                }
+                else if (item.type === 'no_results') {
+                    return $('<li data-ui-autocomplete-item="" class="text-center tl-empty-result tl-nav-spotlight-no-results">')
+                        .data("ui-autocomplete-item", item)
+                        .append('<div><img src="images/empty_states/noSearchBox.svg" class="tl-nav-spotlight-no-results-img"></div>' +
+                            '<div><h3>Oh, no. Nothing was found.</h3></div>' +
+                            '<div>Use a different term or filter and try again</div>')
+                        .appendTo(ul);
+                }
+                else { // "View detailed results" item
+                    return $('<li data-ui-autocomplete-item="" class="text-center tl-nav-spotlight-view-all">')
+                        .data("ui-autocomplete-item", item)
+                        .append('<a href="' + item.url + '" ' + window.printTestId('spotlight-view-all') + ' >' +
+                            '<i class="icon-search"></i>' + item.label +
+                            '</a>')
+                        .appendTo(ul);
+                }
+
+            };
+
+            $.widget("custom.spotlightautocomplete", $.ui.autocomplete, {
+                _create: function () {
+                    this._super();
+                    this.widget().menu("option", "items", "> :not(.tl-spotlight-category)");
+                },
+                _renderMenu: function (ul, items) {
+                    var self = this;
+                    var currentCategory = "";
+                    ul.addClass('dropdown-menu tl-spotlight-dropdown');
+                    $.each(items, function (index, item) {
+                        var li;
+                        var itemsLength = items.length;
+                        if (index < 8 || index === itemsLength - 1) { // Last item is the "View detailed results"
+                            if (item.category !== currentCategory && item.category !== '') {
+                                ul.append("<li class='tl-spotlight-category'>" + item.category + "</li>");
+                                currentCategory = item.category;
+                            }
+                            li = self._renderItemData(ul, item);
+                            if (item.category) {
+                                li.attr("aria-label", item.category + " : " + item.label);
+                            }
+                        }
+                    });
+                },
+                _resizeMenu: function () {
+                    //resize menu
+                }
+            });
+
+            var spotlightLastResults = {}; // Contains the last results fetched by spotlight.
+
+            $('#tl-spotlight').spotlightautocomplete({
+                minLength: 2,
+                source: function (request, response) {
+                    if (spotlightLastResults[request.term]) {
+                        response(spotlightLastResults[request.term]);
+                        return;
+                    }
+
+                    var url = '#/index/spotlight/term:###term###';
+
+                    myportal.app.ajax(url.replace('###term###', encodeURIComponent(request.term)), {
+                        success: function (data) {
+                            var results = $.map(data, function (item) {
+                                return {
+                                    id: item.id,
+                                    label: item.label,
+                                    url: item.url,
+                                    category: item.category,
+                                    imageUrl: item.imageUrl,
+                                    imageClass: item.imageClass,
+                                    details: item.details,
+                                    fileType: item.fileType,
+                                    fileCategory: item.fileCategory,
+                                    modalPreview: item.modalPreview,
+                                    highlightDetails: item.highlightDetails,
+                                    term: request.term
+                                }
+                            });
+
+                            request.term = encodeURI(request.term.replace(/'/g, "%27"));
+
+                            // Push "View detailed results" item.
+                            var url = '#/index/results/term:###term###';
+                            url = url.replace('###term###', request.term);
+
+                            if (!results.length) {
+                                results.push({ // "No Results Found" item
+                                    virtual: true, // Indicate that this is not a real search result item.
+                                    label: '',
+                                    term: '',
+                                    url: '',
+                                    id: 0,
+                                    category: '',
+                                    type: 'no_results',
+                                });
+                            }
+                            else {
+                                results.push({ // "View Detailed Results" item
+                                    virtual: true, // Indicate that this is not a real search result item.
+                                    label: 'View detailed results',
+                                    term: request.term,
+                                    url: url,
+                                    id: 0,
+                                    category: '',
+                                    type: 'view_detailed_results',
+                                });
+                            }
+
+                            spotlightLastResults = { // Re-initialise variable to delete old data.
+                                [request.term]: results
+                            };
+                            response(results);
+                        },
+                        dataType: "json"
+                    });
+                },
+                select: function (event, ui) {
+                    $('#tl-spotlight').val(ui.item.label);
+                    if (ui.item.modalPreview) {
+                        event.preventDefault();
+                        var action = ui.item.url;
+                        if (typeof (action) != 'undefined') {
+                            parameters = {
+                                type: 'GET',
+                                url: action,
+                                success: function (data) {
+                                    $("#preview_modal_nav").empty().append(data);
+                                    $("#preview_modal_nav").modal();
+                                    $('#tl-loading-pane').hide();
+                                }
+                            };
+                            myportal.app.ajax(action, parameters);
+                        }
+                    }
+                    else {
+                        window.location = ui.item.url;
+                    }
+                    return false;
+                },
+                focus: function (event, ui) {
+                    event.preventDefault();
+                },
+                position: { my: "right top", at: "right bottom" },
+                open: function () {
+                    $(".ui-autocomplete:visible").css({ top: "+=10" });
+                },
+            });
+
+            $(window).resize(function () {
+                if ($('.tl-spotlight-dropdown').css('display') === 'block') {
+                    $('#tl-spotlight').spotlightautocomplete('search');
+                }
+            });
+
+            // Auto open header menus
+            $('#tl-dropdown-roles, #tl-dropdown-messages, #tl-dropdown-help, #tl-dropdown-goto, #tl-cms-page-dropdown-more').mouseenter(function (e) {
+                if (!$(this).hasClass('open') && $(window).width() >= 980) {
+                    $(this).addClass("open autoopened");
+                }
+            });
+            $('#tl-dropdown-roles, #tl-dropdown-messages, #tl-dropdown-help, #tl-dropdown-goto, #tl-cms-page-dropdown-more').mouseleave(function () {
+                if ($(this).hasClass('open') && $(this).hasClass('autoopened')) {
+                    $(this).removeClass("open autoopened");
+                }
+            });
+            //empty #preview_modal_nav on close so that videos/audio stop playing
+            $('#preview_modal_nav').bind('hidden', function () {
+                $('#preview_modal_nav').html('');
+            });
+        });
+
+        $(document).ready(function () {
+            var truncate = function (string, maxLength) {
+                return string.length > maxLength ? (string.substring(0, maxLength) + '...') : string;
+            };
+            var strip = function (html) {
+                var tmp = document.createElement("DIV");
+                tmp.innerHTML = html;
+                return tmp.textContent || tmp.innerText || "";
+            };
+            var fulltrim = function (string) {
+                return string.replace(/(?:(?:^|\n)\s+|\s+(?:$|\n))/g, '').replace(/\s+/g, ' ');
+            };
+            var arrayToHash = function (array, key) {
+                var i = 0, l = array.length, hash = {};
+                for (; i < l; i++) {
+                    if (array[i][key]) {
+                        hash[array[i][key]] = array[i];
+                    }
+                }
+                return hash;
+            };
+            var mergeJSON = function (jsonsArray) {
+                var merged = {};
+                for (var i = 0; i < jsonsArray.length; i++) {
+                    for (var key in jsonsArray[i]) {
+                        if (jsonsArray[i].hasOwnProperty(key) && typeof jsonsArray[i][key] !== "undefined") {
+                            merged[key] = jsonsArray[i][key];
+                        }
+                    }
+                }
+                return merged;
+            };
+            $(document).on('state:change', function (e, data) {
+                var stateScope = data.stateScope;
+                var stateName = data.stateName;
+                if (stateName !== 'form' && stateName !== 'form-success') {
+                    clearTicketAttachmentErrors();
+                }
+            });
+            var clearTicketAttachmentErrors = function () {
+                $('#ticket_attachment_namespace .note.error').html('');
+                $('#ticket_attachment_namespace table .files .error').html('');
+
+                $('#success_attachment_namespace .note.error').html('');
+                $('#success_attachment_namespace table .files .error').html('');
+            }
+            var closeHelpMenu = function () {
+                openAndLockHelpMenu(false);
+            };
+            var articlesToHTML = function (articles) {
+                var htmlCode = [],
+                    length = articles ? articles.length : 0,
+                    articleID,
+                    articleURL,
+                    articleTitle,
+                    articleText;
+                for (var i = 0; i < length; i++) {
+                    articleID = articles[i].id;
+                    articleURL = articles[i].html_url;
+                    articleTitle = articles[i].title;
+                    articleText = articles[i].snippet;
+                    articleText = articleText.replace(/&nbsp;/gi, '');
+                    articleText = fulltrim(articleText);
+                    htmlCode.push('<li><div><a data-article-id="' + articleID + '" href="' + articleURL + '" target="_blank" ' + window.printTestId("help-menu-faq-link-" + i) + '><h2>' + articleTitle + '</h2></a><p>' + articleText + '</p></div></li>');
+                }
+                htmlCode = htmlCode.join('');
+                return htmlCode;
+            };
+            var renderArticles = function (articles) {
+                if (articles.length > 0) {
+                    var htmlCode = articlesToHTML(articles);
+                    $('#help_menu_faqs_links').html(htmlCode);
+                    setState("help-menu-faqs", "faqs-loaded");
+                    $('#help_menu_faqs_links').scrollTop(0);
+                } else {
+                    setState("help-menu-faqs", "faqs-empty");
+                }
+            };
+            var defaultSearchKey = " Get started";
+            var defaultArticles;
+            var cachedArticles = {};
+            var fetchHelpArticles = function (searchKey, callback) {
+                var GET_FAQS_ENDPOINT = "#/zendesk/listarticles";
+                myportal.app.ajax(GET_FAQS_ENDPOINT, {
+                    type: "POST",
+                    dataType: "json",
+                    data: {
+                        myToken: window.myToken || "",
+                        pageTitle: searchKey || ""
+                    },
+                    success: (function (callback) {
+                        return function (response) {
+                            var articles = [];
+                            try {
+                                articles = response.data.results || [];
+                            } catch (e) {
+                                articles = [];
+                            }
+                            cachedArticles = mergeJSON([cachedArticles, arrayToHash(articles || [], 'id')]);
+                            callback && callback(articles);
+                        };
+                    })(callback),
+                    error: function () {
+                        callback && callback([]);
+                    }
+                }, false);
+            };
+            var loadHelpArticles = function (searchKey) {
+                var shouldSetDefaultArticles = (typeof defaultArticles === "undefined");
+                searchKey = searchKey ? searchKey : defaultSearchKey;
+                if (shouldSetDefaultArticles || searchKey !== defaultSearchKey) {
+                    setState("help-menu-faqs", "faqs-loading");
+                    fetchHelpArticles(searchKey, (function (shouldSetDefaultArticles) {
+                        return function (articles) {
+                            if (shouldSetDefaultArticles) {
+                                defaultArticles = articles;
+                            }
+                            renderArticles(articles);
+                        };
+                    })(shouldSetDefaultArticles));
+                } else {
+                    renderArticles(defaultArticles);
+                }
+            };
+
+            var isFileUploadedHelpForm = false;
+            var lockHelpForm = function (lock) {
+                $('#help_menu_form')[lock ? 'addClass' : 'removeClass']('tl-help-menu_form--lock');
+                $('#help_submit_btn,#help_submit_send_now').attr('disabled', lock ? 'disabled' : null);
+            };
+            var validateHelpForm = function () {
+                var subject = $('#help_input_subject').val().trim();
+                var message = $('#help_input_message').val().trim();
+                var isValid = subject.length > 0 && message.length > 0;;
+                return isValid;
+            };
+            var previewArticle = function (articleContainerSelector, articleID) {
+                var articleContainer = $(articleContainerSelector);
+                var article = cachedArticles[articleID];
+                if (article && articleContainer.length) {
+                    enableHelpMenuLeftPanel(false);
+                    var articleContainerTitle = articleContainer.find('.tl-help-menu_article-previewer_title');
+                    var articleContainerContent = articleContainer.find('.tl-help-menu_article-previewer_content');
+                    articleContainerTitle.text(truncate(article.title, 49)).attr('title', article.title).attr('href', article.html_url);
+                    articleContainerContent.html(article.body);
+                    articleContainerContent.scrollTop(0);
+                }
+            };
+            $('#help_input_message,#help_input_subject').on('keyup', function (e) {
+                var isValid = validateHelpForm();
+                if (!isFileUploadedHelpForm) {
+                    $('#help_submit_btn').attr('disabled', isValid ? null : 'disabled');
+                }
+            });
+            var submitHelpForm = function () {
+                lockHelpForm(true);
+                setState("help-menu-form-state", "sending");
+                setState("help-menu-form-view", "sending");
+                var helpForm = $('#help_menu_form');
+                var successMessageTTL = 5000; // How much time will display the success message
+                var data = new FormData(helpForm.get(0));
+                var onSuccessSend = function () {
+                    setState("help-menu-form-view", "success");
+                    setTimeout(function () {
+                        lockHelpForm(false);
+                        initHelpForm();
+                    }, successMessageTTL);
+                };
+                var onFailedSend = function (errors) {
+                    setState("help-menu-form-view", "compose");
+                    setState("help-menu-form-state", "unsend");
+                    lockHelpForm(false);
+                    var defaultErrorMessage = "Can't send the message. Please try again later.";
+                    var errorMessage = defaultErrorMessage;
+                    try {
+                        if (errors.length === 0) {
+                            errors.push(defaultErrorMessage);
+                        }
+                    } catch (e) {
+                        errors = [defaultErrorMessage];
+                    }
+                    for (var i = 0; i < errors.length; i++) {
+                        myportal.app.notify({
+                            type: "error",
+                            message: errors[i]
+                        });
+                    }
+                };
+                myportal.app.ajax(helpForm.attr('data-submiturl'), {
+                    type: "POST",
+                    dataType: "json",
+                    data: data,
+                    cache: false,
+                    processData: false,
+                    contentType: false,
+                    success: (function (onSuccessSend, onFailedSend) {
+                        return function (response) {
+                            if (response.success) {
+                                onSuccessSend();
+                            } else {
+                                var errors = [];
+                                for (var i in response.data) {
+                                    if (response.data.hasOwnProperty(i) && typeof response.data[i] !== "undefined") {
+                                        errors.push(response.data[i]);
+                                    }
+                                }
+                                onFailedSend(errors);
+                            }
+                        };
+                    })(onSuccessSend, onFailedSend),
+                    error: (function (onSuccessSend, onFailedSend) {
+                        return function (response) {
+                            var errors = [];
+                            try {
+                                errors = [decodeURIComponent(response.responseJSON.message)];
+                            } catch (e) {
+                                errors = [];
+                            }
+                            onFailedSend(errors);
+                        };
+                    })(onSuccessSend, onFailedSend)
+                });
+            };
+            var enableHelpMenuLeftPanel = function (enable) {
+                $('#help_menu_left_panel')[enable ? 'removeClass' : 'addClass']('hidden');
+            };
+
+            var resetHelpMenuAttachment = function () {
+                setState("help-menu-form-attachment", "select-file");
+                $('input[name="ticket_attachment"]').val('');
+                $('input[name="ticket_s3_attachment"]').val('');
+                $('input[name="ticket_attachment_name"]').val('');
+                $('#tl-ticket-attachment-filename').text('');
+                $('#tl-ticket-attachment-area').hide();
+                $('#ticket_attachment_namespace .fileinput-button').show();
+            };
+            var initHelpForm = function () {
+                setState("help-menu-form-state", "unsend");
+                setState("help-menu-form-view", "compose");
+                resetHelpMenuAttachment();
+                $('#help_submit_btn').attr('disabled', 'disabled');
+                $('#help_submit_send_now').attr('disabled', 'disabled');
+                $('#help_input_message').val('');
+                $('#help_input_subject').val('');
+            };
+            var initHelpMenu = function () {
+                setState("help-menu-mode", "faqs");
+                setState("help-menu-search-faqs", "search");
+                enableHelpMenuLeftPanel(true);
+                initHelpForm();
+                loadHelpArticles();
+            };
+            initHelpMenu();
+
+            $('#ticket_attachment_namespace').fileupload({
+                autoUpload: true,
+                disableInputButton: false,
+                replaceFileInput: true,
+                acceptFileTypes: /(\.|\/)(gif|jpg|jpeg|png|doc|docx|pdf)$/i,
+                maxFileSize: 10485760,
+                uploadTemplateId: 'tl-template-upload-ticket',
+                dropZone: null,
+                add: function (e, data) {
+                    var that = this;
+                    var $this = $(this);
+                    var validation = data.process(function () {
+                        return $this.fileupload('process', data);
+                    });
+
+                    validation.done(function () {
+                        isFileUploadedHelpForm = true;
+                        $('#help_submit_btn').attr('disabled', 'disabled');
+                        $.blueimp.fileupload.prototype.options.add.call(that, e, data);
+                    });
+
+                    validation.fail(function (data) {
+                        $('#ticket_attachment_namespace .note.error').html("<i class='icon-attention-circled tl-cursor-default'></i> " + data.files[data.index].error);
+                    });
+                },
+                done: function (e, data) {
+                    isFileUploadedHelpForm = false;
+                    var isValid = validateHelpForm();
+                    $('#help_submit_btn').attr('disabled', isValid ? null : 'disabled');
+                    $('#ticket_attachment_namespace table .files').html('');
+                }
+            });
+
+            $('#ticket_attachment_namespace').bind('fileuploadstart', function () {
+                myportal.app.isUploading = true;
+                keepSessionAlive = setInterval(function () { $.get("#/index/ping"); }, 300000);
+                $('#ticket_attachment_namespace .file-wrapper').hide();
+            });
+
+            $('#ticket_attachment_namespace').bind('fileuploadstop', function () {
+                myportal.app.isUploading = false;
+                clearInterval(keepSessionAlive);
+            });
+
+            $('#ticket_attachment_namespace').bind('fileuploadalways', function (e, data) {
+                $('#ticket_attachment_namespace .file-wrapper').show();
+            });
+
+            $('#tl-ticket-attachment-clear').click(function () {
+                resetHelpMenuAttachment();
+            });
+
+            $('#ticket_attachment_namespace').bind('fileuploaddone', function (e, data) {
+                if (data.result.success) {
+                    $('input[name="ticket_s3_attachment"]').val(data.result.data.ticket_s3_attachment);
+                    $('input[name="ticket_attachment_name"]').val(data.result.data.ticket_attachment_name);
+                    $('#tl-ticket-attachment-filename').attr("title", data.result.data.ticket_attachment_name).text(data.result.data.ticket_attachment_name.slice(0, 27));
+                    $('#ticket_attachment_namespace .fileinput-button').hide();
+                    $('#tl-ticket-attachment-area').show();
+                } else {
+                    $('#ticket_attachment_namespace .note.error').html("<i class='icon-attention-circled tl-cursor-default'></i> " + data.result.error);
+                }
+            });
+
+            $(document).on('click', '.tl-help-menu', function (e) {
+                /* Make the help menu stay open when click inside */
+                e.stopPropagation();
+            });
+            $('#help_submit_send_now').on('click', function (e) {
+                submitHelpForm();
+            });
+            $('#help_submit_btn').on('click', function (e) {
+                e.stopPropagation();
+                e.preventDefault();
+                var subject = $('#help_input_subject').val().trim();
+                lockHelpForm(true);
+                fetchHelpArticles(subject, function (articles) {
+                    lockHelpForm(false);
+                    if (articles && articles.length > 0) {
+                        var htmlCode = articlesToHTML(articles);
+                        $('#help_form_faq_suggestions').html(htmlCode);
+                        setState("help-menu-form-view", "suggestions");
+                        $('#help_form_faq_suggestions').scrollTop(0);
+                    } else {
+                        submitHelpForm();
+                    }
+                });
+            });
+            $(document).on('click', '#help_form_faq_suggestions li a', function (e) {
+                e.stopPropagation();
+                e.preventDefault();
+                var articleID = $(this).attr('data-article-id');
+                previewArticle('#help_form_faq_previewer', articleID);
+                setState("help-menu-form-view", "preview-faq");
+                $('#help_form_faq_previewer .tl-help-menu_article-previewer_content').scrollTop(0);
+                return false;
+            });
+            $(document).on('click', '#help_menu_faqs_links li a', function (e) {
+                e.stopPropagation();
+                e.preventDefault();
+                var articleID = $(this).attr('data-article-id');
+                previewArticle('#help_search_faq_previewer', articleID);
+                setState("help-menu-search-faqs", "preview-faq");
+                $('#help_search_faq_previewer .tl-help-menu_article-previewer_content').scrollTop(0);
+                return false;
+            });
+            var RESET_TOUR_ENDPOINT = "#/index/hidetips/showall:1";
+            var WELCOME_PAGE_URL = "#/dashboard/welcome";
+            $(document).on('click', '#restart_tour_btn', function (e) {
+                e.stopPropagation();
+                e.preventDefault();
+                myportal.app.ajax(RESET_TOUR_ENDPOINT, {
+                    success: function () {
+                        window.location = WELCOME_PAGE_URL;
+                    }
+                });
+            });
+            $(document).on('click', '[data-close-help-menu]', function (e) {
+                closeHelpMenu();
+                initHelpMenu();
+            });
+            $(document).on('click', '[data-open-menu-left-panel]', function (e) {
+                enableHelpMenuLeftPanel(true);
+            });
+
+            $('.tl-help-menu_faqs-links-list,.tl-help-menu_article-previewer_content').on('scroll', function (e) {
+                var isScrolledDown = $(this).scrollTop() > 0;
+                var headerElement = $(this).closest('.tl-help-menu_screen_part').find('.tl-help-menu_screen_header');
+                if (headerElement.length) {
+                    headerElement[isScrolledDown ? 'addClass' : 'removeClass']('tl-help-menu_screen_header--border');
+                }
+            });
+            $(document).on('keyup', '#help_search_faqs', debounce(function (e) {
+                var searchKey = $(this).val().trim();
+                if (searchKey.length === 0) {
+                    searchKey = defaultSearchKey;
+                }
+                loadHelpArticles(searchKey);
+            }, 600));
+            var openAndLockHelpMenu = function (open) {
+                if (open) {
+                    $('#tl-dropdown-help').addClass('open').find('.tl-help-menu').addClass('lock');
+                } else {
+                    $('#tl-dropdown-help').removeClass('open').find('.tl-help-menu').removeClass('lock');
+                    clearTicketAttachmentErrors();
+                }
+            };
+            $(document).on('mouseenter', '#tl-navigation-bar-handler .dropdown', function (e) {
+                var id = $(this).get(0).id;
+                if (id === "tl-dropdown-help") {
+                    openAndLockHelpMenu(true);
+                } else {
+                    openAndLockHelpMenu(false);
+                }
+            });
+            $(document).on('click', '.tl-help-menu-open-holder', function (e) {
+                openAndLockHelpMenu(false);
+            });
+            $(document).on('click', '.navbar-inner', function (e) {
+                openAndLockHelpMenu(false);
+            });
+            $(document).on('click', '#help_form_show_btn', function (e) {
+                var NOTIFY_HELP_FORM_APPEAR_ENDPOINT = "#/intercom/notify";
+                myportal.app.ajax(NOTIFY_HELP_FORM_APPEAR_ENDPOINT, {
+                    type: "POST",
+                    dataType: "json",
+                    data: {
+                        trigger: "user_clicked_contact_support",
+                        myToken: window.myToken || ""
+                    }
+                }, false);
+            });
+
+            $(document).on('click', '#chat_with_support_btn', function (e) {
+                e.preventDefault();
+                if ($(this).hasClass('chat-enabled') && $(this).hasClass('online')) {
+                    if (chatButtonMode == 'show') {
+                        widgetHandler('showAndOpen', true);
+                    }
+                    else if (chatButtonMode == 'hide') {
+                        widgetHandler('hideAndClose', true);
+                    }
+                }
+                else if ($(this).hasClass('chat-enabled') && $(this).hasClass('offline')) {
+                    $('#help_form_show_btn').trigger('click');
+                }
+                else if ($(this).hasClass('chat-disabled')) {
+                    window.location = $(this).attr('href');
+                }
+            });
+
+            var isFileUploaded = false;
+            var lockSuccessForm = function (lock) {
+                $('#success_manager_form')[lock ? 'addClass' : 'removeClass']('tl-help-menu_form--lock');
+                $('#success_submit_btn').attr('disabled', lock ? 'disabled' : null);
+            };
+            var validateSuccessForm = function () {
+                var subject = $('#success_input_subject').val().trim();
+                var message = $('#success_input_message').val().trim();
+                var isValid = subject.length > 0 && message.length > 0;;
+                return isValid;
+            };
+            $('#success_input_message,#success_input_subject').on('keyup', function (e) {
+                var isValid = validateSuccessForm();
+                if (!isFileUploaded) {
+                    $('#success_submit_btn').attr('disabled', isValid ? null : 'disabled');
+                }
+            });
+            var submitSuccessForm = function () {
+                lockSuccessForm(true);
+                setState("success-manager-form-state", "sending");
+                setState("success-manager-form-view", "sending");
+                var successForm = $('#success_manager_form');
+                var successMessageTTL = 5000; // How much time will display the success message
+                var data = new FormData(successForm.get(0));
+                var onSuccessSend = function () {
+                    setState("success-manager-form-view", "success");
+                    setTimeout(function () {
+                        lockSuccessForm(false);
+                        initSuccessForm();
+                    }, successMessageTTL);
+                };
+                var onFailedSend = function (errors) {
+                    setState("success-manager-form-view", "compose");
+                    setState("success-manager-form-state", "unsend");
+                    lockSuccessForm(false);
+                    var defaultErrorMessage = "Can't send the message. Please try again later.";
+                    var errorMessage = defaultErrorMessage;
+                    try {
+                        if (errors.length === 0) {
+                            errors.push(defaultErrorMessage);
+                        }
+                    } catch (e) {
+                        errors = [defaultErrorMessage];
+                    }
+                    for (var i = 0; i < errors.length; i++) {
+                        myportal.app.notify({
+                            type: "error",
+                            message: errors[i]
+                        });
+                    }
+                };
+                myportal.app.ajax(successForm.attr('data-submiturl'), {
+                    type: "POST",
+                    dataType: "json",
+                    data: data,
+                    cache: false,
+                    processData: false,
+                    contentType: false,
+                    success: (function (onSuccessSend, onFailedSend) {
+                        return function (response) {
+                            if (response.success) {
+                                onSuccessSend();
+                            } else {
+                                var errors = [];
+                                for (var i in response.data) {
+                                    if (response.data.hasOwnProperty(i) && typeof response.data[i] !== "undefined") {
+                                        errors.push(response.data[i]);
+                                    }
+                                }
+                                onFailedSend(errors);
+                            }
+                        };
+                    })(onSuccessSend, onFailedSend),
+                    error: (function (onSuccessSend, onFailedSend) {
+                        return function (response) {
+                            var errors = [];
+                            try {
+                                errors = [decodeURIComponent(response.responseJSON.message)];
+                            } catch (e) {
+                                errors = [];
+                            }
+                            onFailedSend(errors);
+                        };
+                    })(onSuccessSend, onFailedSend)
+                });
+            };
+            var resetSuccessManagerAttachment = function () {
+                setState("success-manager-form-attachment", "select-file");
+                $('input[name="success_attachment"]').val('');
+                $('input[name="success_attachment_hash"]').val('');
+                $('input[name="success_attachment_name"]').val('');
+                $('input[name="success_attachment_id"]').val('');
+                $('#success-attachment-filename').text('');
+                $('#success-attachment-area').hide();
+                $('#success_attachment_namespace .fileinput-button').show();
+            };
+            var initSuccessForm = function () {
+                setState("success-manager-form-state", "unsend");
+                setState("success-manager-form-view", "compose");
+                resetSuccessManagerAttachment();
+                $('#success_submit_btn').attr('disabled', 'disabled');
+                $('#success_input_message').val('');
+                $('#success_input_subject').val('');
+            };
+            initSuccessForm();
+
+            $('#success_attachment_namespace').fileupload({
+                autoUpload: true,
+                disableInputButton: false,
+                replaceFileInput: true,
+                acceptFileTypes: /(\.|\/)(gif|jpg|jpeg|png|doc|docx|pdf)$/i,
+                maxFileSize: 10485760,
+                uploadTemplateId: 'success-template-upload',
+                dropZone: null,
+                add: function (e, data) {
+                    var that = this;
+                    var $this = $(this);
+                    var validation = data.process(function () {
+                        return $this.fileupload('process', data);
+                    });
+
+                    validation.done(function () {
+                        isFileUploaded = true;
+                        $('#success_submit_btn').attr('disabled', 'disabled');
+                        $.blueimp.fileupload.prototype.options.add.call(that, e, data);
+                    });
+
+                    validation.fail(function (data) {
+                        $('#success_attachment_namespace .note.error').html("<i class='icon-attention-circled tl-cursor-default'></i> " + data.files[data.index].error);
+                    });
+                },
+                done: function (e, data) {
+                    isFileUploaded = false;
+                    var isValid = validateSuccessForm();
+                    $('#success_submit_btn').attr('disabled', isValid ? null : 'disabled');
+
+                    $('#success_attachment_namespace table .files').html('');
+                }
+            });
+
+            $('#success_attachment_namespace').bind('fileuploadstart', function () {
+                myportal.app.isUploading = true;
+                keepSessionAlive = setInterval(function () { $.get("#/index/ping"); }, 300000);
+                $('#success_attachment_namespace .file-wrapper').hide();
+            });
+
+            $('#success_attachment_namespace').bind('fileuploadstop', function () {
+                myportal.app.isUploading = false;
+                clearInterval(keepSessionAlive);
+            });
+
+            $('#success_attachment_namespace').bind('fileuploadalways', function (e, data) {
+                $('#success_attachment_namespace .file-wrapper').show();
+            });
+
+            $('#success-attachment-clear').click(function () {
+                resetSuccessManagerAttachment();
+            });
+
+            $('#success_attachment_namespace').bind('fileuploaddone', function (e, data) {
+                if (data.result.success) {
+                    $('input[name="success_attachment_hash"]').val(data.result.data.file_hash);
+                    $('input[name="success_attachment_name"]').val(data.result.data.filename);
+                    $('input[name="success_attachment_id"]').val(data.result.data.file_id);
+                    $('#success-attachment-filename').attr("title", data.result.data.filename).text(data.result.data.filename.slice(0, 27));
+                    $('#success_attachment_namespace .fileinput-button').hide();
+                    $('#success-attachment-area').show();
+                } else {
+                    $('#success_attachment_namespace .note.error').html("<i class='icon-attention-circled tl-cursor-default'></i> " + data.result.error);
+                }
+            });
+
+            $('#success_submit_btn').on('click', function (e) {
+                e.stopPropagation();
+                e.preventDefault();
+                submitSuccessForm();
+            });
+        });
+
+        function buildCmsMenu() {
+            $('#tl-cms-page-dropdown-more .dropdown-menu li').each(function () {
+                $('#tl-cms-page-dropdown-more').before($(this));
+            });
+
+            $('#tl-cms-page-dropdown-more').hide();
+
+            if ($(window).width() < 980) {
+                $('.nav-collapse li.tl-cms-page').fadeIn(100);
+                return;
+            }
+
+            var availableNavSpace = $('.nav-collapse').width();
+            var cmsMenuEntriesSpace = 0;
+            $('.nav-collapse li:not(.tl-cms-page)').each(function () { availableNavSpace -= $(this).outerWidth(true); });
+            availableNavSpace -= $('.brand').outerWidth(true);
+            $('.nav-collapse li.tl-cms-page').each(function () { cmsMenuEntriesSpace += $(this).outerWidth(true); });
+
+            if (cmsMenuEntriesSpace > availableNavSpace) {
+                $('#tl-cms-page-dropdown-more').fadeIn(100);
+                $('#tl-cms-page-dropdown-more-divider').fadeIn(100);
+                availableNavSpace -= $('#tl-cms-page-dropdown-more').outerWidth(true);
+                availableNavSpace -= $('#tl-cms-page-dropdown-more-divider').outerWidth(true);
+            }
+
+            var firstIteration = true;
+            cmsMenuEntriesSpace = 0;
+
+            $('.nav-collapse li.tl-cms-page').each(function (index) {
+                cmsMenuEntriesSpace += $(this).outerWidth(true);
+
+                if (cmsMenuEntriesSpace > availableNavSpace) {
+                    $(this).appendTo('#tl-cms-page-dropdown-more .dropdown-menu');
+                }
+                else {
+                    if (firstIteration) {
+                        $(this).prependTo('.nav-collapse ul[class!="dropdown-menu"]');
+                        firstIteration = false;
+                    }
+                    else {
+                        $('.nav-collapse li.tl-cms-page').eq(index - 1).after($(this));
+                    }
+                }
+            });
+            $('.nav-collapse li.tl-cms-page').fadeIn(100);
+        }
+    </script>
+
+    <script id="tl-template-upload-ticket" type="text/x-tmpl">
+{% for (var i=0, file; file=o.files[i]; i++) { %}
+	<tr class="template-upload fade">
+		<td>
+			<strong class="error text-danger"></strong>
+			<div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+				<div class="bar bar-success progress-bar progress-bar-success" style="width: 0%;"></div>
+			</div>
+		</td>
+	</tr>
+{% } %}
+</script>
+
+    <script id="success-template-upload" type="text/x-tmpl">
+{% for (var i=0, file; file=o.files[i]; i++) { %}
+	<tr class="template-upload fade">
+		<td>
+			<strong class="error text-danger"></strong>
+			<div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+				<div class="bar bar-success progress-bar progress-bar-success" style="width: 0%;"></div>
+			</div>
+		</td>
+	</tr>
+{% } %}
+</script>
+
+    <div class="container ">
+
+
+
+        <div class="row">
+            <div class="span12">
+                <div class="well hide" id="tl-learner-instructor-extra-well"></div>
+
+                <div class="tl-title tl-ellipsis">
+                    <span class="tl-box-title-options"></span>Home
+                </div>
+                <div class="tl-box tl-box-border ">
+                    <div class="row">
+                        <div class="span12">
+                            <div class="tl-content-wide">
+                                <div class="dataTables_filter pull-none" id="grid_course_catalog_filter"
+                                    style="margin: 7px 0px 0px 7px;">
+                                    <label style="float: left;">
+                                        <div class="tl-can-clear-input">
+                                            <input value="" id="tl-grid-mode-search" type="text"
+                                                class="span2 search-query" autocomplete="off"
+                                                placeholder="Search my courses">
+                                            <div class="tl-clear-input-btn">
+                                                <i class="icon-remove"></i>
+                                            </div>
+                                        </div>
+                                    </label>
+                                    <div class="btn-group pull-right" id="tl-catalog-switcher"
+                                        data-toggle="buttons-radio" style="margin: 0px 3px 0px 7px;">
+                                        <button type="button" class="btn "
+                                            onclick="location='#/dashboard/index/mode:list'"><i
+                                                class="icon-th-list tl-icon17"></i></button>
+                                        <button type="button" class="btn active"
+                                            onclick="location='#/dashboard/index/mode:grid'"><i
+                                                class="icon-th tl-icon17"></i></button>
+                                    </div>
+                                    <div class="dropdown tl-dashboard-sorting-wrapper pull-right hidden-phone">
+                                        <a href="#" class="dropdown-toggle tl-dashboard-sorting pull-right btn"
+                                            data-toggle="dropdown" data-target="#" role="button" title="Order"><i
+                                                class="icon-layers tl-icon20"></i>&nbsp;<span
+                                                class="tl-current-sorting-type">Name</span></a>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li class="nav-header">Order</li>
+                                            <li><a class="tl-cursor-pointer sorting-type-option active-sorting-type"
+                                                    href="#/dashboard/index/sort:name">Name</a>
+                                            </li>
+                                            <li><a class="tl-cursor-pointer sorting-type-option "
+                                                    href="#/dashboard/index/sort:date">Date</a>
+                                            </li>
+                                            <li><a class="tl-cursor-pointer sorting-type-option "
+                                                    href="#/dashboard/index/sort:status">Status</a>
+                                            </li>
+                                            <li><a class="tl-cursor-pointer sorting-type-option "
+                                                    href="#/dashboard/index/sort:time">Last
+                                                    updated</a></li>
+                                            <hr style="margin: 5px 0px;">
+                                            <label class="checkbox" id="tl-dashboard-grid-show-categories-label"
+                                                title="Show categories"><input id="tl-dashboard-grid-show-categories"
+                                                    type="checkbox">&nbsp;Categories</label>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="clear" style="height: 10px;"></div>
+                                <div id="tl-dashboard-course-wrapper" class="hide" style="display: block;">
+                                    <div class="span3 tl-grid-dashboard-course-wrapper" data-coursesset="0">
+                                        <div class="tl-grid-dashboard-image-wrapper text-center"><a
+                                                href="#/trainer/course/id:123"><img class="avatar-square"
+                                                    src="images/instructor/course1.png"></a>
+                                            <div class="mask hidden-phone"><i class="icon-pencil" title="Go to course"
+                                                    onclick="location='#/trainer/course/id:123'"></i><i
+                                                    class="icon-info-circle tl-course-info" title="Course info"
+                                                    data-url="#/course/info/course_id:123"></i>
+                                            </div>
+                                        </div>
+                                        <div class="tl-grid-dashboard-course-title text-center">
+                                            <div class="coursename tl-bold-item tl-ellipsis"><a
+                                                    href="#/trainer/course/id:123"><span
+                                                        title="Introduction to TalentLMS (001)"
+                                                        class="tl-formatted-course-name">Introduction to TalentLMS <span
+                                                            class="tl-formatted-course-code">(001)</span></span></a>
+                                            </div>
+                                            <div class="coursestatus"></div>
+                                        </div>
+                                    </div>
+                                    <div class="span3 tl-grid-dashboard-course-wrapper" data-coursesset="0">
+                                        <div class="tl-grid-dashboard-image-wrapper text-center"><a
+                                                href="#/trainer/course/id:124"><img class="avatar-square"
+                                                    src="images/instructor/course2.png"></a>
+                                            <div class="mask hidden-phone"><i class="icon-pencil" title="Go to course"
+                                                    onclick="location='#/trainer/course/id:124'"></i><i
+                                                    class="icon-info-circle tl-course-info" title="Course info"
+                                                    data-url="#/course/info/course_id:124"></i>
+                                            </div>
+                                        </div>
+                                        <div class="tl-grid-dashboard-course-title text-center">
+                                            <div class="coursename tl-bold-item tl-ellipsis"><a
+                                                    href="#/trainer/course/id:124"><span
+                                                        title="Advanced Features of TalentLMS (002)"
+                                                        class="tl-formatted-course-name">Advanced Features of TalentLMS
+                                                        <span class="tl-formatted-course-code">(002)</span></span></a>
+                                            </div>
+                                            <div class="coursestatus"></div>
+                                        </div>
+                                    </div>
+                                    <div class="span3 tl-grid-dashboard-course-wrapper" data-coursesset="0">
+                                        <div class="tl-grid-dashboard-image-wrapper text-center"><a
+                                                href="#/trainer/course/id:46"><img class="avatar-square"
+                                                    src="images/instructor/course3.png"></a>
+                                            <div class="mask hidden-phone"><i class="icon-pencil" title="Go to course"
+                                                    onclick="location='#/trainer/course/id:46'"></i><i
+                                                    class="icon-info-circle tl-course-info" title="Course info"
+                                                    data-url="#/course/info/course_id:46"></i>
+                                            </div>
+                                        </div>
+                                        <div class="tl-grid-dashboard-course-title text-center">
+                                            <div class="coursename tl-bold-item tl-ellipsis"><a
+                                                    href="#/trainer/course/id:46"><span
+                                                        title="Content and TalentLMS (003)"
+                                                        class="tl-formatted-course-name">Content and TalentLMS <span
+                                                            class="tl-formatted-course-code">(003)</span></span></a>
+                                            </div>
+                                            <div class="coursestatus"></div>
+                                        </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                    <div class="span3 tl-grid-dashboard-course-wrapper" data-coursesset="0">
+                                        <div class="tl-grid-dashboard-image-wrapper text-center"><a
+                                                href="#/trainer/course/id:122"><img class="avatar-square"
+                                                    src="images/instructor/course4.png"></a>
+                                            <div class="mask hidden-phone"><i class="icon-pencil" title="Go to course"
+                                                    onclick="location='#/trainer/course/id:122'"></i><i
+                                                    class="icon-info-circle tl-course-info" title="Course info"
+                                                    data-url="#/course/info/course_id:122"></i>
+                                            </div>
+                                        </div>
+                                        <div class="tl-grid-dashboard-course-title text-center">
+                                            <div class="coursename tl-bold-item tl-ellipsis"><a
+                                                    href="#/trainer/course/id:122"><span
+                                                        title="Getting Started With eLearning (004)"
+                                                        class="tl-formatted-course-name">Getting Started With eLearning
+                                                        <span class="tl-formatted-course-code">(004)</span></span></a>
+                                            </div>
+                                            <div class="coursestatus"></div>
+                                        </div>
+                                    </div>
+                                    <div class="span3 tl-grid-dashboard-course-wrapper" data-coursesset="0">
+                                        <div class="tl-grid-dashboard-image-wrapper text-center"><a
+                                                href="#/trainer/course/id:113"><img class="avatar-square"
+                                                    src="images/instructor/course5.png"></a>
+                                            <div class="mask hidden-phone"><i class="icon-pencil" title="Go to course"
+                                                    onclick="location='#/trainer/course/id:113'"></i><i
+                                                    class="icon-info-circle tl-course-info" title="Course info"
+                                                    data-url="#/course/info/course_id:113"></i>
+                                            </div>
+                                        </div>
+                                        <div class="tl-grid-dashboard-course-title text-center">
+                                            <div class="coursename tl-bold-item tl-ellipsis"><a
+                                                    href="#/trainer/course/id:113"><span
+                                                        title="Employee Training 101 (005)"
+                                                        class="tl-formatted-course-name">Employee Training 101 <span
+                                                            class="tl-formatted-course-code">(005)</span></span></a>
+                                            </div>
+                                            <div class="coursestatus"></div>
+                                        </div>
+                                    </div>
+                                    <div class="span3 tl-grid-dashboard-course-wrapper" data-coursesset="0">
+                                        <div class="tl-grid-dashboard-image-wrapper text-center"><a
+                                                href="#/trainer/course/id:125"><img class="avatar-square"
+                                                    src="images/instructor/course6.png"></a>
+                                            <div class="mask hidden-phone"><i class="icon-pencil" title="Go to course"
+                                                    onclick="location='#/trainer/course/id:125'"></i><i
+                                                    class="icon-info-circle tl-course-info" title="Course info"
+                                                    data-url="#/course/info/course_id:125"></i>
+                                            </div>
+                                        </div>
+                                        <div class="tl-grid-dashboard-course-title text-center">
+                                            <div class="coursename tl-bold-item tl-ellipsis"><a
+                                                    href="#/trainer/course/id:125"><span
+                                                        title="What is TalentLibrary? (006)"
+                                                        class="tl-formatted-course-name">What is TalentLibrary? <span
+                                                            class="tl-formatted-course-code">(006)</span></span></a>
+                                            </div>
+                                            <div class="coursestatus"></div>
+                                        </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                    <div class="span3 tl-grid-dashboard-course-wrapper" data-coursesset="0">
+                                        <div class="tl-grid-dashboard-image-wrapper text-center"><a
+                                                href="#/trainer/course/id:128"><img class="avatar-square"
+                                                    src="images/instructor/unknown_x4.png"></a>
+                                            <div class="mask hidden-phone"><i class="icon-pencil" title="Go to course"
+                                                    onclick="location='#/trainer/course/id:128'"></i><i
+                                                    class="icon-info-circle tl-course-info" title="Course info"
+                                                    data-url="#/course/info/course_id:128"></i>
+                                            </div>
+                                        </div>
+                                        <div class="tl-grid-dashboard-course-title text-center">
+                                            <div class="coursename tl-bold-item tl-ellipsis"><a
+                                                    href="#/trainer/course/id:128"><span title="Testing (111)"
+                                                        class="tl-formatted-course-name">Testing
+                                                        <span class="tl-formatted-course-code">(111)</span></span></a>
+                                            </div>
+                                            <div class="coursestatus"></div>
+                                        </div>
+                                    </div>
+                                    <div class="span3 tl-grid-dashboard-course-wrapper" data-coursesset="0">
+                                        <div class="tl-grid-dashboard-image-wrapper text-center"><a
+                                                href="#/trainer/course/id:130"><img class="avatar-square"
+                                                    src="images/instructor/unknown_x4.png"></a>
+                                            <div class="mask hidden-phone"><i class="icon-pencil" title="Go to course"
+                                                    onclick="location='#/trainer/course/id:130'"></i><i
+                                                    class="icon-info-circle tl-course-info" title="Course info"
+                                                    data-url="#/course/info/course_id:130"></i>
+                                            </div>
+                                        </div>
+                                        <div class="tl-grid-dashboard-course-title text-center">
+                                            <div class="coursename tl-bold-item tl-ellipsis"><a
+                                                    href="#/trainer/course/id:130"><span title="Drwaing"
+                                                        class="tl-formatted-course-name">Drwaing</span></a></div>
+                                            <div class="coursestatus"></div>
+                                        </div>
+                                    </div>
+                                    <div class="span3 tl-grid-dashboard-course-wrapper" data-coursesset="0">
+                                        <div class="tl-grid-dashboard-image-wrapper text-center"><a
+                                                href="#/trainer/course/id:129"><img class="avatar-square"
+                                                    src="images/instructor/unknown_x4.png"></a>
+                                            <div class="mask hidden-phone"><i class="icon-pencil" title="Go to course"
+                                                    onclick="location='#/trainer/course/id:129'"></i><i
+                                                    class="icon-info-circle tl-course-info" title="Course info"
+                                                    data-url="#/course/info/course_id:129"></i>
+                                            </div>
+                                        </div>
+                                        <div class="tl-grid-dashboard-course-title text-center">
+                                            <div class="coursename tl-bold-item tl-ellipsis"><a
+                                                    href="#/trainer/course/id:129"><span title="Science"
+                                                        class="tl-formatted-course-name">Science</span></a></div>
+                                            <div class="coursestatus"></div>
+                                        </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                    <div class="span3 tl-grid-dashboard-course-wrapper" data-coursesset="0">
+                                        <div class="tl-grid-dashboard-image-wrapper text-center"><a
+                                                href="#/trainer/course/id:127"><img class="avatar-square"
+                                                    src="images/instructor/unknown_x4.png"></a>
+                                            <div class="mask hidden-phone"><i class="icon-pencil" title="Go to course"
+                                                    onclick="location='#/trainer/course/id:127'"></i><i
+                                                    class="icon-info-circle tl-course-info" title="Course info"
+                                                    data-url="#/course/info/course_id:127"></i>
+                                            </div>
+                                        </div>
+                                        <div class="tl-grid-dashboard-course-title text-center">
+                                            <div class="coursename tl-bold-item tl-ellipsis"><a
+                                                    href="#/trainer/course/id:127"><span title="World Of Music"
+                                                        class="tl-formatted-course-name">World Of
+                                                        Music</span></a></div>
+                                            <div class="coursestatus"></div>
+                                        </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                    <div class="tl-search-empty-result text-center hide">
+                                        <div>
+                                            <img src="images/empty_states/noCatalog.svg" class="tl-empty-results-img">
+                                        </div>
+                                        <div>
+                                            <h3>Oh, no. Nothing was found.</h3>
+                                        </div>
+                                        <div class="tl-empty-result-description">
+                                            Use a different term and try again. </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tl-content-sidebar tl-instructor-content-sidebar">
+                                <div class="tl-icons-block" onclick="location='#/course/index/gridPref:reset'">
+                                    <span class="tl-icon-stack">
+                                        <i class="icon-circle tl-icon-stack-background"></i>
+                                        <i class="icon-book tl-icon-stack-content"></i>
+                                    </span>
+                                    <div class="tl-icon-label">
+                                        <div class="tl-ellipsis tl-bold-link"><a href="#/course/index/gridPref:reset"
+                                                title="Courses">Courses</a></div>
+                                        <div><a href="#/course/create">Add course</a></div>
+                                    </div>
+                                </div>
+                                <div class="tl-icons-block" onclick="location='#/group/index/gridPref:reset'">
+                                    <span class="tl-icon-stack">
+                                        <i class="icon-circle tl-icon-stack-background"></i>
+                                        <i class="icon-users tl-icon-stack-content"></i>
+                                    </span>
+                                    <div class="tl-icon-label">
+                                        <div class="tl-ellipsis tl-bold-link"><a href="#/group/index/gridPref:reset"
+                                                title="Groups">Groups</a></div>
+                                        <div><a href="#/group/create">Add group</a></div>
+                                    </div>
+                                </div>
+                                <div class="tl-icons-block" onclick="location='#/conference/index'">
+                                    <span class="tl-icon-stack">
+                                        <i class="icon-circle tl-icon-stack-background"></i>
+                                        <i class="icon-monitor tl-icon-stack-content"></i>
+                                    </span>
+                                    <div class="tl-icon-label">
+                                        <div class="tl-ellipsis tl-bold-link"><a href="#/conference/index"
+                                                title="Conferences">Conferences</a></div>
+                                        <div><a href="#/conference/create">Add conference</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tl-icons-block" onclick="location='#/discussion/index'">
+                                    <span class="tl-icon-stack">
+                                        <i class="icon-circle tl-icon-stack-background"></i>
+                                        <i class="icon-comment tl-icon-stack-content"></i>
+                                    </span>
+                                    <div class="tl-icon-label">
+                                        <div class="tl-ellipsis tl-bold-link"><a href="#/discussion/index"
+                                                title="Discussions">Discussions</a></div>
+                                        <div>
+                                            <a href="#/discussion/index/create:1">Add
+                                                discussion</a>
+                                            <div id="tl-dashboard-discussions-clear" class="clear"
+                                                style="margin-bottom: 5px; display: none;"></div>
+                                            <span class="badge tl-discussions-stats pull-none invisible"
+                                                title="0 Active / 0 Today" style="display: none;">
+                                                <i class="icon-clock"></i>
+                                                <span class="tl-discussions-today pull-none">0</span>
+                                                <!--<i class="icon-calendar"></i>
+					<span class="tl-discussions-active pull-none">0</span>-->
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tl-icons-block" onclick="location='#/calendar/index'">
+                                    <span class="tl-icon-stack">
+                                        <i class="icon-circle tl-icon-stack-background"></i>
+                                        <i class="icon-calendar tl-icon-stack-content"></i>
+                                    </span>
+                                    <div class="tl-icon-label">
+                                        <div class="tl-ellipsis tl-bold-link"><a href="#/calendar/index"
+                                                title="Calendar">Calendar</a></div>
+                                        <div>
+                                            <a href="#/calendar/index/create:1">Add event</a>
+                                            <div id="tl-dashboard-calendar-events-clear" class="clear"
+                                                style="margin-bottom: 5px; display: none;"></div>
+                                            <span class="badge tl-calendar-events-stats pull-none invisible"
+                                                title="0 in the next 7 days" style="display: none;">
+                                                <i class="icon-clock"></i>
+                                                <span class="tl-calendar-events-next pull-none">0</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="modal fade hide" id="tl-course-info-modal" style="outline: none;" tabindex="-1">
+                                <div class="modal-header">
+                                    <a href="javascript:void(0)" class="close" data-dismiss="modal">×</a>
+                                    <h3>Course info</h3>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="span1 pull-left padded">
+                                        <img id="tl-course-info-modal-avatar" class="avatar-square"
+                                            src="images/unknown_big.png">
+                                    </div>
+                                    <h3 id="tl-course-info-modal-name"></h3>
+                                    <div id="tl-course-info-modal-description" class="tl-course-description"></div>
+                                    <div id="tl-course-info-modal-description-tmp"></div>
+                                    <p id="tl-course-info-modal-fields" class="tl-course-fields"></p>
+                                    <div class="clear">
+                                        <fieldset>
+                                            <legend>Content</legend>
+                                            <div id="tl-course-info-modal-no-units" class="alert alert-info">
+                                                <h4>Empty course</h4>
+                                                There are no units at the moment
+                                            </div>
+                                            <ul class="tl-unit-list" id="tl-course-info-modal-unit-list"></ul>
+                                        </fieldset>
+                                    </div>
+                                    <div class="clear" id="tl-course-info-modal-rules">
+                                        <fieldset>
+                                            <legend>Completion rules</legend>
+                                            <ul class="tl-unit-list" id="tl-course-info-modal-rules-list"></ul>
+                                        </fieldset>
+                                    </div>
+                                    <div class="clear" id="tl-course-info-modal-prerequisites">
+                                        <fieldset>
+                                            <legend>Prerequisites</legend>
+                                            <ul class="tl-unit-list tl-course-info-prerequisites-list"
+                                                id="tl-course-info-modal-prerequisites-list"></ul>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <a href="javascript:void(0)" data-dismiss="modal" class="btn">Close</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <script type="text/javascript">
+                    $(document).ready(function () {
+
+                        $('#tl-dashboard-course-wrapper').show();
+
+
+                        $('.tl-grid-dashboard-course-container .tl-tree-category').on('click', function () {
+                            $(this).toggleClass("dynatree-expanded");
+                        });
+
+                        $('#tl-dashboard-grid-show-categories').on('change', function () {
+                            window.location = '#/dashboard/index/gridShowCategories:##showcategories##'.replace('##showcategories##', $(this).is(":checked") ? 1 : 0);
+                        });
+
+
+
+
+
+                        $(".tl-tree-course").mouseover(function () {
+                            $(this).find(".tl-instructor-goto:first").css('visibility', 'visible');
+                        }).mouseout(function () {
+                            if (!$(this).find(".tl-instructor-goto:first").hasClass('tl-visible-popover')) {
+                                $(this).find(".tl-instructor-goto:first").css('visibility', 'hidden');
+                            }
+                        });
+
+                        var url = '#/discussion/stats';
+
+                        $.ajax(url, {
+                            success: function (response) {
+                                if (response.success) {
+                                    if (response.data.weekly > 0) {
+                                        $('.tl-discussions-today').text(response.data.weekly);
+                                        $('.tl-discussions-stats').attr('title', response.data.weekly + ' active in the past 7 days').removeClass('invisible');
+                                    }
+                                    else {
+                                        $('.tl-discussions-stats, #tl-dashboard-discussions-clear').hide();
+                                    }
+                                }
+                            },
+                            dataType: 'json'
+                        });
+
+                        var url = '#/calendar/stats';
+
+                        $.ajax(url, {
+                            success: function (response) {
+                                if (response.success) {
+                                    if (response.data.nexteventscount > 0) {
+                                        $('.tl-calendar-events-next').text(response.data.nexteventscount);
+                                        $('.tl-calendar-events-stats').attr('title', response.data.nexteventscount + ' in the next 7 days').removeClass('invisible');
+                                    }
+                                    else {
+                                        $('.tl-calendar-events-stats, #tl-dashboard-calendar-events-clear').hide();
+                                    }
+                                }
+                            },
+                            dataType: 'json'
+                        });
+                    });
+                </script>
+            </div>
+        </div>
+
+        <footer class="footer text-right">
+            <a href="#" class="secured_site_icon" id="tl-footer-secured" title="This is a secured site">
+                <span class="tl-icon-stacked">
+                    <i class="icon-circle tl-icon-stacked-1"></i>
+                    <i class="icon-lock-1 tl-icon-stacked-2"></i>
+                </span>
+            </a>
+            TalentLMS 4.15
+        </footer>
+        <div id="secured_site_modal" class="modal fade secured-site-modal hide" tabindex="-1">
+            <div class="modal-header">
+                <a class="close" data-dismiss="modal">×</a>
+                <h3 class="secured-site-modal_header">
+                    This is a secured site </h3>
+            </div>
+            <div class="modal-body">
+                <div class="secured-site-modal_img-container">
+                    <a href="http://www.positivessl.com" class="none-decoration" target="_blank"
+                        title="SSL Certificate Authority">
+                        <img src="images/secured-site-header.png" alt="SSL Certificate Authority"
+                            title="SSL Certificate Authority">
+                    </a>
+                </div>
+                <div class="secured-site-modal_text">
+                    <p>
+                        A secure site is a web site that is protected from prying eyes. When information passes back and
+                        forth between our server and your computer, all the information is encrypted. That means that if
+                        anyone were to 'listen in' and see this data, they will not be able to decrypt or read what it
+                        means. </p>
+                    <p>
+                        demo77 uses this security (known as SSL) throughout the site and all its subdomains to make sure
+                        that <b>your personal information is not accessible by anyone but yourself</b>. </p>
+                </div>
+            </div>
+        </div>
+        <div id="tl-gamification-points-message" class="hide hidden-phone text-center tl-bold-item"></div>
+        <div id="tl-gamification-badges-message" class="hide hidden-phone">
+            <div class="tl-badge-image-message-wrapper">
+                <img class="tl-badge-image pull-left image60x60">
+                <div class="tl-badge-message text-center tl-bold-item"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade hide" id="tl-export-to-csv-modal" style="outline: none;" tabindex="-1">
+        <div class="modal-header">
+            <h3>Save as CSV</h3>
+        </div>
+        <div class="modal-body">
+            <div class="text-center">Creating the export file. Please wait...</div>
+            <div class="progress progress-striped progress-success active" style="margin: 15px 0px;">
+                <div class="bar" style="width: 100%;"></div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <div class="pull-left span4 text-left hide" style="margin: 0px 5px 0px 0px;">
+                <span>Please wait while the operation is cancelled</span>
+            </div>
+            <div class="pull-right">
+                <a href="javascript:void(0)" class="btn" id="tl-cancel-export">Cancel</a>
+            </div>
+        </div>
+    </div>
+    <div id="tl-export-to-csv-token" class="hide"></div>
+
+    <div class="modal fade hide" id="tl-confirm" style="outline: none;" tabindex="-1">
+        <div class="modal-header">
+            <a href="javascript:void(0)" class="close" data-dismiss="modal">×</a>
+            <h3 class="tl-modal-header">Notice</h3>
+        </div>
+        <div class="modal-body">
+            <p id="tl-modal-body"></p>
+        </div>
+        <div class="modal-footer">
+            <a id="tl-confirm-submit" class="btn btn-danger"><i class="icon-trash"></i>&nbsp;Delete</a>
+            <a id="tl-confirm-continue" class="btn btn-danger hide"><i class="icon-trash"></i>&nbsp;Delete, don't keep
+                asking</a>
+            <a class="btn" data-dismiss="modal">Cancel</a>
+        </div>
+    </div>
+    <div class="modal fade hide" id="tl-confirm-double" style="outline: none;" tabindex="-1">
+        <div class="modal-header">
+            <a href="javascript:void(0)" class="close" data-dismiss="modal">×</a>
+            <h3 class="tl-modal-header-double">Notice</h3>
+        </div>
+        <div class="modal-body">
+            <p id="tl-modal-body-double"></p>
+        </div>
+        <div class="modal-footer">
+            <a id="tl-confirm-submit-double" class="btn btn-danger"><i class="icon-trash"></i>&nbsp;Delete</a>
+            <a id="tl-confirm-submit-double2" class="btn btn-danger"></a>
+            <a class="btn" data-dismiss="modal">Cancel</a>
+        </div>
+    </div>
+    <div class="modal fade hide" id="tl_leavepage_confirm" style="outline: none;" tabindex="-1">
+        <div class="modal-header">
+            <a href="javascript:void(0)" class="close" data-dismiss="modal">×</a>
+            <h3>Notice</h3>
+        </div>
+        <div class="modal-body">
+            <p></p>
+        </div>
+        <div class="modal-footer">
+            <a id="tl-leavepage" class="btn btn-danger"><i class="icon-trash"></i>&nbsp;Discard changes</a>
+            <a class="btn" data-dismiss="modal">Cancel</a>
+        </div>
+    </div>
+
+
+    <div class="modal fade hide" id="tl-relogin-modal" style="outline: none;" tabindex="-1">
+        <div class="modal-header text-center">
+            <h3>Just to be safe, we logged you out</h3>
+        </div>
+        <div class="modal-body">
+            <div class="text-center" style="padding: 10px 0px;">
+                <img src="images/lockout.svg">
+                <div style="margin-top: 15px;">Enter your password to pick up where you left off</div>
+                <form name="tl-relogin-form" method="post" action="#/dashboard/index/role:trainer"
+                    class="tl-form form-horizontal" id="tl-relogin-form" data-submiturl="#/index/relogin"><input
+                        type="hidden" name="_track_tl-relogin-form" value="1667149012" class="" id="1276059938"><input
+                        type="hidden" name="_redirect_" value="" class="" id="_redirect_"><input type="hidden"
+                        name="_myToken" value="ef1dfa353a14f63c03ba3006b68cba6d" class="" id="_myToken"><input
+                        type="hidden" name="appear_as_supervisor_after_relogin" value="" class="" id="168502028"><input
+                        type="hidden" name="relogin_role" value="trainer" class="" id="999835993"><input type="hidden"
+                        name="relogin_username" value="coir.high" class="" id="2017738230">
+                    <div class="control-group ">
+                        <div class="controls">
+                            <input type="password" name="relogin_password" value="" class="span4" id="265902479"
+                                placeholder="password" autocomplete="off" tabindex=""> <span class="help-block"></span>
+                        </div>
+                    </div>
+                    <input type="submit" name="submit_relogin" value="Login" class="btn btn-primary" id="1573669571"
+                        data-loading-text="Logging in..." tabindex="">
+                </form>
+                <div><a href="#/index">Logout</a></div>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+        $('body').on('touchstart.dropdown', '.dropdown-menu', function (e) { e.stopPropagation(); });	// Fix for https://github.com/twitter/bootstrap/issues/2975#issuecomment-6659992, should be removed if fixed in twitter bs 2.1.2 (or whenever)
+        myportal.app.translations['search'] = "Search";
+        myportal.app.translations['Completed'] = "Completed";
+        myportal.app.translations['cancel'] = "Cancel";
+        myportal.app.translations['ok'] = "Ok";
+        myportal.app.translations['save'] = "Save";
+        myportal.app.translations['save-as-new'] = "Save as new";
+        myportal.app.translations['more'] = "more";
+        myportal.app.translations['less'] = "less";
+        myportal.app.translations['remove'] = "Remove";
+        myportal.app.translations['reset'] = "Reset";
+        myportal.app.translations['refresh'] = "Refresh";
+        myportal.app.translations['notice'] = "Notice";
+        myportal.app.translations['reset-remove-certification'] = "Reset & remove certificate";
+        myportal.app.translations['activate'] = "activate";
+        myportal.app.translations['deactivate'] = "deactivate";
+        myportal.app.translations['search-courses'] = "Search courses";
+        myportal.app.translations['add-image'] = "Add image";
+        myportal.app.translations['change-image'] = "Change image";
+        myportal.app.translations['accepted-files'] = "Accepted files";
+        myportal.app.translations['max-file-size'] = "Max file size";
+        myportal.app.translations['switch-editor'] = "Switch between HTML and Source view";
+        myportal.app.translations['grid-more-results'] = "Show more results per page";
+        myportal.app.translations['grid-less-results'] = "Show less results per page";
+        myportal.app.translations['image-course-files'] = "Use an image from course files";
+        myportal.app.translations['use-image-url'] = "Use an image URL (http://...)";
+        myportal.app.translations['width'] = "Width";
+        myportal.app.translations['padding'] = "Padding";
+        myportal.app.translations['align-default'] = "Align (default)";
+        myportal.app.translations['align-left'] = "Align left";
+        myportal.app.translations['align-right'] = "Align right";
+        myportal.app.translations['make-changes'] = "Save changes";
+        myportal.app.translations['grid-start-end-total'] = "_START_ to _END_ of _TOTAL_";
+        myportal.app.translations['matrix-of-total'] = "of _TOTAL_";
+        myportal.app.translations['matrix-more-less-results'] = "Show more/less results per page";
+        myportal.app.translations['matrix-search-input-threshold'] = "Please use 3+ characters";
+        myportal.app.translations['search-users'] = "Search users";
+        myportal.app.translations['export'] = "Export";
+        myportal.app.translations['save-as-csv'] = "Save as CSV";
+        myportal.app.translations['active-file-upload'] = "There is an active file upload transfer";
+        myportal.app.translations['upload-leave-page'] = "Are you sure you want to leave this page? File upload will stop and you will lose all uploaded data.";
+        myportal.app.translations['unsaved-changes'] = "There are unsaved changes";
+        myportal.app.translations['changes-leave-page'] = "Are you sure you want to leave this page? You will lose all unsaved changes.";
+        myportal.app.translations['discard-draft'] = "Are you sure you want to delete the autosave? This action cannot be undone.";
+        myportal.app.translations['restore-draft'] = "Are you sure you want to restore the autosave? This action cannot be undone.";
+        myportal.app.translations['add'] = "Add";
+        myportal.app.translations['added'] = "Added";
+        myportal.app.translations['processing'] = "Processing...";
+        myportal.app.translations['validate'] = "Validate";
+        myportal.app.translations['click-to-start'] = "Start";
+        myportal.app.translations['reset-password'] = "Reset password";
+        myportal.app.translations['operation-completed-successfully'] = "Operation completed successfully";
+        myportal.app.translations['points'] = "points";
+        myportal.app.translations['badges'] = "badges";
+        myportal.app.translations['help-videos-unavailable'] = "Videos are not currently available";
+        myportal.app.translations['next'] = "Next";
+        myportal.app.translations['previous'] = "Previous";
+        myportal.app.translations['your-rating'] = "Your rating";
+        myportal.app.translations['reset-your-rating'] = "Reset your rating";
+        myportal.app.translations['creating-export'] = "Creating the export file. Please wait...";
+        myportal.app.translations['no-results-found'] = "No results were found. Please try again.";
+        myportal.app.translations['login'] = "Login";
+        myportal.app.translations['crop'] = "Crop";
+        myportal.app.translations['apply'] = "Apply";
+        myportal.app.translations['preview-certification-error'] = "An error occurred while generating the preview, try again later";
+        myportal.app.translations['preview'] = "Preview";
+        myportal.app.translations['wait-preview-generation'] = "Please wait while generating the preview";
+        myportal.app.translations['youtube'] = 'Youtube';
+        myportal.app.translations['uploaded-video'] = 'Uploaded video';
+        myportal.app.translations['days'] = 'days';
+        myportal.app.translations['pick-an-expiration-date'] = 'Pick an expiration date';
+        myportal.app.translations['duration'] = 'Duration';
+        myportal.app.translations['start-date'] = 'Start date';
+        myportal.app.translations['expiration-date'] = 'Expiration date';
+        myportal.app.translations['time-limit'] = 'Time limit';
+        myportal.app.translations['start-date-and-time-limit'] = 'Start date & Time limit';
+        myportal.app.translations['dtable-error'] = 'Failed to execute action (operation timed out)';
+        myportal.app.translations['generic-error'] = 'Oops, something went wrong! Please try reloading the page';
+
+        var isMobile = false;
+        var isRtl = false;
+        var general_css = '#/index/css/fmt:1666974789,tn:41,tv:0,ct:1';
+        var editorMaxUploadSize = '10485760';
+        var editorFormattedMaxUploadSize = '10 MB';
+        var editorAcceptedFileTypes = 'gif|jpg|jpeg|png';
+        var editorFormattedAcceptedFileTypes = 'gif, jpg, jpeg, png';
+        var imageAcceptedFileTypes = 'gif|jpg|jpeg|png';
+        var imageMaxUploadSize = '3145728';
+
+        var courseImageCanvasSizeWidth = '120';
+        var courseImageCanvasSizeHeight = '80';
+
+        var datepickerFormat = 'dd/mm/yyyy';
+        var showSelect2 = true;
+        var currentUserId = "1";
+        var currentUserName = "Mohit Gupta";
+        var currentUserEmail = "coir.high@gmail.com";
+        var currentUserCreatedOn = "1660556604";
+        var currentUserIntercomHash = '';
+        var myToken = "ef1dfa353a14f63c03ba3006b68cba6d";
+        var myEffectiveDomain = 'demo77.talentlms.com';
+        var myAdminDomain = '';
+        var gridExportChunkSize = 5000;
+        var gridExportProgressThreshold = 100;
+        var isDummy = false;
+        var sessionMaxLifeTime = 10800;
+        var checkSessionExpirationUrl = '#/index/checksessionexpiration';
+        var logourRedirectUrl = '';
+        var reloginRedirectUrl = '#/dashboard/index/role:trainer';
+        var enableRelogin = true;
+        var currency = '<span class="dollar-price">&#36;</span>';
+    </script>
+
+    <script type="text/javascript"></script>
+    <script type="text/javascript">
+        window.getTestIdAttr = function () {
+            return window.testIDAttr || "";
+        };
+        window.printTestId = function (testID) {
+            if (window.testEnvActive && (typeof testID !== 'undefined')) {
+                return window.getTestIdAttr() + '=' + testID;
+            } else {
+                return '';
+            }
+        };
+        jQuery.fn.printTestId = function (testID) {
+            var el = $(this[0]);
+            if (window.testEnvActive && (typeof testID !== 'undefined')) {
+                el.attr(window.getTestIdAttr(), testID);
+            }
+            return this;
+        };
+    </script>
+
+    <script>
+
+        var intercomAppId = "g4iweqc2";
+        window.intercomSettings.app_id = intercomAppId;
+        window.intercomSettings.user_id = "production-d627090-u1";
+        (function () {
+            var w = window;
+            var ic = w.Intercom;
+            if (typeof ic === "function") {
+                ic('reattach_activator');
+                ic('update', intercomSettings);
+            }
+            else {
+                var d = document;
+                var i = function () { i.c(arguments) };
+                i.q = [];
+                i.c = function (args) { i.q.push(args) };
+                w.Intercom = i;
+
+                function l() {
+                    var s = d.createElement('script');
+                    s.type = 'text/javascript';
+                    s.async = true;
+                    s.src = 'https://widget.intercom.io/widget/' + intercomAppId;
+                    var x = d.getElementsByTagName('script')[0];
+                    x.parentNode.insertBefore(s, x);
+                }
+
+                if (w.attachEvent) { w.attachEvent('onload', l); }
+                else { w.addEventListener('load', l, false); }
+            }
+        })();
+    </script>
+
+
+
+
+    <ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content" id="ui-id-1" tabindex="0"
+        style="display: none;"></ul><span role="status" aria-live="assertive" aria-relevant="additions"
+        class="ui-helper-hidden-accessible"></span><iframe id="intercom-frame"
+        style="position: absolute !important; opacity: 0 !important; width: 1px !important; height: 1px !important; top: 0 !important; left: 0 !important; border: none !important; display: block !important; z-index: -1 !important; pointer-events: none;"
+        aria-hidden="true" tabindex="-1" title="Intercom"></iframe>
+    <div class="intercom-lightweight-app">
+        <style id="intercom-lightweight-app-style" type="text/css">
+            @keyframes intercom-lightweight-app-launcher {
+                from {
+                    opacity: 0;
+                    transform: scale(0.5);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+            }
+
+            @keyframes intercom-lightweight-app-gradient {
+                from {
+                    opacity: 0;
+                }
+
+                to {
+                    opacity: 1;
+                }
+            }
+
+            @keyframes intercom-lightweight-app-messenger {
+
+                from {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+
+            }
+
+            .intercom-lightweight-app {
+                position: fixed;
+                z-index: 2147483001;
+                width: 0;
+                height: 0;
+                font-family: intercom-font, "Helvetica Neue", "Apple Color Emoji", Helvetica, Arial, sans-serif;
+            }
+
+            .intercom-lightweight-app-gradient {
+                position: fixed;
+                z-index: 2147483002;
+                width: 500px;
+                height: 500px;
+                bottom: 0;
+                right: 0;
+                pointer-events: none;
+                background: radial-gradient(ellipse at bottom right,
+                        rgba(29, 39, 54, 0.16) 0%,
+                        rgba(29, 39, 54, 0) 72%);
+                animation: intercom-lightweight-app-gradient 200ms ease-out;
+            }
+
+            .intercom-lightweight-app-launcher {
+                position: fixed;
+                z-index: 2147483003;
+                padding: 0 !important;
+                margin: 0 !important;
+                border: none;
+                bottom: 20px;
+                right: 20px;
+                max-width: 60px;
+                width: 60px;
+                max-height: 60px;
+                height: 60px;
+                border-radius: 50%;
+                background: #0071b2;
+                cursor: pointer;
+                box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.06), 0 2px 32px 0 rgba(0, 0, 0, 0.16);
+                transition: transform 167ms cubic-bezier(0.33, 0.00, 0.00, 1.00);
+                box-sizing: content-box;
+            }
+
+
+
+
+            .intercom-lightweight-app-launcher:focus {
+                outline: none;
+
+
+            }
+
+            .intercom-lightweight-app-launcher-icon {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 60px;
+                height: 60px;
+                transition: transform 100ms linear, opacity 80ms linear;
+            }
+
+            .intercom-lightweight-app-launcher-icon-open {
+
+                opacity: 1;
+                transform: rotate(0deg) scale(1);
+
+            }
+
+            .intercom-lightweight-app-launcher-icon-open svg {
+                width: 28px;
+                height: 32px;
+            }
+
+            .intercom-lightweight-app-launcher-icon-open svg path {
+                fill: rgb(255, 255, 255);
+            }
+
+            .intercom-lightweight-app-launcher-icon-self-serve {
+
+                opacity: 1;
+                transform: rotate(0deg) scale(1);
+
+            }
+
+            .intercom-lightweight-app-launcher-icon-self-serve svg {
+                height: 56px;
+            }
+
+            .intercom-lightweight-app-launcher-icon-self-serve svg path {
+                fill: rgb(255, 255, 255);
+            }
+
+            .intercom-lightweight-app-launcher-custom-icon-open {
+                max-height: 36px;
+                max-width: 36px;
+
+
+                opacity: 1;
+                transform: rotate(0deg) scale(1);
+
+            }
+
+            .intercom-lightweight-app-launcher-icon-minimize {
+
+                opacity: 0;
+                transform: rotate(-60deg) scale(0);
+
+            }
+
+            .intercom-lightweight-app-launcher-icon-minimize svg path {
+                fill: rgb(255, 255, 255);
+            }
+
+            .intercom-lightweight-app-messenger {
+                position: fixed;
+                z-index: 2147483003;
+                overflow: hidden;
+                background-color: white;
+                animation: intercom-lightweight-app-messenger 250ms cubic-bezier(0, 1.2, 1, 1);
+                transform-origin: bottom right;
+
+                width: 376px;
+                height: calc(100% - 40px);
+                max-height: 704px;
+                min-height: 250px;
+                right: 20px;
+                bottom: 20px;
+                box-shadow: 0 5px 40px rgba(0, 0, 0, 0.16);
+
+                border-radius: 8px;
+            }
+
+            .intercom-lightweight-app-messenger-header {
+                height: 75px;
+                background: linear-gradient(135deg,
+                        rgb(0, 113, 178) 0%,
+                        rgb(0, 48, 76) 100%);
+            }
+
+            .intercom-lightweight-app-messenger-footer {
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                min-height: 81px;
+                background: #fff;
+                font-size: 14px;
+                line-height: 21px;
+                border-top: 1px solid rgba(0, 0, 0, 0.05);
+                box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.05);
+            }
+
+            @media print {
+                .intercom-lightweight-app {
+                    display: none;
+                }
+            }
+        </style>
+    </div>
+</body>
+
+</html>

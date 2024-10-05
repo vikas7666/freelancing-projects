@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="LMS">
+	<meta property="og:title" content="LMS">
+	<meta property="og:description"
+		content="TalentLMS - Cloud based, Lean Learning Platform with an Emphasis on Usability and Easy Course Creation">
+
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0">
+	<meta http-equiv="Content-Language" content="en">
+	<meta charset="utf-8">
+	<meta name="keywords" content="lms, elearning, learning platform, cloud, saas">
+	<meta name="description"
+		content="TalentLMS - Cloud based, Lean Learning Platform with an Emphasis on Usability and Easy Course Creation">
+	<title>LMS</title>
+	<!-- css -->
+	<link href="css/animate.min.css" rel="stylesheet" type="text/css">
+	<link href="css/reset.css" rel="stylesheet" type="text/css">
+	<link href="favicon.ico" rel="shortcut icon">
+	<link href="css/toastr.min.css" rel="stylesheet" type="text/css">
+	<!--- js -->
+	<script src="js/login-544.min.js" type="text/javascript"></script>
+	<script async src="js/formenhancements.min.js" type="text/javascript"></script>
+
+</head>
+
+<body class="tl-body">
+	<div class="navbar">
+		<div class="navbar-inner">
+			<div class="container-fluid nav-container" id="tl-navigation-bar-handler">
+				<a class="btn btn-navbar hamburger hamburger--slider hamburger--small hamburger--collapse"
+					data-toggle="collapse" data-target=".nav-collapse">
+					<span class="hamburger-box">
+						<span class="hamburger-inner"></span>
+					</span>
+				</a>
+				<a class="brand" href="index"><img src="images/talent_big.png" class="avatar-square"></a>
+				<div id="tl-loading-pane" class="hide affix text-center">
+					<p><img src="images/loading-small.gif" class="tl-loader-small"></p>
+				</div>
+				<div class="nav-collapse collapse">
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="preview_modal_nav" class="modal fade preview-modal hide" tabindex="-1"></div>
+
+	<script type="text/javascript">
+		$(document).ready(function () {
+			// Auto open header menus
+			$('#tl-dropdown-roles, #tl-dropdown-messages, #tl-dropdown-help, #tl-dropdown-goto, #tl-cms-page-dropdown-more').mouseenter(function (e) {
+				if (!$(this).hasClass('open') && $(window).width() >= 980) {
+					$(this).addClass("open autoopened");
+				}
+			});
+			$('#tl-dropdown-roles, #tl-dropdown-messages, #tl-dropdown-help, #tl-dropdown-goto, #tl-cms-page-dropdown-more').mouseleave(function () {
+				if ($(this).hasClass('open') && $(this).hasClass('autoopened')) {
+					$(this).removeClass("open autoopened");
+				}
+			});
+			//empty #preview_modal_nav on close so that videos/audio stop playing
+			$('#preview_modal_nav').bind('hidden', function () {
+				$('#preview_modal_nav').html('');
+			});
+		});
+		function buildCmsMenu() {
+			$('#tl-cms-page-dropdown-more .dropdown-menu li').each(function () {
+				$('#tl-cms-page-dropdown-more').before($(this));
+			});
+
+			$('#tl-cms-page-dropdown-more').hide();
+
+			if ($(window).width() < 980) {
+				$('.nav-collapse li.tl-cms-page').fadeIn(100);
+				return;
+			}
+
+			var availableNavSpace = $('.nav-collapse').width();
+			var cmsMenuEntriesSpace = 0;
+			$('.nav-collapse li:not(.tl-cms-page)').each(function () { availableNavSpace -= $(this).outerWidth(true); });
+			availableNavSpace -= $('.brand').outerWidth(true);
+			$('.nav-collapse li.tl-cms-page').each(function () { cmsMenuEntriesSpace += $(this).outerWidth(true); });
+
+			if (cmsMenuEntriesSpace > availableNavSpace) {
+				$('#tl-cms-page-dropdown-more').fadeIn(100);
+				$('#tl-cms-page-dropdown-more-divider').fadeIn(100);
+				availableNavSpace -= $('#tl-cms-page-dropdown-more').outerWidth(true);
+				availableNavSpace -= $('#tl-cms-page-dropdown-more-divider').outerWidth(true);
+			}
+
+			var firstIteration = true;
+			cmsMenuEntriesSpace = 0;
+
+			$('.nav-collapse li.tl-cms-page').each(function (index) {
+				cmsMenuEntriesSpace += $(this).outerWidth(true);
+
+				if (cmsMenuEntriesSpace > availableNavSpace) {
+					$(this).appendTo('#tl-cms-page-dropdown-more .dropdown-menu');
+				}
+				else {
+					if (firstIteration) {
+						$(this).prependTo('.nav-collapse ul[class!="dropdown-menu"]');
+						firstIteration = false;
+					}
+					else {
+						$('.nav-collapse li.tl-cms-page').eq(index - 1).after($(this));
+					}
+				}
+			});
+			$('.nav-collapse li.tl-cms-page').fadeIn(100);
+		}
+	</script>
+
+	<script id="tl-template-upload-ticket" type="text/x-tmpl">
+{% for (var i=0, file; file=o.files[i]; i++) { %}
+	<tr class="template-upload fade">
+		<td>
+			<strong class="error text-danger"></strong>
+			<div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+				<div class="bar bar-success progress-bar progress-bar-success" style="width: 0%;"></div>
+			</div>
+		</td>
+	</tr>
+{% } %}
+</script>
+
+	<script id="success-template-upload" type="text/x-tmpl">
+{% for (var i=0, file; file=o.files[i]; i++) { %}
+	<tr class="template-upload fade">
+		<td>
+			<strong class="error text-danger"></strong>
+			<div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+				<div class="bar bar-success progress-bar progress-bar-success" style="width: 0%;"></div>
+			</div>
+		</td>
+	</tr>
+{% } %}
+</script>
+
+	<div class="container ">
+		<div class="row">
+			<div class="span12">
+				<div class="hero-unit tl-auth-form-box">
+
+
+					<div class="tl-auth-form--handle-display" data-state-scope="auth_form_view" data-state-name="login">
+						<div class="tl-auth-form">
+							<script type="text/javascript">
+								$(document).ready(function () {
+									$('#tlLoginForm').submit(function (event) {
+										if ($(this).attr('id') == 'tl-account-certifications' && $('#mode').val() == 1) {
+											$('#update-certificate').removeClass('disabled').button('reset');
+										}
+
+										if ($(this).attr('id') == 'tl-account-themes' && $('#mode').val() == 1) {
+											$('#update-theme').removeClass('disabled').button('reset');
+										}
+
+										if (($(this).attr('id') == 'add-coupon-form' || $(this).attr('id') == 'edit-coupon-form') && $('#tl-discount-type').val() == '1') {
+											$("input[name='fixed_amount_discount']").val(123456789.11);
+										}
+										else if (($(this).attr('id') == 'add-coupon-form' || $(this).attr('id') == 'edit-coupon-form') && $('#tl-discount-type').val() == '2') {
+											$("input[name='percentage_discount']").val(99.101);
+										}
+
+										myportal.app.submitForm = new Array();
+
+										if (typeof (myportal.app.validForm) == 'undefined' || myportal.app.validForm == false) {
+											myportal.app.validForm = true;
+										}
+
+										$('#1696975844').closest('.controls').find('.help-block:first').empty();
+										$('#1696975844').parents('.control-group').removeClass('error');
+										$('#1895054166').closest('.controls').find('.help-block:first').empty();
+										$('#1895054166').parents('.control-group').removeClass('error');
+
+										myportal.app.submitForm['1696975844'] = new Array();
+										myportal.app.submitForm['1696975844']['login_or_email'] = true;
+										myportal.app.submitForm['1696975844']['mandatory'] = true;
+										myportal.app.submitForm['1895054166'] = new Array();
+										myportal.app.submitForm['1895054166']['mandatory'] = true;
+
+										myportal.app.validateLoginOrEmail('1696975844', decodeURIComponent('This%20is%20not%20a%20valid%20%27Username%20or%20email%27'));
+										myportal.app.validateMandatory('1696975844', decodeURIComponent('%27Username%20or%20email%27%20is%20required'));
+										myportal.app.validateMandatory('1895054166', decodeURIComponent('%27Password%27%20is%20required'));
+
+
+										if (typeof (myportal.app.submitForm) != 'undefined') {
+											var submitMe = true;
+											var errorElement = false;
+
+											for (var index in myportal.app.submitForm) {
+												for (var index_ in myportal.app.submitForm[index]) {
+													if (myportal.app.submitForm[index][index_] == false) {
+														submitMe = false;
+														errorElement = index;
+														myportal.app.validForm = false;
+														break;
+													}
+												}
+											}
+										}
+
+										if (typeof (myportal.app.submitForm) != 'undefined' && submitMe == false) {
+											event.preventDefault();
+											$(this).find("input[type=submit]").next('.dropdown-toggle').removeClass('disabled');
+											$(this).find("input[type=submit]").button('reset');
+											$(this).find("input[type=submit]").blur();
+
+
+											if (($(this).attr('id') == 'tl-account-themes' || $(this).attr('id') == 'tl-account-certifications') && !myportal.app.validForm) { // make sure that the tab with the error is shown
+												var errorTab = $('#' + errorElement).parents('.tab-pane').attr('id');
+												$('li a[href="#' + errorTab + '"]').tab('show');
+											}
+
+											if (($(this).attr('id') == 'tl-account-certifications' && $('#mode').val() == 1) || ($(this).attr('id') == 'tl-account-themes' && $('#mode').val() == 1)) {
+												$('#save-as-new-button').removeClass('disabled').removeAttr("disabled").val(myportal.app.translate('save-as-new'));
+											}
+
+											if (($(this).attr('id') == 'add-coupon-form' || $(this).attr('id') == 'edit-coupon-form') && $('#tl-discount-type').val() == '1') {
+												$("input[name='fixed_amount_discount']").val('');
+											}
+											else if (($(this).attr('id') == 'add-coupon-form' || $(this).attr('id') == 'edit-coupon-form') && $('#tl-discount-type').val() == '2') {
+												$("input[name='percentage_discount']").val('');
+											}
+										}
+									});
+								});
+							</script>
+							<form name="login_form" method="post" action="index" class="tl-form form-horizontal"
+								id="tlLoginForm"><input type="hidden" name="_track_login_form" value="1666281387" class
+									id="475679743"><input type="hidden" name="_redirect_" value class
+									id="_redirect_"><input type="hidden" name="_loginToken"
+									value="01e096cdb3b1058e8dc89010031a2b1c" class id="_loginToken">
+								<div class="spacer"></div>
+								<div class="spacer">
+									<div class="control-group ">
+										<label>
+											Username or email </label>
+										<div class="controls">
+											<input type="text" name="login" value class="login-fields" id="1696975844"
+												placeholder tabindex="1" autocomplete="on"> <span class="help-block">
+											</span>
+										</div>
+									</div>
+								</div>
+								<div class="spacer">
+									<div class="control-group ">
+										<label>
+											Password </label>
+										<div class="controls">
+											<input type="password" name="password" value
+												class="login-fields tl-form-password-field" id="1895054166" placeholder
+												tabindex="2" autocomplete="off"> <span class="help-block">
+											</span>
+										</div>
+									</div>
+								</div>
+								<div class="spacer spacer--x2">
+									<div class="control-group">
+										<input type="submit" name="submit" value="Login"
+											class="btn btn-primary btn-large" id="1378705055" tabindex="3"
+											data-loading-text="Logging in...">
+									</div>
+								</div>
+								<div class="spacer spacer--x2">
+									<div class="control-group">
+										<div class="text-center">
+											Forgot your <a href="javascript:void(0)" class="link-color"
+												data-select-state="auth_form_view:forgot_password">password</a>? </div>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+
+
+
+					<div class="tl-auth-form--handle-display" data-state-scope="auth_form_view"
+						data-state-name="forgot_password">
+						<div class="tl-auth-form">
+							<script type="text/javascript">
+								$(document).ready(function () {
+									$('#tl-forgot-password-form').submit(function (event) {
+										if ($(this).attr('id') == 'tl-account-certifications' && $('#mode').val() == 1) {
+											$('#update-certificate').removeClass('disabled').button('reset');
+										}
+
+										if ($(this).attr('id') == 'tl-account-themes' && $('#mode').val() == 1) {
+											$('#update-theme').removeClass('disabled').button('reset');
+										}
+
+										if (($(this).attr('id') == 'add-coupon-form' || $(this).attr('id') == 'edit-coupon-form') && $('#tl-discount-type').val() == '1') {
+											$("input[name='fixed_amount_discount']").val(123456789.11);
+										}
+										else if (($(this).attr('id') == 'add-coupon-form' || $(this).attr('id') == 'edit-coupon-form') && $('#tl-discount-type').val() == '2') {
+											$("input[name='percentage_discount']").val(99.101);
+										}
+
+										myportal.app.submitForm = new Array();
+
+										if (typeof (myportal.app.validForm) == 'undefined' || myportal.app.validForm == false) {
+											myportal.app.validForm = true;
+										}
+
+										$('#1872593668').closest('.controls').find('.help-block:first').empty();
+										$('#1872593668').parents('.control-group').removeClass('error');
+
+										myportal.app.submitForm['1872593668'] = new Array();
+										myportal.app.submitForm['1872593668']['mandatory'] = true;
+										myportal.app.submitForm['1872593668']['login_or_email'] = true;
+
+										myportal.app.validateMandatory('1872593668', decodeURIComponent('%27Username%20or%20email%27%20is%20required'));
+										myportal.app.validateLoginOrEmail('1872593668', decodeURIComponent('This%20is%20not%20a%20valid%20%27Username%20or%20email%27'));
+
+
+										if (typeof (myportal.app.submitForm) != 'undefined') {
+											var submitMe = true;
+											var errorElement = false;
+
+											for (var index in myportal.app.submitForm) {
+												for (var index_ in myportal.app.submitForm[index]) {
+													if (myportal.app.submitForm[index][index_] == false) {
+														submitMe = false;
+														errorElement = index;
+														myportal.app.validForm = false;
+														break;
+													}
+												}
+											}
+										}
+
+										if (typeof (myportal.app.submitForm) != 'undefined' && submitMe == false) {
+											event.preventDefault();
+											$(this).find("input[type=submit]").next('.dropdown-toggle').removeClass('disabled');
+											$(this).find("input[type=submit]").button('reset');
+											$(this).find("input[type=submit]").blur();
+
+
+											if (($(this).attr('id') == 'tl-account-themes' || $(this).attr('id') == 'tl-account-certifications') && !myportal.app.validForm) { // make sure that the tab with the error is shown
+												var errorTab = $('#' + errorElement).parents('.tab-pane').attr('id');
+												$('li a[href="#' + errorTab + '"]').tab('show');
+											}
+
+											if (($(this).attr('id') == 'tl-account-certifications' && $('#mode').val() == 1) || ($(this).attr('id') == 'tl-account-themes' && $('#mode').val() == 1)) {
+												$('#save-as-new-button').removeClass('disabled').removeAttr("disabled").val(myportal.app.translate('save-as-new'));
+											}
+
+											if (($(this).attr('id') == 'add-coupon-form' || $(this).attr('id') == 'edit-coupon-form') && $('#tl-discount-type').val() == '1') {
+												$("input[name='fixed_amount_discount']").val('');
+											}
+											else if (($(this).attr('id') == 'add-coupon-form' || $(this).attr('id') == 'edit-coupon-form') && $('#tl-discount-type').val() == '2') {
+												$("input[name='percentage_discount']").val('');
+											}
+										}
+									});
+								});
+							</script>
+							<form name="forgot_password_form" method="post" action="index"
+								class="tl-form form-horizontal" id="tl-forgot-password-form"><input type="hidden"
+									name="_track_forgot_password_form" value="1666281387" class id="1524811158"><input
+									type="hidden" name="_redirect_" value class id="_redirect_">
+								<div class="spacer"></div>
+								<div class="spacer">
+									<h3 class="tl-auth-form_title">Reset password</h3>
+									<p>Enter your username or email address and we'll email you instructions on how to
+										reset your password</p>
+								</div>
+								<div class="spacer">
+									<div class="control-group ">
+										<div class="controls">
+											<input type="text" name="username" value class="login-fields"
+												id="1872593668" placeholder="Username or email" autocomplete="on"
+												tabindex> <span class="help-block"></span>
+										</div>
+									</div>
+								</div>
+								<div class="spacer--x2">
+									<div class="control-group">
+										<input type="submit" name="submit_login" value="Send"
+											class="btn btn-primary btn-large" id="1446955762" autocomplete="off"
+											data-loading-text="Processing..." tabindex>
+									</div>
+								</div>
+								<div class="spacer"></div>
+								<div class="spacer spacer--x2 text-center">
+									<a class="link-color" href="javascript:void(0)"
+										data-select-state="auth_form_view:login">
+										Log in </a>
+									with your credentials
+								</div>
+							</form>
+						</div>
+					</div>
+
+
+					<script type="text/javascript">
+						$(document).on('state:change', function (e, data) {
+							var stateScope = data.scope;
+							var stateName = data.name;
+							var transitionDelay = 50;
+
+							switch (stateScope) {
+								case "auth_form_view":
+									switch (stateName) {
+										case "login":
+											setTimeout(function () {
+												$('form input[name="login"]').focus();
+											}, transitionDelay);
+											break;
+										case "forgot_password":
+											setTimeout(function () {
+												$('form input[name="username"]').focus();
+											}, transitionDelay);
+											break;
+										case "ldap_login":
+											setTimeout(function () {
+												$('form input[name="ldap_login"]').focus();
+												$('.tl-form-password-field').trigger('keyup');
+											}, 10);
+											break;
+										case "signup":
+											setTimeout(function () {
+												$('form[name="signup_form"] input[name="name"]').focus();
+											}, transitionDelay);
+											break;
+										default:
+									}
+									break;
+								default:
+							}
+						});
+
+						$(document).ready(function () {
+
+							var initialScreen = "login";
+							var switchToForgotPassword = !!'';
+							var switchToLDAPLogin = !!'';
+							if (switchToForgotPassword) {
+								initialScreen = "forgot_password";
+							}
+							if (switchToLDAPLogin) {
+								initialScreen = "ldap_login"
+							}
+
+							setState("auth_form_view", initialScreen);
+
+						});
+
+					</script>
+				</div>
+
+
+				<script type="text/javascript">
+					/* SIGNUP FORM */
+					$(document).ready(function () {
+						var signupFormID = "tl-cms-signup-form";
+						$("#" + signupFormID).unbind('submit').on('submit', function (e) {
+							$(this).find(".error").removeClass('error');
+							$(this).find(".help-block").html('');
+							$("#" + signupFormID + ' .alert').remove();
+							var url = 'cms/signup';
+							var formdata = $(this).serialize();
+							var $cmsFormSignup = $("#" + signupFormID);
+
+							myportal.app.ajax(url, {
+								type: "post",
+								data: formdata,
+								dataType: 'json',
+								success: function (resp) {
+									if (!resp.success) {
+										if (resp.data) {
+											$.each(resp.data, function (key, val) {
+												$cmsFormSignup.find("input[name='" + key + "']").parents('.control-group').addClass('error');
+												$cmsFormSignup.find("input[name='" + key + "']").closest('.controls').find('.help-block:first').html('<span class="help-inline">' + val + '</span>');
+												$cmsFormSignup.find("select[name='" + key + "']").parents('.control-group').addClass('error');
+												$cmsFormSignup.find("select[name='" + key + "']").closest('.controls').find('.help-block:first').html('<span class="help-inline">' + val + '</span>');
+
+												if (key == 'signup_captcha') {
+													$cmsFormSignup.find('#captcha-control-group').addClass('error');
+													$cmsFormSignup.find('#captcha-help-block').html('<span class="help-inline">' + val + '</span>');
+												}
+											});
+
+											/* Will reset captcha on every validation(api) error user receives */
+											if ($("#captcha-control-group").length > 0) {
+												resetGrecaptcha();
+											}
+										}
+										else if (resp.exc) {
+											myportal.app.notify({ type: "error", message: resp.exc });
+										}
+
+										$cmsFormSignup.find('#input[type=submit]').removeClass('disabled').removeAttr('disabled').val("Create account");
+									}
+									else {
+										if (resp.redirect) {
+											$(location).attr('href', resp.url);
+										}
+										else {
+											emailVerificationActivation(signupFormID);
+										}
+									}
+								},
+								error: function (jqXHR_obj) {
+									var response = $.parseJSON(jqXHR_obj.responseText);
+									$('#tl-cms-signup-modal').modal('hide');
+									$(this).find('input[type=submit]').removeClass('disabled').removeAttr('disabled').val("Create account");
+									myportal.app.notify({ type: "error", message: decodeURIComponent(response.message) });
+								}
+							});
+
+							return false;
+						});
+
+					});
+
+					/* SIGNUP FORM */
+					function emailVerificationActivation() {
+
+						signUpformReplaceWithAlertBox("cms", message);
+						openAuthModalAt("login", "cms");
+						myportal.app.notify({ type: "success", message: message, timeOut: 6000 });
+					}
+				</script>
+			</div>
+		</div>
+
+		<div id="tl-gamification-points-message" class="hide hidden-phone text-center tl-bold-item"></div>
+		<div id="tl-gamification-badges-message" class="hide hidden-phone">
+			<div class="tl-badge-image-message-wrapper">
+				<img class="tl-badge-image pull-left image60x60">
+				<div class="tl-badge-message text-center tl-bold-item"></div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="modal fade hide" id="tl-confirm" style="outline: none;" tabindex="-1">
+		<div class="modal-header">
+			<a href="javascript:void(0)" class="close" data-dismiss="modal">×</a>
+			<h3 class="tl-modal-header">Notice</h3>
+		</div>
+		<div class="modal-body">
+			<p id="tl-modal-body"></p>
+		</div>
+		<div class="modal-footer">
+			<a id="tl-confirm-submit" class="btn btn-danger"><i class="icon-trash"></i> Delete</a>
+			<a id="tl-confirm-continue" class="btn btn-danger hide"><i class="icon-trash"></i> Delete, don't keep
+				asking</a>
+			<a class="btn" data-dismiss="modal">Cancel</a>
+		</div>
+	</div>
+	<div class="modal fade hide" id="tl-confirm-double" style="outline: none;" tabindex="-1">
+		<div class="modal-header">
+			<a href="javascript:void(0)" class="close" data-dismiss="modal">×</a>
+			<h3 class="tl-modal-header-double">Notice</h3>
+		</div>
+		<div class="modal-body">
+			<p id="tl-modal-body-double"></p>
+		</div>
+		<div class="modal-footer">
+			<a id="tl-confirm-submit-double" class="btn btn-danger"><i class="icon-trash"></i> Delete</a>
+			<a id="tl-confirm-submit-double2" class="btn btn-danger"></a>
+			<a class="btn" data-dismiss="modal">Cancel</a>
+		</div>
+	</div>
+	<div class="modal fade hide" id="tl_leavepage_confirm" style="outline: none;" tabindex="-1">
+		<div class="modal-header">
+			<a href="javascript:void(0)" class="close" data-dismiss="modal">×</a>
+			<h3>Notice</h3>
+		</div>
+		<div class="modal-body">
+			<p></p>
+		</div>
+		<div class="modal-footer">
+			<a id="tl-leavepage" class="btn btn-danger"><i class="icon-trash"></i> Discard changes</a>
+			<a class="btn" data-dismiss="modal">Cancel</a>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		$('body').on('touchstart.dropdown', '.dropdown-menu', function (e) { e.stopPropagation(); });	// Fix for https://github.com/twitter/bootstrap/issues/2975#issuecomment-6659992, should be removed if fixed in twitter bs 2.1.2 (or whenever)
+		myportal.app.translations['search'] = "Search";
+		myportal.app.translations['Completed'] = "Completed";
+		myportal.app.translations['cancel'] = "Cancel";
+		myportal.app.translations['ok'] = "Ok";
+		myportal.app.translations['save'] = "Save";
+		myportal.app.translations['save-as-new'] = "Save as new";
+		myportal.app.translations['more'] = "more";
+		myportal.app.translations['less'] = "less";
+		myportal.app.translations['remove'] = "Remove";
+		myportal.app.translations['reset'] = "Reset";
+		myportal.app.translations['refresh'] = "Refresh";
+		myportal.app.translations['notice'] = "Notice";
+		myportal.app.translations['reset-remove-certification'] = "Reset & remove certificate";
+		myportal.app.translations['activate'] = "activate";
+		myportal.app.translations['deactivate'] = "deactivate";
+		myportal.app.translations['search-courses'] = "Search courses";
+		myportal.app.translations['add-image'] = "Add image";
+		myportal.app.translations['change-image'] = "Change image";
+		myportal.app.translations['accepted-files'] = "Accepted files";
+		myportal.app.translations['max-file-size'] = "Max file size";
+		myportal.app.translations['switch-editor'] = "Switch between HTML and Source view";
+		myportal.app.translations['grid-more-results'] = "Show more results per page";
+		myportal.app.translations['grid-less-results'] = "Show less results per page";
+		myportal.app.translations['image-course-files'] = "Use an image from course files";
+		myportal.app.translations['use-image-url'] = "Use an image URL (http://...)";
+		myportal.app.translations['width'] = "Width";
+		myportal.app.translations['padding'] = "Padding";
+		myportal.app.translations['align-default'] = "Align (default)";
+		myportal.app.translations['align-left'] = "Align left";
+		myportal.app.translations['align-right'] = "Align right";
+		myportal.app.translations['make-changes'] = "Save changes";
+		myportal.app.translations['grid-start-end-total'] = "_START_ to _END_ of _TOTAL_";
+		myportal.app.translations['matrix-of-total'] = "of _TOTAL_";
+		myportal.app.translations['matrix-more-less-results'] = "Show more/less results per page";
+		myportal.app.translations['matrix-search-input-threshold'] = "Please use 3+ characters";
+		myportal.app.translations['search-users'] = "Search users";
+		myportal.app.translations['export'] = "Export";
+		myportal.app.translations['save-as-csv'] = "Save as CSV";
+		myportal.app.translations['active-file-upload'] = "There is an active file upload transfer";
+		myportal.app.translations['upload-leave-page'] = "Are you sure you want to leave this page? File upload will stop and you will lose all uploaded data.";
+		myportal.app.translations['unsaved-changes'] = "There are unsaved changes";
+		myportal.app.translations['changes-leave-page'] = "Are you sure you want to leave this page? You will lose all unsaved changes.";
+		myportal.app.translations['discard-draft'] = "Are you sure you want to delete the autosave? This action cannot be undone.";
+		myportal.app.translations['restore-draft'] = "Are you sure you want to restore the autosave? This action cannot be undone.";
+		myportal.app.translations['add'] = "Add";
+		myportal.app.translations['added'] = "Added";
+		myportal.app.translations['processing'] = "Processing...";
+		myportal.app.translations['validate'] = "Validate";
+		myportal.app.translations['click-to-start'] = "Start";
+		myportal.app.translations['reset-password'] = "Reset password";
+		myportal.app.translations['operation-completed-successfully'] = "Operation completed successfully";
+		myportal.app.translations['points'] = "points";
+		myportal.app.translations['badges'] = "badges";
+		myportal.app.translations['help-videos-unavailable'] = "Videos are not currently available";
+		myportal.app.translations['next'] = "Next";
+		myportal.app.translations['previous'] = "Previous";
+		myportal.app.translations['your-rating'] = "Your rating";
+		myportal.app.translations['reset-your-rating'] = "Reset your rating";
+		myportal.app.translations['creating-export'] = "Creating the export file. Please wait...";
+		myportal.app.translations['no-results-found'] = "No results were found. Please try again.";
+		myportal.app.translations['login'] = "Login";
+		myportal.app.translations['crop'] = "Crop";
+		myportal.app.translations['apply'] = "Apply";
+		myportal.app.translations['preview-certification-error'] = "An error occurred while generating the preview, try again later";
+		myportal.app.translations['preview'] = "Preview";
+		myportal.app.translations['wait-preview-generation'] = "Please wait while generating the preview";
+		myportal.app.translations['youtube'] = 'Youtube';
+		myportal.app.translations['uploaded-video'] = 'Uploaded video';
+		myportal.app.translations['days'] = 'days';
+		myportal.app.translations['pick-an-expiration-date'] = 'Pick an expiration date';
+		myportal.app.translations['duration'] = 'Duration';
+		myportal.app.translations['start-date'] = 'Start date';
+		myportal.app.translations['expiration-date'] = 'Expiration date';
+		myportal.app.translations['time-limit'] = 'Time limit';
+		myportal.app.translations['start-date-and-time-limit'] = 'Start date & Time limit';
+		myportal.app.translations['dtable-error'] = 'Failed to execute action (operation timed out)';
+		myportal.app.translations['generic-error'] = 'Oops, something went wrong! Please try reloading the page';
+
+		var isMobile = true;
+		var isRtl = false;
+		var general_css = 'index/css/fmt:1666263694,tn:41,tv:0,ct:1';
+		var editorMaxUploadSize = '10485760';
+		var editorFormattedMaxUploadSize = '10 MB';
+		var editorAcceptedFileTypes = 'gif|jpg|jpeg|png';
+		var editorFormattedAcceptedFileTypes = 'gif, jpg, jpeg, png';
+		var imageAcceptedFileTypes = 'gif|jpg|jpeg|png';
+		var imageMaxUploadSize = '3145728';
+
+		var courseImageCanvasSizeWidth = '120';
+		var courseImageCanvasSizeHeight = '80';
+
+		var datepickerFormat = 'dd/mm/yyyy';
+		var showSelect2 = false;
+		var currentUserId = "";
+		var currentUserName = "";
+		var currentUserEmail = "";
+		var currentUserCreatedOn = "";
+		var currentUserIntercomHash = '';
+		var myToken = "";
+		var myEffectiveDomain = 'demo77.talentlms.com';
+		var myAdminDomain = '';
+		var gridExportChunkSize = 5000;
+		var gridExportProgressThreshold = 100;
+		var isDummy = false;
+		var sessionMaxLifeTime = 10800;
+		var checkSessionExpirationUrl = 'index/checksessionexpiration';
+		var logourRedirectUrl = '';
+		var reloginRedirectUrl = 'dashboard';
+		var enableRelogin = false;
+		var currency = '<span class="dollar-price">$</span>';
+	</script>
+
+	<script type="text/javascript"></script>
+	<script type="text/javascript">
+		window.getTestIdAttr = function () {
+			return window.testIDAttr || "";
+		};
+		window.printTestId = function (testID) {
+			if (window.testEnvActive && (typeof testID !== 'undefined')) {
+				return window.getTestIdAttr() + '=' + testID;
+			} else {
+				return '';
+			}
+		};
+		jQuery.fn.printTestId = function (testID) {
+			var el = $(this[0]);
+			if (window.testEnvActive && (typeof testID !== 'undefined')) {
+				el.attr(window.getTestIdAttr(), testID);
+			}
+			return this;
+		};
+	</script>
+</body>
+
+</html>
